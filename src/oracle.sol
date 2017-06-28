@@ -11,7 +11,19 @@ contract oracleTest {
 }
 
 contract Oracle{
-	function Oracle();
-	function update(bytes32 newCurrent);
-	function current()constant returns(bytes32 current);
+    bytes32 public _current;
+    
+	function Oracle()
+    {
+    }
+
+	function update(bytes32 newCurrent)
+    {
+        _current = newCurrent;
+    }
+
+	function current() constant returns(bytes32 current)
+    {
+        return _current;
+    }
 }
