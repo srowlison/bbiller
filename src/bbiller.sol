@@ -7,20 +7,21 @@ contract BBiller {
     string public symbol = 'BBILLER';
     string public name = 'BBiller';
 
-    uint256 public earlyBirdDate; //Early bird split applies before this date.
+    uint256 public earlyBirdDate; //Early bird discount applies before this date.
     uint256 public earlyBirdSupply; //
 
     //uint256 _earlyBirdDate, uint256 _earlyBirdSupply, uint256 _earlyBirdRate
     function BBiller() {
         owner = msg.sender;
-        totalSupply =  55728000 ;
+        totalSupply =   61300800;
+ 
 
         //Issue coins to contract owner
         balances[msg.sender] = totalSupply;
 
         //2018/1/1 00:00 GMT
         earlyBirdDate = 1514764800;
-        earlyBirdSupply = 16925333;
+        earlyBirdSupply =    33436800;
     }
 
     function transfer(address _to, uint256 _value) returns (bool success) {
@@ -45,7 +46,8 @@ contract BBiller {
     function buy() payable {
         //use brave new coin oracle 0x25dc90faa727aa29e437e660e8f868c9784d3828, checked sum 0x25Dc90FAa727aa29e437E660e8F868C9784D3828
         uint256 ethaud = 450;
-	// TODO Change to 0.015AUD and not $1.00AUD
+	// TODO Change to 0.015AUD and not $1.00AUD.  20% Discount to Early Birds.  0.012AUD Per Token.
+
         uint256 amountToTransfer = msg.value / 1000000000000;
 
         Oracle o = Oracle(0x25Dc90FAa727aa29e437E660e8F868C9784D3828);
