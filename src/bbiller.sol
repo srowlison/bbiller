@@ -7,7 +7,7 @@ contract BBiller {
     string public symbol = 'BBILLER';
     string public name = 'BBiller';
 
-    uint256 public earlyBirdDate; //Early bird discount applies before this date.
+    uint256 public earlyBirdDate; //Early bird split applies before this date.
     uint256 public earlyBirdSupply; //
 
     //uint256 _earlyBirdDate, uint256 _earlyBirdSupply, uint256 _earlyBirdRate
