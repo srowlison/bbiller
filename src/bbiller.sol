@@ -1,15 +1,25 @@
 pragma solidity ^0.4.9;
 
-// TODO: If $152,040AUD not reached, refund Token Holders.  (  8,595,870  BBILER tokens @0.01768756430 AUD each)
+// Total Issue: 77,001,543
+// Reserve: 6,984,232
+// Presales:   2,235,355 
+// Total Supply:   67,781,956
+
+// Token Threshold: 11,707,315 - Refund token holders if this is not achived by Date - TBA
+//
+// Round 1: Early Bird: Round 1. Price per token: 0.012986753 AUD x 37,383,094.34 =  485,485.00AUD – Early Bird Price.
+// Round 2: Seoond Round. Round 2: Price per token: 0.02597351 AUD x 18,691,547.17 = 485,485.00 AUD
+
+
 // Values subject to change during pre-sale process.
-// 2,675,556 pre-sales.
+
 
 contract BBiller {
 
     uint256 public totalSupply;
     address public owner;
     string public symbol = 'BBILLER';
-    string public name = 'BBiller';
+    string public name = 'bBiller';
 
     uint256 public earlyBirdDate; //Early bird discount applies before this date.
     uint256 public earlyBirdSupply; //
@@ -17,7 +27,7 @@ contract BBiller {
     //uint256 _earlyBirdDate, uint256 _earlyBirdSupply, uint256 _earlyBirdRate
     function BBiller() {
         owner = msg.sender;
-        totalSupply =    56536897;
+        totalSupply =    67781956;
  
 
         //Issue coins to contract owner
@@ -25,7 +35,9 @@ contract BBiller {
 
         //2018/1/1 00:00 GMT
         earlyBirdDate = 1514764800;
-        earlyBirdSupply =    28268448;
+        earlyBirdSupply =   37383094;
+	secondRound = 18691547
+	
 	
     }
 
@@ -51,7 +63,12 @@ contract BBiller {
     function buy() payable {
         //use brave new coin oracle 0x25dc90faa727aa29e437e660e8f868c9784d3828, checked sum 0x25Dc90FAa727aa29e437E660e8F868C9784D3828
         uint256 ethaud = 450;
-	// TODO Change to 0.01768756430AUD and not $1.00AUD.  // Subject to change based on pre-sales.
+	// If earlyBird
+	// Token Price = 0.012986753AUD // First Round
+	// else
+	// Token Price =  0.02597351AUD // Second Round
+
+
 
         uint256 amountToTransfer = msg.value / 1000000000000;
 
