@@ -1,5 +1,7 @@
 pragma solidity ^0.4.9;
 
+// TODO: If $140,000AUD not reached, refund Token Holders.  ( 12,500,000 BBILER tokens @ 0.012AUD each)
+// Values subject to change during pre-sale process.
 contract BBiller {
 
     uint256 public totalSupply;
