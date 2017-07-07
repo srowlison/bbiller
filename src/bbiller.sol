@@ -137,6 +137,7 @@ contract BBiller {
         if (earlyBirdDate < now)
         {
             //in early bird period
+	    // TODO: If Threshold not reached, then perform refund 
             
         }
         else
