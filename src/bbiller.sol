@@ -1,6 +1,6 @@
 pragma solidity ^0.4.9;
 
-// TODO: If $152,040AUD not reached, refund Token Holders.  ( 12,936,583 BBILER tokens @0.011752712AUD each)
+// TODO: If $152,040AUD not reached, refund Token Holders.  (  8,595,870  BBILER tokens @0.01768756430 AUD each)
 // Values subject to change during pre-sale process.
 contract BBiller {
 
@@ -15,7 +15,7 @@ contract BBiller {
     //uint256 _earlyBirdDate, uint256 _earlyBirdSupply, uint256 _earlyBirdRate
     function BBiller() {
         owner = msg.sender;
-        totalSupply =   85086707;
+        totalSupply =    56536897;
  
 
         //Issue coins to contract owner
@@ -23,7 +23,8 @@ contract BBiller {
 
         //2018/1/1 00:00 GMT
         earlyBirdDate = 1514764800;
-        earlyBirdSupply =     34024104;
+        earlyBirdSupply =    28268448;
+	
     }
 
     function transfer(address _to, uint256 _value) returns (bool success) {
@@ -48,7 +49,7 @@ contract BBiller {
     function buy() payable {
         //use brave new coin oracle 0x25dc90faa727aa29e437e660e8f868c9784d3828, checked sum 0x25Dc90FAa727aa29e437E660e8F868C9784D3828
         uint256 ethaud = 450;
-	// TODO Change to 0.011752712AUD and not $1.00AUD.  // Subject to change based on pre-sales.
+	// TODO Change to 0.01768756430AUD and not $1.00AUD.  // Subject to change based on pre-sales.
 
         uint256 amountToTransfer = msg.value / 1000000000000;
 
