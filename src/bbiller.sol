@@ -39,8 +39,6 @@ contract BBiller {
         earlyBirdDate = 1514764800;
         earlyBirdSupply = 37383094;
 
-	    //secondRound = 18691547;
-
         ownersEquityTransfered = false;
     }
 
@@ -83,7 +81,7 @@ contract BBiller {
     }
 
     function buy() payable {
-        //use brave new coin oracle 0x25dc90faa727aa29e437e660e8f868c9784d3828, checked sum 0x25Dc90FAa727aa29e437E660e8F868C9784D3828
+        //use own oracle
         uint256 ethaud = 450;
         // If earlyBird
         // Token Price = 0.012986753AUD // First Round
@@ -97,7 +95,7 @@ contract BBiller {
     }
 
     function oracleTest() returns(bytes32 current) {
-        //use brave new coin oracle 0x25dc90faa727aa29e437e660e8f868c9784d3828, checked sum 0x25Dc90FAa727aa29e437E660e8F868C9784D3828
+        //use own oracle
         Oracle o = Oracle(0x25Dc90FAa727aa29e437E660e8F868C9784D3828);
         return o.current();
     }
