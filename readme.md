@@ -6,3 +6,6 @@ Testnet contract address
 
 Deployed from
 0x6f94209B9eF2142b933aA2C6D7fa8a8aF1A97516
+
+Mainnet contract address
+0x6a93c9143afef65ce9f7df5fb4d1f89868bd7d0c

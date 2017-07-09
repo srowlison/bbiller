@@ -1,18 +1,18 @@
 pragma solidity ^0.4.9;
 
-// Total Issue: 77,001,543
-// Reserve: 6,984,232
-// Presales:   2,235,355 
-// Total Supply:   67,781,956
+// Issued Tokens: 85,086,707
+// Price per token: 0.01175271709 AUD, Payable in ETH
 
-// Token Threshold: 11,707,315 - Refund token holders if this is not achived by Date - TBA
-//
-// Round 1: Early Bird: Round 1. Price per token: 0.012986753 AUD x 37,383,094.34 =  485,485.00AUD – Early Bird Price.
-// Round 2: Seoond Round. Round 2: Price per token: 0.02597351 AUD x 18,691,547.17 = 485,485.00 AUD
+// Allocation:
+// Existing shareholders: 2,311,799 (paid up $12,400AUD).  These need to be transferred as they are already paid.  They need to be handled outside of the split of an earlybird.
 
+// Market sales: 35,050,618 Tokens ($411,940.00 AUD)
 
-// Values subject to change during pre-sale process.
+// Early Bird
+// Market Sales over the threshold of 12,936,583 tokens are transferred to the project address, otherwise returned to the purchaser if not reached by 1st August 2017.
 
+// Owner’s Equity: 35,050,618 Tokens ($411,940.00 AUD)
+// Owners’ Equity tokens are not released until after 1/1/2018 and then transferred to the owner’s address. Locked.  0x2ae876501cbf3e6b4102c10bdd8e54505c190f98
 
 contract BBiller {
 
@@ -21,24 +21,27 @@ contract BBiller {
     string public symbol = 'BBILLER';
     string public name = 'bBiller';
 
-    uint256 public earlyBirdDate; //Early bird discount applies before this date.
-    uint256 public earlyBirdSupply; //
+    //Early bird discount applies before this date.
+    uint256 public earlyBirdDate; 
+    uint256 public earlyBirdSupply;
 
-    //uint256 _earlyBirdDate, uint256 _earlyBirdSupply, uint256 _earlyBirdRate
+    //Prevent double sending of owners tokens.
+    bool public ownersEquityTransfered;
+
     function BBiller() {
         owner = msg.sender;
-        totalSupply =    67781956;
+        totalSupply = 85086707;
  
-
         //Issue coins to contract owner
         balances[msg.sender] = totalSupply;
 
         //2018/1/1 00:00 GMT
         earlyBirdDate = 1514764800;
-        earlyBirdSupply =   37383094;
-	secondRound = 18691547
-	
-	
+        earlyBirdSupply = 37383094;
+
+	    //secondRound = 18691547;
+
+        ownersEquityTransfered = false;
     }
 
     function transfer(address _to, uint256 _value) returns (bool success) {
@@ -56,6 +59,25 @@ contract BBiller {
         }
     }
 
+    function transferOwnersEquity() returns (bool success) {
+        require(msg.sender == owner);
+
+        //Can only be excuted after 1/1/2018
+        if (ownersEquityTransfered == false && earlyBirdDate < now)
+        {
+            //35,050,618
+            ownersEquityTransfered == true;
+            balances[owner] -= 35050618;
+            balances[] += 35050618;
+
+            return true;
+        }
+        else
+        {
+            throw;
+        }
+    }
+
     function balanceOf(address _owner) constant returns (uint256 balance) {
         return balances[_owner];
     }
@@ -63,12 +85,10 @@ contract BBiller {
     function buy() payable {
         //use brave new coin oracle 0x25dc90faa727aa29e437e660e8f868c9784d3828, checked sum 0x25Dc90FAa727aa29e437E660e8F868C9784D3828
         uint256 ethaud = 450;
-	// If earlyBird
-	// Token Price = 0.012986753AUD // First Round
-	// else
-	// Token Price =  0.02597351AUD // Second Round
-
-
+        // If earlyBird
+        // Token Price = 0.012986753AUD // First Round
+        // else
+        // Token Price =  0.02597351AUD // Second Round
 
         uint256 amountToTransfer = msg.value / 1000000000000;
 
@@ -76,7 +96,7 @@ contract BBiller {
         Buy();
     }
 
-    function otest() returns(bytes32 current) {
+    function oracleTest() returns(bytes32 current) {
         //use brave new coin oracle 0x25dc90faa727aa29e437e660e8f868c9784d3828, checked sum 0x25Dc90FAa727aa29e437E660e8F868C9784D3828
         Oracle o = Oracle(0x25Dc90FAa727aa29e437E660e8F868C9784D3828);
         return o.current();
@@ -137,8 +157,7 @@ contract BBiller {
         if (earlyBirdDate < now)
         {
             //in early bird period
-	    // TODO: If Threshold not reached, then perform refund 
-            
+	        // TODO: If Threshold not reached, then perform refund 
         }
         else
         {
