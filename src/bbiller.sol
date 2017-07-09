@@ -7,7 +7,7 @@ pragma solidity ^0.4.9;
 
 // Round 1. Price per token: 0.01257379 AUD x 30,886, 097 = $ 402,958  AUD – Early Bird Price.
 // Round 2: Price per token: 0.02514759 AUD x  46,329,146  =  1,165,065.38 AUD
-// total Supply  61,772,195 
+// total Supply  79,530,552   
 
 // Values subject to change during pre-sale process.
 
@@ -25,7 +25,7 @@ contract BBiller {
     //uint256 _earlyBirdDate, uint256 _earlyBirdSupply, uint256 _earlyBirdRate
     function BBiller() {
         owner = msg.sender;
-        totalSupply =    61772195;
+        totalSupply =    79530552  ;
  
 
         //Issue coins to contract owner
@@ -136,6 +136,8 @@ contract BBiller {
         {
             //in early bird period
 	    // TODO: If Threshold not reached, then perform refund 
+	    
+	    // TODO When > 50% reached, lock until 1/1/2018 then release to company address
             
         }
         else
