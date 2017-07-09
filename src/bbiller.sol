@@ -1,14 +1,12 @@
 pragma solidity ^0.4.9;
 
 
-// Token Threshold: 1,500,000 - Refund token holders if this is not achived by Date - TBA
+// Token Threshold:  1,500,000 - Refund token holders if this is not achived by Date - TBA
 //
-
-// Total Issue: 100,000,000
 // Pre-Sales	 2,911,218 
-// Reserve	 38,227,804
-// Round 1. Price per token: 0.01 AUD x 23,544,390 = $235,443 AUD – Early Bird Price.
-// Round 2: Price per token: 0.02 AUD x 35,316,586 = $706,331 AUD
+
+// Round 1. Price per token: 0.01257379 AUD x 30,886, 097 = $ 402,958  AUD – Early Bird Price.
+// Round 2: Price per token: 0.02514759 AUD x  46,329,146  =  1,165,065.38 AUD
 // total Supply  61,772,195 
 
 // Values subject to change during pre-sale process.
@@ -35,8 +33,8 @@ contract BBiller {
 
         //2018/1/1 00:00 GMT
         earlyBirdDate = 1514764800;
-        earlyBirdSupply =    23544390;
-	secondRound = 35316586
+        earlyBirdSupply =    30886097;
+	secondRound = 46329146
 	
 	
     }
@@ -64,9 +62,9 @@ contract BBiller {
         //use brave new coin oracle 0x25dc90faa727aa29e437e660e8f868c9784d3828, checked sum 0x25Dc90FAa727aa29e437E660e8F868C9784D3828
         uint256 ethaud = 450;
 	// If earlyBird
-	// Token Price = 0.01AUD // First Round
+	// Token Price = 0.01257379AUD // First Round
 	// else
-	// Token Price =  0.02AUD // Second Round
+	// Token Price =  0.02514759AUD // Second Round
 
 
 
