@@ -1,17 +1,13 @@
 pragma solidity ^0.4.9;
 
-// Issued Tokens: 85,086,707
-// Price per token: 0.01175271709 AUD, Payable in ETH
+//Round 1. Price per token: 0.01257379 AUD x 30,886, 097 = $ 402,958  AUD – Early Bird Price.
+//Round 2: Price per token: 0.02514759 AUD x 46,329,146  =  $1,165,065 AUD
+//Existing shareholders: 2,911,218 (paid up $14,603 AUD)
+//Capital expected $ 1,553,420 AUD, if fully taken up.
+//Allocation: 
+//Market Sales over the threshold of 1,500,000 tokens are transferred to the project address, otherwise returned to the purchaser  
 
-// Allocation:
-// Existing shareholders: 2,311,799 (paid up $12,400AUD).  These need to be transferred as they are already paid.  They need to be handled outside of the split of an earlybird.
-
-// Market sales: 35,050,618 Tokens ($411,940.00 AUD)
-
-// Early Bird
-// Market Sales over the threshold of 12,936,583 tokens are transferred to the project address, otherwise returned to the purchaser if not reached by 1st August 2017.
-
-// Owner’s Equity: 35,050,618 Tokens ($411,940.00 AUD)
+//Owner’s Equity: 39,765,275=Tokens ($500,000AUD)
 // Owners’ Equity tokens are not released until after 1/1/2018 and then transferred to the owner’s address. Locked.  0x2ae876501cbf3e6b4102c10bdd8e54505c190f98
 
 contract BBiller {
@@ -30,15 +26,20 @@ contract BBiller {
 
     function BBiller() {
         owner = msg.sender;
-        totalSupply = 85086707;
+        totalSupply = 79530552  ;
  
         //Issue coins to contract owner
         balances[msg.sender] = totalSupply;
 
         //2018/1/1 00:00 GMT
         earlyBirdDate = 1514764800;
-        earlyBirdSupply = 37383094;
+        earlyBirdSupply =30886097;
 
+<<<<<<< HEAD
+=======
+	    //secondRound = 46329146;
+
+>>>>>>> f4997d0dc528ab4ea6844a94a10f2e2b31e66ea6
         ownersEquityTransfered = false;
     }
 
@@ -63,10 +64,10 @@ contract BBiller {
         //Can only be excuted after 1/1/2018
         if (ownersEquityTransfered == false && earlyBirdDate < now)
         {
-            //35,050,618
+            //39,765,275
             ownersEquityTransfered == true;
-            balances[owner] -= 35050618;
-            balances[] += 35050618;
+            balances[owner] -= 39765275;
+            balances[] += 39765275;
 
             return true;
         }
@@ -84,9 +85,9 @@ contract BBiller {
         //use own oracle
         uint256 ethaud = 450;
         // If earlyBird
-        // Token Price = 0.012986753AUD // First Round
+        // Token Price = 0.01257379AUD // First Round
         // else
-        // Token Price =  0.02597351AUD // Second Round
+        // Token Price =  0.02514759AUD // Second Round
 
         uint256 amountToTransfer = msg.value / 1000000000000;
 
