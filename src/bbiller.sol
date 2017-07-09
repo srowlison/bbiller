@@ -64,9 +64,9 @@ contract BBiller {
         //use brave new coin oracle 0x25dc90faa727aa29e437e660e8f868c9784d3828, checked sum 0x25Dc90FAa727aa29e437E660e8F868C9784D3828
         uint256 ethaud = 450;
 	// If earlyBird
-	// Token Price = 0.012986753AUD // First Round
+	// Token Price = 0.01AUD // First Round
 	// else
-	// Token Price =  0.02597351AUD // Second Round
+	// Token Price =  0.02AUD // Second Round
 
 
 
