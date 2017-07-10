@@ -5,7 +5,7 @@ pragma solidity ^0.4.9;
 //Existing shareholders: 2,911,218 (paid up $14,603 AUD)
 //Capital expected $ 1,553,420 AUD, if fully taken up.
 //Allocation: 
-//Market Sales over the threshold of 1,500,000 tokens are transferred to the project address, otherwise returned to the purchaser  
+//Market Sales over the threshold of 11,929,582  tokens are transferred to the project address, otherwise returned to the purchaser  
 
 //Owner’s Equity: 39,765,275=Tokens ($500,000AUD)
 // Owners’ Equity tokens are not released until after 1/1/2018 and then transferred to the owner’s address. Locked.  0x2ae876501cbf3e6b4102c10bdd8e54505c190f98
