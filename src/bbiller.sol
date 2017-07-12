@@ -35,11 +35,8 @@ contract BBiller {
         earlyBirdDate = 1514764800;
         earlyBirdSupply =30886097;
 
-<<<<<<< HEAD
-=======
 	    //secondRound = 46329146;
 
->>>>>>> f4997d0dc528ab4ea6844a94a10f2e2b31e66ea6
         ownersEquityTransfered = false;
     }
 
