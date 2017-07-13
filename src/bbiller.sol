@@ -1,18 +1,20 @@
 Source files can be stored here (smart contracts).
 pragma solidity ^0.4.9;
+// Looks good to go.
 
 //Round 1. Price per token: 0.012 AUD x   50,000,000.00  = $   600,000 AUD/ETH – Early Bird Price.
-//Round 2: Price per token:  0.02 AUD x  30,906,315.00   =  $  618,126 AUD/ETH
+//Round 2: Price per token:  0.02 AUD x  30,906,319.00   =  $  618,126 AUD/ETH
 
-// Existing shareholders:   2,427,015  (paid up to 13/7/2017 = $ 14,703 AUD/AUD) - from presale
-// Total Anticipated  from ICO $    $  1,218,126  AUD/ETH 
+// Existing shareholders:   2,427,015  (paid up to 14/7/2017 = $ 14,703 AUD/AUD) - from presale
+// Total Anticipated  from ICO $    $   1,218,126  AUD/ETH 
 // Total Capital  $         1,232,829 AUD/ETH
 // Project Address: 0x7B64fa719E14496818FaCba26bc9AfC72fA6947b
+ 
 
 //Allocation: 
 // Market Sales over the threshold of  12,500,000   tokens are transferred to the project address, otherwise returned to the purchaser  
 
-// Owner’s Equity:   41,666,665 
+// Owner’s Equity:    41,666,667.08
 // Owners’ Equity tokens are not released until after 1/1/2018 and then transferred to the owner’s address. Locked. 
 
 contract BBiller {
@@ -21,20 +23,20 @@ contract BBiller {
     address public owner;
     string public symbol = 'BBILLER';
     string public name = 'bBiller';
-	address sendTo;
+    address sendTo;
     uint256 amount;
 
     
-	uint256 public ownersExitDate;
+    uint256 public ownersExitDate;
     uint256 public roundOneSupply;
-	unit256 public refundThreshold;
+    unit256 public refundThreshold;
 
     //Prevent double sending of owners tokens.
     bool public ownersEquityTransfered;
 
     function BBiller() {
         owner = msg.sender;
-        totalSupply =    83333333 ;
+        totalSupply =    83333333.33 ;
    
         //Issue coins to contract owner
         balances[msg.sender] = totalSupply;
@@ -42,16 +44,14 @@ contract BBiller {
         //2018/1/1 00:00 GMT
         ownersExitDate = 1514764800;
 
-		//2017 14th Oct 2017, 0:00 UTC
-		endICODate =  1507939200;
+	//2017 14th Oct 2017, 0:00 UTC
+	endICODate =  1507939200;
 
         roundOneSupply =   50000000;
-
-		 
-		refundThreshold =  12500000;
-
-
-	    //secondRound =  30,906,315 ; // Implied based on remaining balance available.
+				 
+	refundThreshold =  12500000;
+		
+       //secondRound =   30,906,319.00; // Implied based on remaining balance available.
 		 
 
         ownersEquityTransfered = false;
@@ -78,11 +78,11 @@ contract BBiller {
         //Can only be excuted after 1/1/2018
         if (ownersEquityTransfered == false && ownersExitDate < now)
         {
-            //41,666,665
+            //441,666,667.09;
             ownersEquityTransfered == true;
-            balances[owner] -=  41666665;
+            balances[owner] -=  41666667.09;
 
-            balances[] += 41666665;
+            balances[] += 41666667.09;
 
             return true;
         }
@@ -101,15 +101,14 @@ contract BBiller {
         //use bBiller Oracle 
        
 
-		// Set the price depending on the remaining number of tokens.  
-        if (balances[] < roundOneSupply)
-		{ 
-			tokenPrice = 0.012;  // AUD First Round
+	// Set the price depending on the remaining number of tokens.  
+        if (balances[] < roundOneSupply) { 
+		tokenPrice = 0.012;  // AUD First Round
         }
-		else
-		{
-			tokenPrice = 0.02;  //AUD  Second Round
-		}
+	else
+	{
+		tokenPrice = 0.02;  //AUD  Second Round
+	}
 	
         uint256 amountToTransfer = (msg.value / 1000000000000) * tokenPrice;
 
@@ -186,22 +185,21 @@ contract BBiller {
     function withdraw(uint256 _amount) {
         if (balances[] > refundThreshold  && endICODate < now )
         {
-        	uint amount = pendingWithdrawals[msg.sender];
-			pendingWithdrawals[msg.sender] = 0;
-			msg.sender.transfer(amount);
+        uint amount = pendingWithdrawals[msg.sender];
+	pendingWithdrawals[msg.sender] = 0;
+	msg.sender.transfer(amount);
         }
         else
         {
-			// TODO : Withdraw funds to Project Address.
-			address bBiller = 0x7B64fa719E14496818FaCba26bc9AfC72fA6947b  
-			bBiller.transfer(uint256 amount)
-		 }
+	address bBiller = 0x7B64fa719E14496818FaCba26bc9AfC72fA6947b  
+	bBiller.transfer(uint256 amount)
 	}
+     }	
 		
 
     mapping (address => uint256) balances;
     mapping  (uint256 => GitHubIssue) issues;
-	mapping (address => uint) pendingWithdrawals;
+    mapping (address => uint) pendingWithdrawals;
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event AddIssue(uint256 _gitHubId);
