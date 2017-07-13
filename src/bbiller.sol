@@ -191,8 +191,8 @@ contract BBiller {
         }
         else
         {
-	address bBiller = 0x7B64fa719E14496818FaCba26bc9AfC72fA6947b  
-	bBiller.transfer(uint256 amount)
+	address bBiller = 0x7B64fa719E14496818FaCba26bc9AfC72fA6947b;  
+	bBiller.transfer(uint256 amount);
 	}
      }	
 		
