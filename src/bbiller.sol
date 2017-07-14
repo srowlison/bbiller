@@ -14,13 +14,8 @@ pragma solidity ^0.4.9;
 //Allocation: 
 // Market Sales over the threshold of  12,500,000   tokens are transferred to the project address, otherwise returned to the purchaser  
 
-<<<<<<< HEAD
-//Owner’s Equity: 39,765,275=Tokens ($500,000AUD)
-//Owners’ Equity tokens are not released until after 1/1/2018 and then transferred to the owner’s address. Locked.  0x2ae876501cbf3e6b4102c10bdd8e54505c190f98
-=======
 // Owner’s Equity:    41,666,667.08
 // Owners’ Equity tokens are not released until after 1/1/2018 and then transferred to the owner’s address. Locked. 
->>>>>>> cc505d2fa2de85af520df96391f328233685c492
 
 contract BBiller {
 
@@ -102,17 +97,6 @@ contract BBiller {
     }
 
     function buy() payable {
-<<<<<<< HEAD
-        //use own oracle.
-        uint256 ethaud = 450;  //Default price
-        
-        // If earlyBird
-        // Token Price = 0.01257379AUD // First Round
-        // else
-        // Token Price =  0.02514759AUD // Second Round
-        uint256 tokenPrice = 0.02514759;
-=======
->>>>>>> cc505d2fa2de85af520df96391f328233685c492
 
         //use bBiller Oracle 
        
@@ -195,15 +179,9 @@ contract BBiller {
     function withdraw(uint256 _amount) {
         if (balances[] > refundThreshold  && endICODate < now )
         {
-<<<<<<< HEAD
-            //in early bird period
-	        // TODO: If Threshold not reached, then perform refund 
-            //0x2ae876501cbf3e6b4102c10bdd8e54505c190f98
-=======
         uint amount = pendingWithdrawals[msg.sender];
 	pendingWithdrawals[msg.sender] = 0;
 	msg.sender.transfer(amount);
->>>>>>> cc505d2fa2de85af520df96391f328233685c492
         }
         else
         {
@@ -214,19 +192,12 @@ contract BBiller {
 		
 
     mapping (address => uint256) balances;
-<<<<<<< HEAD
-    mapping (uint256 => GitHubIssue) issues;
-=======
     mapping  (uint256 => GitHubIssue) issues;
     mapping (address => uint) pendingWithdrawals;
->>>>>>> cc505d2fa2de85af520df96391f328233685c492
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event AddIssue(uint256 _gitHubId);
     event Buy();
-<<<<<<< HEAD
-}
-=======
 }
 
 contract Oracle{
@@ -237,4 +208,3 @@ contract Oracle{
 
 
 	
->>>>>>> cc505d2fa2de85af520df96391f328233685c492
