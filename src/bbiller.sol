@@ -44,16 +44,13 @@ contract BBiller {
         //2018/1/1 00:00 GMT
         ownersExitDate = 1514764800;
 
-	//2017 14th Oct 2017, 0:00 UTC
-	endICODate =  1507939200;
+        //2017 14th Oct 2017, 0:00 UTC
+        endICODate =  1507939200;
 
         roundOneSupply =   50000000;
 				 
-	refundThreshold =  12500000;
+	    refundThreshold =  12500000;
 		
-       //secondRound =   30,906,319.00; // Implied based on remaining balance available.
-		 
-
         ownersEquityTransfered = false;
     }
 
@@ -101,22 +98,20 @@ contract BBiller {
         //use bBiller Oracle 
        
 
-	// Set the price depending on the remaining number of tokens.  
+	    // Set the price depending on the remaining number of tokens.  
         if (balances[] < roundOneSupply) { 
-		tokenPrice = 0.012;  // AUD First Round
+		    tokenPrice = 0.012;  // AUD First Round
         }
-	else
-	{
-		tokenPrice = 0.02;  //AUD  Second Round
-	}
+        else
+        {
+            tokenPrice = 0.02;  //AUD  Second Round
+        }
 	
         uint256 amountToTransfer = (msg.value / 1000000000000) * tokenPrice;
 
         Oracle o = Oracle(0x25Dc90FAa727aa29e437E660e8F868C9784D3828);  
 
-        Buy();  
-
-
+        Buy();
     }
 	// TODO: Use this function to test reporting of oracle.
 
@@ -179,32 +174,23 @@ contract BBiller {
     function withdraw(uint256 _amount) {
         if (balances[] > refundThreshold  && endICODate < now )
         {
-        uint amount = pendingWithdrawals[msg.sender];
-	pendingWithdrawals[msg.sender] = 0;
-	msg.sender.transfer(amount);
+            uint amount = pendingWithdrawals[msg.sender];
+            pendingWithdrawals[msg.sender] = 0;
+            msg.sender.transfer(amount);
         }
         else
         {
-	address bBiller = 0x7B64fa719E14496818FaCba26bc9AfC72fA6947b;  
-	bBiller.transfer(uint256 amount);
-	}
+            address bBiller = 0x7B64fa719E14496818FaCba26bc9AfC72fA6947b;  
+            bBiller.transfer(uint256 amount);
+        }
      }	
 		
 
     mapping (address => uint256) balances;
-    mapping  (uint256 => GitHubIssue) issues;
+    mapping (uint256 => GitHubIssue) issues;
     mapping (address => uint) pendingWithdrawals;
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event AddIssue(uint256 _gitHubId);
     event Buy();
 }
-
-contract Oracle{
-	function Oracle();
-	function update(bytes32 newCurrent);
-	function current()constant returns(bytes32 current);
-}
-
-
-	
