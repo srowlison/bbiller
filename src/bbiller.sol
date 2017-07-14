@@ -8,7 +8,7 @@ pragma solidity ^0.4.9;
 //Market Sales over the threshold of 11,929,582  tokens are transferred to the project address, otherwise returned to the purchaser  
 
 //Owner’s Equity: 39,765,275=Tokens ($500,000AUD)
-// Owners’ Equity tokens are not released until after 1/1/2018 and then transferred to the owner’s address. Locked.  0x2ae876501cbf3e6b4102c10bdd8e54505c190f98
+//Owners’ Equity tokens are not released until after 1/1/2018 and then transferred to the owner’s address. Locked.  0x2ae876501cbf3e6b4102c10bdd8e54505c190f98
 
 contract BBiller {
 
@@ -79,23 +79,19 @@ contract BBiller {
     }
 
     function buy() payable {
-        //use own oracle
-        uint256 ethaud = 450;
+        //use own oracle.
+        uint256 ethaud = 450;  //Default price
+        
         // If earlyBird
         // Token Price = 0.01257379AUD // First Round
         // else
         // Token Price =  0.02514759AUD // Second Round
+        uint256 tokenPrice = 0.02514759;
 
         uint256 amountToTransfer = msg.value / 1000000000000;
 
         Oracle o = Oracle(0x25Dc90FAa727aa29e437E660e8F868C9784D3828);
         Buy();
-    }
-
-    function oracleTest() returns(bytes32 current) {
-        //use own oracle
-        Oracle o = Oracle(0x25Dc90FAa727aa29e437E660e8F868C9784D3828);
-        return o.current();
     }
 
     //Users can vote on a git hub issue id.  They can vote in favour, no abstane.
@@ -154,6 +150,7 @@ contract BBiller {
         {
             //in early bird period
 	        // TODO: If Threshold not reached, then perform refund 
+            //0x2ae876501cbf3e6b4102c10bdd8e54505c190f98
         }
         else
         {
@@ -162,15 +159,9 @@ contract BBiller {
     }
 
     mapping (address => uint256) balances;
-    mapping  (uint256 => GitHubIssue) issues;
+    mapping (uint256 => GitHubIssue) issues;
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event AddIssue(uint256 _gitHubId);
     event Buy();
-}
-
-contract Oracle{
-	function Oracle();
-	function update(bytes32 newCurrent);
-	function current()constant returns(bytes32 current);
 }
