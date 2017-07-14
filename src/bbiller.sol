@@ -26,7 +26,6 @@ contract BBiller {
     address sendTo;
     uint256 amount;
 
-    
     uint256 public ownersExitDate;
     uint256 public roundOneSupply;
     unit256 public refundThreshold;
@@ -36,7 +35,7 @@ contract BBiller {
 
     function BBiller() {
         owner = msg.sender;
-        totalSupply =    83333333.33 ;
+        totalSupply = 83333333;
    
         //Issue coins to contract owner
         balances[msg.sender] = totalSupply;
@@ -77,8 +76,7 @@ contract BBiller {
         {
             //441,666,667.09;
             ownersEquityTransfered == true;
-            balances[owner] -=  41666667.09;
-
+            balances[owner] -= 41666667.09;
             balances[] += 41666667.09;
 
             return true;
@@ -94,10 +92,6 @@ contract BBiller {
     }
 
     function buy() payable {
-
-        //use bBiller Oracle 
-       
-
 	    // Set the price depending on the remaining number of tokens.  
         if (balances[] < roundOneSupply) { 
 		    tokenPrice = 0.012;  // AUD First Round
@@ -108,12 +102,13 @@ contract BBiller {
         }
 	
         uint256 amountToTransfer = (msg.value / 1000000000000) * tokenPrice;
+        
+        balance[msg.sender] += amountToTransfer;
 
         Oracle o = Oracle(0x25Dc90FAa727aa29e437E660e8F868C9784D3828);  
 
         Buy();
     }
-	// TODO: Use this function to test reporting of oracle.
 
     //Users can vote on a git hub issue id.  They can vote in favour, no abstane.
     struct GitHubIssue {
@@ -168,7 +163,6 @@ contract BBiller {
         sendTo = msg.sender;
         amount = msg.value;
     }
-
 
     //Withdraw the eth to a white listed address
     function withdraw(uint256 _amount) {
