@@ -1,6 +1,6 @@
-Source files can be stored here (smart contracts).
 pragma solidity ^0.4.9;
-// Looks good to go.
+
+//  1 bugs found. 3+ issues, 
 
 //Round 1. Price per token: 0.012 AUD x   50,000,000.00  = $   600,000 AUD/ETH – Early Bird Price.
 //Round 2: Price per token:  0.02 AUD x  30,906,319.00   =  $  618,126 AUD/ETH
@@ -17,6 +17,9 @@ pragma solidity ^0.4.9;
 // Owner’s Equity:    41,666,667.08
 // Owners’ Equity tokens are not released until after 1/1/2018 and then transferred to the owner’s address. Locked. 
 
+
+
+
 contract BBiller {
 
     uint256 public totalSupply;
@@ -28,14 +31,26 @@ contract BBiller {
 
     uint256 public ownersExitDate;
     uint256 public roundOneSupply;
-    unit256 public refundThreshold;
+    uint256 public refundThreshold;
+    uint256 public endICODate;
+    uint256 public tokenPrice;
+    
 
     //Prevent double sending of owners tokens.
     bool public ownersEquityTransfered;
+    
+    mapping (address => uint256) balances;
+    mapping  (uint256 => GitHubIssue) issues;
+    mapping (address => uint) pendingWithdrawals;
+
+    event Transfer(address indexed _from, address indexed _to, uint256 _value);
+    event AddIssue(uint256 _gitHubId);
+    event Buy();
+ 
 
     function BBiller() {
         owner = msg.sender;
-        totalSupply = 83333333;
+        totalSupply =   83333333 ;
    
         //Issue coins to contract owner
         balances[msg.sender] = totalSupply;
@@ -43,12 +58,12 @@ contract BBiller {
         //2018/1/1 00:00 GMT
         ownersExitDate = 1514764800;
 
-        //2017 14th Oct 2017, 0:00 UTC
-        endICODate =  1507939200;
+	    //2017 14th Oct 2017, 0:00 UTC
+	    endICODate =  1507939200;
 
         roundOneSupply =   50000000;
 				 
-	    refundThreshold =  12500000;
+	    refundThreshold = 12500000;
 		
         ownersEquityTransfered = false;
     }
@@ -92,22 +107,32 @@ contract BBiller {
     }
 
     function buy() payable {
-	    // Set the price depending on the remaining number of tokens.  
-        if (balances[] < roundOneSupply) { 
-		    tokenPrice = 0.012;  // AUD First Round
-        }
-        else
-        {
-            tokenPrice = 0.02;  //AUD  Second Round
-        }
-	
-        uint256 amountToTransfer = (msg.value / 1000000000000) * tokenPrice;
-        
-        balance[msg.sender] += amountToTransfer;
 
-        Oracle o = Oracle(0x25Dc90FAa727aa29e437E660e8F868C9784D3828);  
+        //use bBiller Oracle 
+        
+    uint256 amountToTransfer;
+	// Set the price depending on the remaining number of tokens.  
+        if (balances[owner] < roundOneSupply) { 
+            // amountToTransfer = (msg.value / 1000000000000) * tokenprice;
+	        amountToTransfer = (msg.value / 1000000000000000) * 12;
+       }
+	 else
+	 {
+	
+	    amountToTransfer = (msg.value / 1000000000000000) * 2;
+	 }
+	
+    
+
+        Oracle o = Oracle(0x25Dc90FAa727aa29e437E660e8F868C9784D3828);  // to do reports unused local variable.
 
         Buy();
+    }
+
+    function oracleTest() returns(bytes32 current) {
+        //use own oracle
+        Oracle o = Oracle(0x25Dc90FAa727aa29e437E660e8F868C9784D3828);
+        return o.current();
     }
 
     //Users can vote on a git hub issue id.  They can vote in favour, no abstane.
@@ -166,25 +191,33 @@ contract BBiller {
 
     //Withdraw the eth to a white listed address
     function withdraw(uint256 _amount) {
-        if (balances[] > refundThreshold  && endICODate < now )
+        if (balances[owner] > refundThreshold  && endICODate < now )// TODO - This is a worry
         {
-            uint amount = pendingWithdrawals[msg.sender];
-            pendingWithdrawals[msg.sender] = 0;
-            msg.sender.transfer(amount);
+        uint amount = pendingWithdrawals[msg.sender];
+	    pendingWithdrawals[msg.sender] = 0;
+	    msg.sender.transfer(amount);
         }
         else
         {
-            address bBiller = 0x7B64fa719E14496818FaCba26bc9AfC72fA6947b;  
-            bBiller.transfer(uint256 amount);
-        }
-     }	
+             msg.sender.transfer(amount);
+              
+//	address bBillerTo = 0x7B64fa719E14496818FaCba26bc9AfC72fA6947b;  
+	
+//	owner.Transfer(owner, bBillerTo, amount);
+	
+	}
+        	
 		
 
-    mapping (address => uint256) balances;
-    mapping (uint256 => GitHubIssue) issues;
-    mapping (address => uint) pendingWithdrawals;
-
-    event Transfer(address indexed _from, address indexed _to, uint256 _value);
-    event AddIssue(uint256 _gitHubId);
-    event Buy();
+    }  
 }
+    contract Oracle{
+	function Oracle();
+	function update(bytes32 newCurrent);
+	function current()constant returns(bytes32 current);
+    }
+
+
+
+
+	
