@@ -19,15 +19,15 @@ pragma solidity ^0.4.9;
 
 
 
-
 contract BBiller {
 
     uint256 public totalSupply;
     address public owner;
     string public symbol = 'BBILLER';
     string public name = 'bBiller';
-    address sendTo;
-    uint256 amount;
+    
+    //address sendTo;
+    //uint256 amount;
 
     uint256 public ownersExitDate;
     uint256 public roundOneSupply;
@@ -39,14 +39,13 @@ contract BBiller {
     //Prevent double sending of owners tokens.
     bool public ownersEquityTransfered;
     
-    mapping (address => uint256) balances;
-    mapping  (uint256 => GitHubIssue) issues;
-    mapping (address => uint) pendingWithdrawals;
+    mapping (address => uint256) balances; //ICO BALANCES
+    mapping (uint256 => GitHubIssue) issues; 
+    mapping (address => uint256) pendingWithdrawals; //ETH SPENT
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event AddIssue(uint256 _gitHubId);
     event Buy();
- 
 
     function BBiller() {
         owner = msg.sender;
@@ -61,7 +60,7 @@ contract BBiller {
 	    //2017 14th Oct 2017, 0:00 UTC
 	    endICODate =  1507939200;
 
-        roundOneSupply =   50000000;
+        roundOneSupply = 50000000;
 				 
 	    refundThreshold = 12500000;
 		
@@ -89,10 +88,10 @@ contract BBiller {
         //Can only be excuted after 1/1/2018
         if (ownersEquityTransfered == false && ownersExitDate < now)
         {
-            //441,666,667.09;
+            //441,666,667;
             ownersEquityTransfered == true;
-            balances[owner] -= 41666667.09;
-            balances[] += 41666667.09;
+            balances[owner] -= 41666667;
+            //balances[] += 41666667;
 
             return true;
         }
@@ -109,30 +108,24 @@ contract BBiller {
     function buy() payable {
 
         //use bBiller Oracle 
-        
-    uint256 amountToTransfer;
-	// Set the price depending on the remaining number of tokens.  
+        uint256 amountToTransfer = 0;
+
+        //Save the sent ETH amount for refunds
+        pendingWithdrawals[msg.sender] = msg.value;
+
+	    // Set the price depending on the remaining number of tokens.  
         if (balances[owner] < roundOneSupply) { 
             // amountToTransfer = (msg.value / 1000000000000) * tokenprice;
 	        amountToTransfer = (msg.value / 1000000000000000) * 12;
-       }
-	 else
-	 {
-	
-	    amountToTransfer = (msg.value / 1000000000000000) * 2;
-	 }
-	
-    
+        }
+        else
+        {
+            amountToTransfer = (msg.value / 1000000000000000) * 2;
+        }
 
         Oracle o = Oracle(0x25Dc90FAa727aa29e437E660e8F868C9784D3828);  // to do reports unused local variable.
 
         Buy();
-    }
-
-    function oracleTest() returns(bytes32 current) {
-        //use own oracle
-        Oracle o = Oracle(0x25Dc90FAa727aa29e437E660e8F868C9784D3828);
-        return o.current();
     }
 
     //Users can vote on a git hub issue id.  They can vote in favour, no abstane.
@@ -163,13 +156,13 @@ contract BBiller {
         AddIssue(_gitHubId);
     }
 
-    function vote(uint256 _gitHubId, bool inFavour) {
+    function vote(uint256 _gitHubId, bool _inFavour) {
         //voter has tokens and is allowed
         require(balances[msg.sender] > 0);
         
         if (issues[_gitHubId].start > now && issues[_gitHubId].end < now)
         {
-            if (inFavour == true)
+            if (_inFavour == true)
             {
                 issues[_gitHubId].inFavourCount += 1;
             }
@@ -184,40 +177,33 @@ contract BBiller {
         }
     }
 
-	function WithdrawalContract() payable {
-        sendTo = msg.sender;
-        amount = msg.value;
-    }
-
     //Withdraw the eth to a white listed address
     function withdraw(uint256 _amount) {
-        if (balances[owner] > refundThreshold  && endICODate < now )// TODO - This is a worry
+        if (balances[owner] > refundThreshold && endICODate < now) // TODO - This is a worry
         {
-        uint amount = pendingWithdrawals[msg.sender];
-	    pendingWithdrawals[msg.sender] = 0;
-	    msg.sender.transfer(amount);
+            uint amount = pendingWithdrawals[msg.sender];
+            pendingWithdrawals[msg.sender] = 0;
         }
         else
         {
              msg.sender.transfer(amount);
               
-//	address bBillerTo = 0x7B64fa719E14496818FaCba26bc9AfC72fA6947b;  
-	
-//	owner.Transfer(owner, bBillerTo, amount);
-	
-	}
-        	
-		
-
-    }  
-}
-    contract Oracle{
-	function Oracle();
-	function update(bytes32 newCurrent);
-	function current()constant returns(bytes32 current);
+            //	address bBillerTo = 0x7B64fa719E14496818FaCba26bc9AfC72fA6947b;  
+            //	owner.Transfer(owner, bBillerTo, amount);
+	    }
     }
 
+    function refund(address _to) {
+        require (msg.sender == owner);
 
+        uint256 ethAmount = pendingWithdrawals[_to];
 
+        if (ethAmount > 0)
+        {
+            balances[_to] = 0;
+            pendingWithdrawals[_to] = 0;
 
-	
+            _to.send(ethAmount);
+        }
+    }
+}
