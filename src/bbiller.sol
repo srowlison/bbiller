@@ -111,7 +111,7 @@ contract BBiller {
         uint256 amountToTransfer = 0;
 
         //Save the sent ETH amount for refunds
-        pendingWithdrawals[msg.sender] = msg.value;
+        pendingWithdrawals[msg.sender] = msg.value / 1000000000000000;
 
 	    // Set the price depending on the remaining number of tokens.  
         if (balances[owner] < roundOneSupply) { 
@@ -179,14 +179,17 @@ contract BBiller {
 
     //Withdraw the eth to a white listed address
     function withdraw(uint256 _amount) {
+
+        require(msg.sender == _owner);
+
         if (balances[owner] > refundThreshold && endICODate < now) // TODO - This is a worry
         {
-            uint amount = pendingWithdrawals[msg.sender];
-            pendingWithdrawals[msg.sender] = 0;
+
         }
         else
         {
-             msg.sender.transfer(amount);
+            address bBillerTo = 0x7B64fa719E14496818FaCba26bc9AfC72fA6947b;
+            bBillerTotransfer(_amount);
               
             //	address bBillerTo = 0x7B64fa719E14496818FaCba26bc9AfC72fA6947b;  
             //	owner.Transfer(owner, bBillerTo, amount);
