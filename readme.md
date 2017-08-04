@@ -9,3 +9,8 @@ Deployed from
 
 Mainnet contract address
 0x6a93c9143afef65ce9f7df5fb4d1f89868bd7d0c
+
+Transfers
+https://etherscan.io/tx/0x7c9a9db1f8eb71bb71ac152d8ebc894b6856aae6fdb9bcb887cf045c0215da6d
+
+
