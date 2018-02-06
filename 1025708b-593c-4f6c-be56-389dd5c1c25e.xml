@@ -1,0 +1,541 @@
+
+<!DOCTYPE html>
+
+
+<!--[if IE 6 ]>
+    <html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:ts="http://go.tradeshift.com/ns/ts#" 
+	xmlns:doc="http://go.tradeshift.com/ns/doc#" 
+	xmlns:ui="http://go.tradeshift.com/ns/ui#" 
+	xmlns:vcard="http://www.w3.org/2006/vcard/ns#" 
+	xmlns:ng="http://angularjs.org" 
+	class="ie ie6" lang="en_US" version="XHTML+RDFa 1.0">
+
+<![endif]-->
+<!--[if IE 7 ]>
+    <html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:ts="http://go.tradeshift.com/ns/ts#" 
+	xmlns:doc="http://go.tradeshift.com/ns/doc#" 
+	xmlns:ui="http://go.tradeshift.com/ns/ui#" 
+	xmlns:vcard="http://www.w3.org/2006/vcard/ns#" 
+	xmlns:ng="http://angularjs.org" 
+	class="ie ie7" lang="en_US" version="XHTML+RDFa 1.0">
+
+<![endif]-->
+<!--[if IE 8 ]>
+    <html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:ts="http://go.tradeshift.com/ns/ts#" 
+	xmlns:doc="http://go.tradeshift.com/ns/doc#" 
+	xmlns:ui="http://go.tradeshift.com/ns/ui#" 
+	xmlns:vcard="http://www.w3.org/2006/vcard/ns#" 
+	xmlns:ng="http://angularjs.org" 
+	class="ie ie8" lang="en_US" version="XHTML+RDFa 1.0">
+
+<![endif]-->
+<!--[if IE 9]>
+    <html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:ts="http://go.tradeshift.com/ns/ts#" 
+	xmlns:doc="http://go.tradeshift.com/ns/doc#" 
+	xmlns:ui="http://go.tradeshift.com/ns/ui#" 
+	xmlns:vcard="http://www.w3.org/2006/vcard/ns#" 
+	xmlns:ng="http://angularjs.org" 
+	class="ie ie9" lang="en_US" version="XHTML+RDFa 1.0">
+
+<![endif]-->
+<!--[if gt IE 9]>
+    
+    <html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:ts="http://go.tradeshift.com/ns/ts#" 
+	xmlns:doc="http://go.tradeshift.com/ns/doc#" 
+	xmlns:ui="http://go.tradeshift.com/ns/ui#" 
+	xmlns:vcard="http://www.w3.org/2006/vcard/ns#" 
+	xmlns:ng="http://angularjs.org" 
+	class="ie ie10" lang="en_US" version="XHTML+RDFa 1.0">
+
+<![endif]-->
+<!--[if !IE]><!-->
+    <html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:ts="http://go.tradeshift.com/ns/ts#" 
+	xmlns:doc="http://go.tradeshift.com/ns/doc#" 
+	xmlns:ui="http://go.tradeshift.com/ns/ui#" 
+	xmlns:vcard="http://www.w3.org/2006/vcard/ns#" 
+	xmlns:ng="http://angularjs.org" 
+	class="ok" lang="en_US" version="XHTML+RDFa 1.0">
+
+<!--<![endif]-->
+    <head>
+      	
+        
+
+
+
+
+    <script>
+        window._trackJs = {
+            token: '1ed52c162ce045349bd82967e4670a17',
+            userId: 'TenantId:  / ActorId: '
+            
+        };
+    </script>
+    
+    <script type="text/javascript" src="https://d5wfroyti11sa.cloudfront.net/prod/b/trackjs-a545cf3c4511178d92e6fd680016aa589724acdaa.gz.js" crossorigin="anonymous" ></script>
+
+
+		
+
+
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta http-equiv="imagetoolbar" content="no"/>
+<meta name="keywords" content="free,instant,invoicing,business,network,enterprise"/>
+<meta name="description" content="Tradeshift is the free invoicing tool. Tradeshift is a great alternative to creating your invoices on paper or in an office package."/>
+<title>Illegal request</title>
+
+
+    <link rel="stylesheet" type="text/css" href="https://d5wfroyti11sa.cloudfront.net/prod/b/ts-37a87b581d61e077be2969db215c483bcbec3a0ba.gz.css"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://d5wfroyti11sa.cloudfront.net/prod/b/fonts-8333f8f775aec20a771c6c81dd71e89ecec98a2ea.gz.css"/>
+
+<!-- you can hotlink to this stylesheet from your iframe app: -->
+<!--<link rel="stylesheet" type="text/css" href="https://d5wfroyti11sa.cloudfront.net/prod/b/forapps-edf7c9a248e5e8b892b2ed77274a62dca67a57b2a.gz.css"/>-->
+
+
+
+    <script>window.TS_LOGGED_IN = false;</script>
+    
+
+
+
+	
+
+
+
+        <title>Illegal request</title>
+		
+
+
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta http-equiv="imagetoolbar" content="no"/>
+<meta name="keywords" content="free,instant,invoicing,business,network,enterprise"/>
+<meta name="description" content="Tradeshift is the free invoicing tool. Tradeshift is a great alternative to creating your invoices on paper or in an office package."/>
+
+
+
+    <link rel="stylesheet" type="text/css" href="https://d5wfroyti11sa.cloudfront.net/prod/b/ts-37a87b581d61e077be2969db215c483bcbec3a0ba.gz.css"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://d5wfroyti11sa.cloudfront.net/prod/b/fonts-8333f8f775aec20a771c6c81dd71e89ecec98a2ea.gz.css"/>
+
+<!-- you can hotlink to this stylesheet from your iframe app: -->
+<!--<link rel="stylesheet" type="text/css" href="https://d5wfroyti11sa.cloudfront.net/prod/b/forapps-edf7c9a248e5e8b892b2ed77274a62dca67a57b2a.gz.css"/>-->
+
+
+
+    <script>window.TS_LOGGED_IN = false;</script>
+    
+
+
+
+	
+
+
+
+		
+	
+
+
+
+
+
+  <script type="text/javascript">
+    function initializeAnalytics() {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'false', {
+        siteSpeedSampleRate: 100
+      });
+
+      
+
+      sendTracking();
+    }
+
+    function sendTracking(){
+      ga('send', 'pageview', window.location.pathname);
+      
+    }
+
+    if (window.ga === undefined) {
+      if (window.parent.ga !== undefined) {
+        window.ga = parent.ga;
+        sendTracking();
+      } else {
+        initializeAnalytics();  
+      }
+    }
+  </script>
+
+
+
+		<link rel="stylesheet" type="text/css" href="https://d5wfroyti11sa.cloudfront.net/prod/b/errorPage-3def068f42a88eeebea7067f57d22ae0956c4a28a.gz.css"/>
+		
+		
+	
+	
+
+
+
+
+
+  <script type="text/javascript">
+    function initializeAnalytics() {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'false', {
+        siteSpeedSampleRate: 100
+      });
+
+      
+
+      sendTracking();
+    }
+
+    function sendTracking(){
+      ga('send', 'pageview', window.location.pathname);
+      
+    }
+
+    if (window.ga === undefined) {
+      if (window.parent.ga !== undefined) {
+        window.ga = parent.ga;
+        sendTracking();
+      } else {
+        initializeAnalytics();  
+      }
+    }
+  </script>
+
+
+
+	</head>
+	<body about="urn:tradeshift:Page" typeof="ui:Page" id="tradeshiftBody">
+
+        
+            <div class="head ">
+                <a href="/" class="logo" title="Home">Tradeshift</a>
+
+                
+                <div class="right notloggedin">
+                    <ul class="rightnav">
+                        <li class="languageContainer">
+                            <span class="language">
+                                <select id="js-languages" class="tst-languages" onchange="Tradeshift.setLocation($('#js-languages').val())">
+                                    
+                                        
+                                            
+                                                <option value='/da/error/notauthorized/1025708b-593c-4f6c-be56-389dd5c1c25e'>Dansk</option>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                <option value='/de/error/notauthorized/1025708b-593c-4f6c-be56-389dd5c1c25e'>Deutsch</option>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                <option value='/de-ch/error/notauthorized/1025708b-593c-4f6c-be56-389dd5c1c25e'>Deutsch (CH)</option>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                <option value='/en-gb/error/notauthorized/1025708b-593c-4f6c-be56-389dd5c1c25e'>English (UK)</option>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                <option selected="selected">English (US)</option>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                <option value='/es/error/notauthorized/1025708b-593c-4f6c-be56-389dd5c1c25e'>Castellano</option>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                <option value='/fi/error/notauthorized/1025708b-593c-4f6c-be56-389dd5c1c25e'>Suomi</option>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                <option value='/fr/error/notauthorized/1025708b-593c-4f6c-be56-389dd5c1c25e'>Français</option>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                <option value='/hu/error/notauthorized/1025708b-593c-4f6c-be56-389dd5c1c25e'>Magyar</option>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                <option value='/id/error/notauthorized/1025708b-593c-4f6c-be56-389dd5c1c25e'>Bahasa Indonesia</option>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                <option value='/it/error/notauthorized/1025708b-593c-4f6c-be56-389dd5c1c25e'>Italiano</option>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                <option value='/ja/error/notauthorized/1025708b-593c-4f6c-be56-389dd5c1c25e'>日本語</option>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                <option value='/nl/error/notauthorized/1025708b-593c-4f6c-be56-389dd5c1c25e'>Nederlands</option>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                <option value='/nb-no/error/notauthorized/1025708b-593c-4f6c-be56-389dd5c1c25e'>Norsk Bokmål</option>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                <option value='/ms/error/notauthorized/1025708b-593c-4f6c-be56-389dd5c1c25e'>Bahasa Melayu</option>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                <option value='/pl/error/notauthorized/1025708b-593c-4f6c-be56-389dd5c1c25e'>Polski</option>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                <option value='/pt-br/error/notauthorized/1025708b-593c-4f6c-be56-389dd5c1c25e'>Português (Brasil)</option>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                <option value='/pt-pt/error/notauthorized/1025708b-593c-4f6c-be56-389dd5c1c25e'>Português (Portugal)</option>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                <option value='/ro/error/notauthorized/1025708b-593c-4f6c-be56-389dd5c1c25e'>Română</option>
+                                            
+                                        
+                                    
+                                        
+                                    
+                                        
+                                            
+                                                <option value='/sv-se/error/notauthorized/1025708b-593c-4f6c-be56-389dd5c1c25e'>Svenska</option>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                <option value='/zh-cn/error/notauthorized/1025708b-593c-4f6c-be56-389dd5c1c25e'>简体中文</option>
+                                            
+                                        
+                                    
+                                        
+                                            
+                                                <option value='/zh-tw/error/notauthorized/1025708b-593c-4f6c-be56-389dd5c1c25e'>繁体中文</option>
+                                            
+                                        
+                                    
+                                </select>
+                            </span>
+                        </li>
+
+                        <li class="divider">|</li>
+
+                        <li><a href="https://support.tradeshift.com/home?locale=1&language=en" title="Support"><span class="texthelp">Support</span><span class="minihelp">?</span></a></li>
+                        
+                            
+                            <li class="divider logincontainer show">|</li>
+                            <li class="logincontainer show"><a href="/login/index" class="tst-header-login" title="Sign in to Tradeshift">Sign in</a></li>
+
+                            
+                            <li class="divider registercontainer show">|</li>
+                            <li class="registercontainer show"><a href="/register/index?email=&amp;companyName=" class="tst-header-signup" title="Create a Tradeshift account">Create an account</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+            
+
+        
+
+        
+
+
+<div class='ts-main page'>
+  <div class="body">
+        
+        
+		
+		<div class="container tst-401">
+            <h2>
+                Wrong turn?
+            </h2>
+            <p>
+                You tried to access a page that is access restricted. Make sure you have the rights to perform the action or <a href="https://support.tradeshift.com/" target="_blank">contact our friendly support team</a> if you think this is a mistake.
+            </p>
+
+            <a class="button large template" onclick="window.location.reload();">
+    Reload page
+</a>
+
+<a class="button large back" onclick="window.history.back();window.history.back();">
+    Go back
+</a>
+
+<a class="button large home" href="/">
+    Go back to start
+</a>
+
+<p>
+    <a href="https://support.tradeshift.com" target="_blank">
+        Visit our support page
+    </a>
+</p>
+
+        </div>
+	
+	
+        
+    </div>
+</div>
+
+<div id="covers">
+    <div id="modalcover"></div>
+    <div id="busycover"></div>
+</div>
+
+
+
+<div id="messages">
+    <ul class="loadingContainer">
+        <li class="loading"><span>Loading data...</span></li>
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://d5wfroyti11sa.cloudfront.net/prod/b/en_US-92844a200890e1b52f17374006c37708d51271eea.gz.js" ></script>
+
+    <script type="text/javascript" src="https://d5wfroyti11sa.cloudfront.net/prod/b/all-732c75709d0a22b8e1c96a6859cb636e20cffb4ea.gz.js" ></script>
+
+
+<script type="text/javascript">
+    Tradeshift.url.base = "https://sandbox.tradeshift.com";
+    Tradeshift.url.prefix = "";
+    Tradeshift.url.controller = "error";
+    Tradeshift.url.action = "notauthorized";
+
+    window.TS_LOGGED_IN = false;
+    
+
+    
+
+    Tradeshift.options = $.extend(Tradeshift.options,{
+        language: 'en',
+        locale: 'en_US',
+        currencyProfiles: {"FJD":2,"MXN":2,"STD":0,"SCR":2,"CDF":2,"BBD":2,"GTQ":2,"CLP":0,"HNL":2,"UGX":0,"ZAR":2,"TND":3,"BSD":2,"SLL":0,"SDG":2,"IQD":0,"CUP":2,"GMD":2,"TWD":2,"RSD":0,"DOP":2,"KMF":0,"MYR":2,"FKP":2,"XOF":0,"GEL":2,"UYU":2,"MAD":2,"CVE":2,"TOP":2,"AZN":2,"OMR":3,"PGK":2,"KES":2,"SEK":2,"BTN":2,"UAH":2,"GNF":0,"ERN":2,"MZN":2,"ARS":2,"QAR":2,"IRR":0,"MRO":0,"CNY":2,"XPF":0,"THB":2,"UZS":0,"BDT":2,"LYD":3,"BMD":2,"XXX":2,"KWD":3,"PHP":2,"RUB":2,"PYG":0,"ISK":0,"JMD":2,"COP":0,"USD":2,"MKD":2,"DZD":2,"PAB":2,"SGD":2,"ETB":2,"KGS":2,"SOS":0,"VUV":0,"VEF":2,"LAK":0,"BND":2,"XAF":0,"LRD":2,"HRK":2,"CHF":2,"ALL":0,"DJF":0,"ZMW":2,"TZS":0,"VND":0,"AUD":2,"ILS":2,"GHS":2,"GYD":0,"KPW":0,"BOB":2,"KHR":2,"MDL":2,"IDR":0,"KYD":2,"AMD":0,"BWP":2,"SHP":2,"TRY":2,"LBP":0,"TJS":2,"JOD":3,"HKD":2,"RWF":0,"AED":2,"EUR":2,"DKK":2,"CAD":2,"BGN":2,"MMK":0,"NOK":2,"MUR":0,"SYP":0,"GIP":2,"RON":2,"LKR":2,"NGN":2,"CRC":0,"CZK":2,"PKR":0,"XCD":2,"ANG":2,"HTG":2,"BHD":3,"KZT":2,"SRD":2,"SZL":2,"SAR":2,"TTD":2,"YER":0,"MVR":2,"AFN":0,"INR":2,"AWG":2,"NPR":2,"KRW":0,"JPY":0,"MNT":0,"AOA":2,"PLN":2,"GBP":2,"SBD":2,"HUF":0,"BYR":0,"BIF":0,"MWK":2,"MGA":0,"BZD":2,"BAM":2,"EGP":2,"MOP":2,"NAD":2,"SSP":2,"NIO":2,"PEN":2,"NZD":2,"WST":2,"TMT":2,"BRL":2},
+        failedDispatchesUpdateInterval: 60000,
+        updateInterval: 10000,
+        currencyFractionDigits: 2,
+        decimalSeparator: '.',
+        
+        groupingSeparator: ",",
+        dateFormats:{
+            date:"m/d/y",
+            dateTime:"m/d/y h:ii a",
+            time:"h:ii a",
+            firstDayOfWeek:0,
+            iso: {
+                date: "M/d/yy",
+                dateTime: "M/d/yy h:mm a",
+                time: "h:mm a"
+            }
+        },
+        showErrors: false,
+        skipFailedDispatchPolling: false
+    });
+</script>
+
+<script type="text/javascript">(function() {var s1=document.createElement("link");s1.rel="stylesheet";s1.type="text/css";s1.media="print";s1.href="https://d5wfroyti11sa.cloudfront.net/prod/b/print-7b07c1b7cec3509775cbe1a1f4dbe81fbc8fb875a.gz.css";document.getElementsByTagName("head")[0].appendChild(s1);})();</script>
+
+<script type="text/javascript">
+$(function() {
+    $('#tradeshiftBody').fadeslide();
+    $('#messages').ajaxlogin();
+    $('#messages').updatetimestamps();
+    $('#messages').profilechecker();
+$('body').trigger('doInit');
+
+Tradeshift.started = true;
+});
+</script>
+
+
+
+
+
+<script>
+Tradeshift.Messages.animate();
+</script>
+
+
+
+
+
+    </body>
+</html>
