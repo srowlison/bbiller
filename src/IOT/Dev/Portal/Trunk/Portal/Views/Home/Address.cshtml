@@ -1,0 +1,51 @@
+﻿@model DC.Data.Address
+@{
+    ViewBag.Title = "Address";
+}
+
+<h2>Address</h2>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+     <div class="view">
+        <ol style="list-style :none;">
+            <li>
+                @Html.LabelFor(m => m.AddressLine1,new { @class= "label" }) 
+                @Html.TextBoxFor(m => m.AddressLine1,new { @class= "textbox" })
+            </li>
+           
+            <li>
+                @Html.LabelFor(m => m.AddressLine2,new { @class= "label" })
+                @Html.PasswordFor(m => m.AddressLine2,new { @class= "textbox" })
+            </li>
+            @*<li>
+                @Html.LabelFor(m => m.Country,new { @class= "label" })
+                @Html.PasswordFor(m => m.Country,new { @class= "textbox" })
+            </li>*@
+             <li>
+                @Html.LabelFor(m => m.Suburb,new { @class= "label" })
+                @Html.TextBoxFor(m => m.Suburb,new { @class= "textbox" })
+            </li>
+                <li>
+                @Html.LabelFor(m => m.LandLine,new { @class= "label" })
+                @Html.TextBoxFor(m => m.LandLine,new { @class= "textbox" })
+            </li>
+                <li>
+                @Html.LabelFor(m => m.Mobile,new { @class= "label" })
+                @Html.TextBoxFor(m => m.Mobile,new { @class= "textbox" })
+            </li>
+             <li>
+                @Html.LabelFor(m => m.Fax,new { @class= "label" })
+                @Html.TextBoxFor(m => m.Fax,new { @class= "textbox" })
+            </li>
+
+        </ol>
+        <input type="submit" value="Register" />
+         </div>
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<DC.Data.UploadFile>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="view">
+
+</div>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="datagrid">
+   
+<table>
+     <thead>
+    <tr>
+        <th>
+          File Name
+        </th>
+         <th>
+        Created date
+        </th>
+        
+        <th></th>
+    </tr>
+</thead>
+@foreach (var item in Model) {
+    <tr>
+        @Html.HiddenFor(modelItem => item.Id)
+        <td>
+            @Html.DisplayFor(modelItem => item.FileName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Createdate)
+        </td>
+     
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+</div>

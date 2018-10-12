@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="atm" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IAtm_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://node.diamondcircle.net/atm.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://node.diamondcircle.net/atm.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://node.diamondcircle.net/atm.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/dcweb.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAtm_CreatePublicEncryptedPrivateKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePublicEncryptedPrivateKey" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_CreatePublicEncryptedPrivateKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePublicEncryptedPrivateKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_CreateOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrder" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_CreateOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_SendBitcoins_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendBitcoins" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_SendBitcoins_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendBitcoinsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_GetBitcoinAmount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBitcoinAmount" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_GetBitcoinAmount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBitcoinAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_GetBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalance" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_GetBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_AddCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCard" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_AddCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_isCardOnFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:isCardOnFile" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_isCardOnFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isCardOnFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_WriteTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteTransaction" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_WriteTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_CreateaPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateaPayment" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_CreateaPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateaPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_GetMargin_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMargin" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_GetMargin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_CreateOnlineAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOnlineAccount" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_CreateOnlineAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOnlineAccountResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAtm">
+    <wsdl:operation name="CreatePublicEncryptedPrivateKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtm/CreatePublicEncryptedPrivateKey" message="tns:IAtm_CreatePublicEncryptedPrivateKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtm/CreatePublicEncryptedPrivateKeyResponse" message="tns:IAtm_CreatePublicEncryptedPrivateKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtm/CreateOrder" message="tns:IAtm_CreateOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtm/CreateOrderResponse" message="tns:IAtm_CreateOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendBitcoins">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtm/SendBitcoins" message="tns:IAtm_SendBitcoins_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtm/SendBitcoinsResponse" message="tns:IAtm_SendBitcoins_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBitcoinAmount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtm/GetBitcoinAmount" message="tns:IAtm_GetBitcoinAmount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtm/GetBitcoinAmountResponse" message="tns:IAtm_GetBitcoinAmount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBalance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtm/GetBalance" message="tns:IAtm_GetBalance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtm/GetBalanceResponse" message="tns:IAtm_GetBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtm/AddCard" message="tns:IAtm_AddCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtm/AddCardResponse" message="tns:IAtm_AddCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="isCardOnFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtm/isCardOnFile" message="tns:IAtm_isCardOnFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtm/isCardOnFileResponse" message="tns:IAtm_isCardOnFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtm/WriteTransaction" message="tns:IAtm_WriteTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtm/WriteTransactionResponse" message="tns:IAtm_WriteTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateaPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtm/CreateaPayment" message="tns:IAtm_CreateaPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtm/CreateaPaymentResponse" message="tns:IAtm_CreateaPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMargin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtm/GetMargin" message="tns:IAtm_GetMargin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtm/GetMarginResponse" message="tns:IAtm_GetMargin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOnlineAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtm/CreateOnlineAccount" message="tns:IAtm_CreateOnlineAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtm/CreateOnlineAccountResponse" message="tns:IAtm_CreateOnlineAccount_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAtm" type="tns:IAtm">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IAtm_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreatePublicEncryptedPrivateKey">
+      <soap:operation soapAction="http://tempuri.org/IAtm/CreatePublicEncryptedPrivateKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrder">
+      <soap:operation soapAction="http://tempuri.org/IAtm/CreateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBitcoins">
+      <soap:operation soapAction="http://tempuri.org/IAtm/SendBitcoins" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBitcoinAmount">
+      <soap:operation soapAction="http://tempuri.org/IAtm/GetBitcoinAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBalance">
+      <soap:operation soapAction="http://tempuri.org/IAtm/GetBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCard">
+      <soap:operation soapAction="http://tempuri.org/IAtm/AddCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isCardOnFile">
+      <soap:operation soapAction="http://tempuri.org/IAtm/isCardOnFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteTransaction">
+      <soap:operation soapAction="http://tempuri.org/IAtm/WriteTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateaPayment">
+      <soap:operation soapAction="http://tempuri.org/IAtm/CreateaPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMargin">
+      <soap:operation soapAction="http://tempuri.org/IAtm/GetMargin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOnlineAccount">
+      <soap:operation soapAction="http://tempuri.org/IAtm/CreateOnlineAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="atm">
+    <wsdl:port name="BasicHttpBinding_IAtm" binding="tns:BasicHttpBinding_IAtm">
+      <soap:address location="https://node.diamondcircle.net/atm.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

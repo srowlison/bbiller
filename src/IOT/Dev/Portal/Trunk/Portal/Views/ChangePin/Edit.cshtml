@@ -1,0 +1,51 @@
+﻿@model DC.Data.Card
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+ <div class="view">
+
+     
+            @Html.HiddenFor(model => model.CustomerID)   
+            @Html.HiddenFor(model => model.DateIssued)
+        
+             @Html.HiddenFor(model => model.CardId)
+
+
+            @Html.HiddenFor(model => model.Password)
+      
+
+      
+            @Html.HiddenFor(model => model.PublicKey)
+     
+        <div class="editor-label">
+          Enter New Pin Number
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Pin)
+            @Html.ValidationMessageFor(model => model.Pin)
+        </div>
+
+     
+            @Html.HiddenFor(model => model.Status)
+      
+
+        <p>
+            <input type="submit" value="Change" />
+        </p>
+ </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

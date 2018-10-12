@@ -1,0 +1,64 @@
+﻿@model IEnumerable<DC.Data.Card>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Your Cards</h2>
+
+    <div class="datagrid">
+<table>
+
+        <thead>
+    <tr>
+        3
+        <th>
+            @Html.DisplayNameFor(model => model.CardId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateIssued)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublicKey)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+</thead>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CardId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateIssued)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublicKey)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Change Pin", "Edit", new { id=item.CardId })
+           
+        </td>
+    </tr>
+}
+
+</table>
+</div>

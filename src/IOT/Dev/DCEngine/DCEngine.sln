@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DCEngine", "http://localhost/DCEngine", "{A2EA0ACF-5BD8-4EA4-890B-7362F2E7D482}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/DCEngine"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\Source\Workspaces\PureMethods\CustomerPortal\CustomerPortalDC\DCEngine\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\DCEngine\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/DCEngine"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\Source\Workspaces\PureMethods\CustomerPortal\CustomerPortalDC\DCEngine\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\DCEngine\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\..\..\Source\Workspaces\PureMethods\CustomerPortal\CustomerPortalDC\DCEngine\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://puremethods.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccWebProject1 = true
+		SccProjectUniqueName1 = http://localhost/DCEngine
+		SccProjectName1 = ../CustomerPortal/CustomerPortalDC/DCEngine
+		SccLocalPath1 = ..\\..\\..\\..\\Source\\Workspaces\\PureMethods\\CustomerPortal\\CustomerPortalDC\\DCEngine
+		SccProjectEnlistmentChoice1 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2EA0ACF-5BD8-4EA4-890B-7362F2E7D482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2EA0ACF-5BD8-4EA4-890B-7362F2E7D482}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

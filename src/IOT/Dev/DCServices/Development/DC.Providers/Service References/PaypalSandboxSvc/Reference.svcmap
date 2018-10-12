@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="72cb7acb-b564-4897-8462-e300b7bcc72d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://www.sandbox.paypal.com/wsdl/PayPalSvc.wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="eBLBaseComponents.xsd" MetadataType="Schema" ID="78e8cda0-17d1-420d-a97d-2165322e34d3" SourceId="1" SourceUrl="https://www.sandbox.paypal.com/wsdl/eBLBaseComponents.xsd" />
+    <MetadataFile FileName="EnhancedDataTypes.xsd" MetadataType="Schema" ID="808e0995-d0da-4dc8-b881-050457954477" SourceId="1" SourceUrl="https://www.sandbox.paypal.com/wsdl/EnhancedDataTypes.xsd" />
+    <MetadataFile FileName="CoreComponentTypes.xsd" MetadataType="Schema" ID="389b34bc-b280-4a11-9dbd-32b7a050d538" SourceId="1" SourceUrl="https://www.sandbox.paypal.com/wsdl/CoreComponentTypes.xsd" />
+    <MetadataFile FileName="PayPalSvc.wsdl" MetadataType="Wsdl" ID="db8265ed-6b38-44fa-860b-b2b7d047bf95" SourceId="1" SourceUrl="https://www.sandbox.paypal.com/wsdl/PayPalSvc.wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

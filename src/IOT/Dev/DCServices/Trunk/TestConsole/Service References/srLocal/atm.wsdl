@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="https://node.diamondcircle.net" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://node.diamondcircle.net" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="https://node.diamondcircle.net/Imports">
+      <xsd:import schemaLocation="https://localhost:44300/atm.svc?xsd=xsd0" namespace="https://node.diamondcircle.net" />
+      <xsd:import schemaLocation="https://localhost:44300/atm.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://localhost:44300/atm.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DC.Common.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAtm_CreatePublicEncryptedPrivateKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePublicEncryptedPrivateKey" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_CreatePublicEncryptedPrivateKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePublicEncryptedPrivateKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_CreateOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrder" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_CreateOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_SendBitcoins_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendBitcoins" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_SendBitcoins_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendBitcoinsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_SendBitcoins2_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendBitcoins2" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_SendBitcoins2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendBitcoins2Response" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_GetBitcoinAmount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBitcoinAmount" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_GetBitcoinAmount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBitcoinAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_GetBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalance" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_GetBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalanceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAtm">
+    <wsdl:operation name="CreatePublicEncryptedPrivateKey">
+      <wsdl:input wsaw:Action="https://node.diamondcircle.net/IAtm/CreatePublicEncryptedPrivateKey" message="tns:IAtm_CreatePublicEncryptedPrivateKey_InputMessage" />
+      <wsdl:output wsaw:Action="https://node.diamondcircle.net/IAtm/CreatePublicEncryptedPrivateKeyResponse" message="tns:IAtm_CreatePublicEncryptedPrivateKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrder">
+      <wsdl:input wsaw:Action="https://node.diamondcircle.net/IAtm/CreateOrder" message="tns:IAtm_CreateOrder_InputMessage" />
+      <wsdl:output wsaw:Action="https://node.diamondcircle.net/IAtm/CreateOrderResponse" message="tns:IAtm_CreateOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendBitcoins">
+      <wsdl:input wsaw:Action="https://node.diamondcircle.net/IAtm/SendBitcoins" message="tns:IAtm_SendBitcoins_InputMessage" />
+      <wsdl:output wsaw:Action="https://node.diamondcircle.net/IAtm/SendBitcoinsResponse" message="tns:IAtm_SendBitcoins_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendBitcoins2">
+      <wsdl:input wsaw:Action="https://node.diamondcircle.net/IAtm/SendBitcoins2" message="tns:IAtm_SendBitcoins2_InputMessage" />
+      <wsdl:output wsaw:Action="https://node.diamondcircle.net/IAtm/SendBitcoins2Response" message="tns:IAtm_SendBitcoins2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBitcoinAmount">
+      <wsdl:input wsaw:Action="https://node.diamondcircle.net/IAtm/GetBitcoinAmount" message="tns:IAtm_GetBitcoinAmount_InputMessage" />
+      <wsdl:output wsaw:Action="https://node.diamondcircle.net/IAtm/GetBitcoinAmountResponse" message="tns:IAtm_GetBitcoinAmount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBalance">
+      <wsdl:input wsaw:Action="https://node.diamondcircle.net/IAtm/GetBalance" message="tns:IAtm_GetBalance_InputMessage" />
+      <wsdl:output wsaw:Action="https://node.diamondcircle.net/IAtm/GetBalanceResponse" message="tns:IAtm_GetBalance_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

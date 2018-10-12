@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Portal.Web", "DC.Portal.Web\DC.Portal.Web.csproj", "{79216936-56EA-403A-8FA9-2F562C972CAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Portal.Web.Tests", "DC.Portal.Web.Tests\DC.Portal.Web.Tests.csproj", "{81E468C6-AF64-486A-8875-66BF61CB0F6E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{D0FE8F48-CA12-4E54-A09C-11626A67A316}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{9FCBA7B2-D768-49C1-B069-966DDB909561}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\DCPortalWeb-WAWS-dev.json = PublishScripts\Configurations\DCPortalWeb-WAWS-dev.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://puremethods.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DC.Portal.Web.Tests\\DC.Portal.Web.Tests.csproj
+		SccProjectName1 = DC.Portal.Web.Tests
+		SccLocalPath1 = DC.Portal.Web.Tests
+		SccProjectUniqueName2 = DC.Portal.Web\\DC.Portal.Web.csproj
+		SccProjectName2 = DC.Portal.Web
+		SccLocalPath2 = DC.Portal.Web
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79216936-56EA-403A-8FA9-2F562C972CAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79216936-56EA-403A-8FA9-2F562C972CAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79216936-56EA-403A-8FA9-2F562C972CAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79216936-56EA-403A-8FA9-2F562C972CAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81E468C6-AF64-486A-8875-66BF61CB0F6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81E468C6-AF64-486A-8875-66BF61CB0F6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81E468C6-AF64-486A-8875-66BF61CB0F6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81E468C6-AF64-486A-8875-66BF61CB0F6E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9FCBA7B2-D768-49C1-B069-966DDB909561} = {D0FE8F48-CA12-4E54-A09C-11626A67A316}
+	EndGlobalSection
+EndGlobal

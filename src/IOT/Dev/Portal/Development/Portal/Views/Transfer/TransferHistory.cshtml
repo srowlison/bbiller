@@ -1,0 +1,84 @@
+﻿@model DC.Common.Models.SingleAddressResponse
+
+@{
+    ViewBag.Title = "TransferHistory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.Transactions.Count() == 0)
+{
+    <h3 style="color:green">No transfer history </h3>
+}
+else
+{
+
+<h2>Bitcoin Transfer History</h2>
+
+
+    <table class="table1">
+
+        <thead>
+            <tr>
+                <th>
+                    Address
+                </th>
+                <th>
+                    NumberOfTransactions
+                </th>
+                <th>
+                    OutputIndexAsBytes
+                </th>
+                <th>
+                    Script
+                </th>
+                <th>
+                    TxHash
+                </th>
+                <th>
+                    TxOutputN
+                </th>
+                <th>
+                    Value
+                </th>
+            </tr>
+        </thead>
+        @foreach (var item in Model.Transactions)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Result)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.OutputIndexAsBytes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Script)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TxHash)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TxOutputN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Value)
+                </td>*@
+            </tr>
+        }
+
+    </table>
+
+}
+<div class="row"
+     style="height:150px; vertical-align:bottom;">
+
+    <div class="col gu8">
+        @Html.ActionLink("Back", "Index", routeValues: null, htmlAttributes: new { @class = "cancelbutton" })
+    </div>
+    <div class="col gu16" style="float:right;"></div>
+
+
+</div>

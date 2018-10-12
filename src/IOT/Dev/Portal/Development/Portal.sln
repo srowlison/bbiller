@@ -1,0 +1,162 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal", "Portal\Portal.csproj", "{0761521C-0C8A-4DE6-B7DF-6F61224961E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal.Tests", "Portal.Tests\Portal.Tests.csproj", "{ED8DB626-4644-4724-8580-7BD6B3408DE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{C31A5EF7-EC66-40CB-8C28-65B8412FEFE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Data", "..\..\DCServices\Development\DC.Data\DC.Data.csproj", "{45CC1033-9ADC-4592-9750-5595A48D9BAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Providers", "..\..\DCServices\Development\DC.Providers\DC.Providers.csproj", "{2E98565F-C938-4B3F-B559-276321B12F3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Common.Models", "..\..\DCServices\Development\DC.Models\DC.Common.Models.csproj", "{5780EF14-C471-4CC5-97CA-2BE451734CAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Common", "..\..\DCServices\Development\DC.Common\DC.Common.csproj", "{725A0573-6B64-43DC-AFBE-2C8D332B887C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Node", "..\..\DCServices\Development\DC.Node\DC.Node.csproj", "{DE22A676-3082-4D39-B3DD-7CAF37790334}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Node.Tests", "..\..\DCServices\Development\DC.Node.Tests\DC.Node.Tests.csproj", "{7B3D6509-0067-44E2-BC47-863AC2DC539F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Payment", "..\..\DCServices\Development\DC.Payments\DC.Payment.csproj", "{D4411210-EA0F-419C-B810-2A09BF3B6D76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crypto", "..\..\DCServices\Development\bccrypto-net-1.7-src-ext\csharp\crypto\crypto.csproj", "{38872A5F-E87E-4FAD-B109-8EB7B2E6A4A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{326BD89D-C68B-405D-9833-0D67777EE598}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitcoinRpcSharp", "..\..\DCServices\Development\BitcoinRpcSharp\BitcoinRpcSharp.csproj", "{21023FF2-B19C-4CAD-9EC2-28F47FC9FC4C}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 13
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://puremethods.visualstudio.com/DefaultCollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Portal\\Portal.csproj
+		SccProjectName1 = Portal
+		SccLocalPath1 = Portal
+		SccProjectUniqueName2 = Portal.Tests\\Portal.Tests.csproj
+		SccProjectName2 = Portal.Tests
+		SccLocalPath2 = Portal.Tests
+		SccProjectUniqueName3 = ConsoleApp\\ConsoleApp.csproj
+		SccProjectName3 = ConsoleApp
+		SccLocalPath3 = ConsoleApp
+		SccProjectUniqueName4 = ..\\..\\DCServices\\Development\\DC.Data\\DC.Data.csproj
+		SccProjectName4 = ../../DCServices/Development/DC.Data
+		SccLocalPath4 = ..\\..\\DCServices\\Development\\DC.Data
+		SccProjectUniqueName5 = ..\\..\\DCServices\\Development\\DC.Providers\\DC.Providers.csproj
+		SccProjectName5 = ../../DCServices/Development/DC.Providers
+		SccLocalPath5 = ..\\..\\DCServices\\Development\\DC.Providers
+		SccProjectUniqueName6 = ..\\..\\DCServices\\Development\\DC.Models\\DC.Common.Models.csproj
+		SccProjectName6 = ../../DCServices/Development/DC.Models
+		SccLocalPath6 = ..\\..\\DCServices\\Development\\DC.Models
+		SccProjectUniqueName7 = ..\\..\\DCServices\\Development\\DC.Common\\DC.Common.csproj
+		SccProjectName7 = ../../DCServices/Development/DC.Common
+		SccLocalPath7 = ..\\..\\DCServices\\Development\\DC.Common
+		SccProjectUniqueName8 = ..\\..\\DCServices\\Development\\DC.Node\\DC.Node.csproj
+		SccProjectName8 = ../../DCServices/Development/DC.Node
+		SccLocalPath8 = ..\\..\\DCServices\\Development\\DC.Node
+		SccProjectUniqueName9 = ..\\..\\DCServices\\Development\\DC.Node.Tests\\DC.Node.Tests.csproj
+		SccProjectName9 = ../../DCServices/Development/DC.Node.Tests
+		SccLocalPath9 = ..\\..\\DCServices\\Development\\DC.Node.Tests
+		SccProjectUniqueName10 = ..\\..\\DCServices\\Development\\DC.Payments\\DC.Payment.csproj
+		SccProjectName10 = ../../DCServices/Development/DC.Payments
+		SccLocalPath10 = ..\\..\\DCServices\\Development\\DC.Payments
+		SccProjectUniqueName11 = ..\\..\\DCServices\\Development\\bccrypto-net-1.7-src-ext\\csharp\\crypto\\crypto.csproj
+		SccProjectName11 = ../../DCServices/Development/bccrypto-net-1.7-src-ext/csharp/crypto
+		SccLocalPath11 = ..\\..\\DCServices\\Development\\bccrypto-net-1.7-src-ext\\csharp\\crypto
+		SccProjectUniqueName12 = ..\\..\\DCServices\\Development\\BitcoinRpcSharp\\BitcoinRpcSharp.csproj
+		SccProjectName12 = ../../DCServices/Development/BitcoinRpcSharp
+		SccLocalPath12 = ..\\..\\DCServices\\Development\\BitcoinRpcSharp
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Lucas.Local|Any CPU = Lucas.Local|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0761521C-0C8A-4DE6-B7DF-6F61224961E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0761521C-0C8A-4DE6-B7DF-6F61224961E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0761521C-0C8A-4DE6-B7DF-6F61224961E6}.Lucas.Local|Any CPU.ActiveCfg = Lucas.Local|Any CPU
+		{0761521C-0C8A-4DE6-B7DF-6F61224961E6}.Lucas.Local|Any CPU.Build.0 = Lucas.Local|Any CPU
+		{0761521C-0C8A-4DE6-B7DF-6F61224961E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0761521C-0C8A-4DE6-B7DF-6F61224961E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED8DB626-4644-4724-8580-7BD6B3408DE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED8DB626-4644-4724-8580-7BD6B3408DE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED8DB626-4644-4724-8580-7BD6B3408DE6}.Lucas.Local|Any CPU.ActiveCfg = Lucas.Local|Any CPU
+		{ED8DB626-4644-4724-8580-7BD6B3408DE6}.Lucas.Local|Any CPU.Build.0 = Lucas.Local|Any CPU
+		{ED8DB626-4644-4724-8580-7BD6B3408DE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED8DB626-4644-4724-8580-7BD6B3408DE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C31A5EF7-EC66-40CB-8C28-65B8412FEFE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C31A5EF7-EC66-40CB-8C28-65B8412FEFE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C31A5EF7-EC66-40CB-8C28-65B8412FEFE2}.Lucas.Local|Any CPU.ActiveCfg = Lucas.Local|Any CPU
+		{C31A5EF7-EC66-40CB-8C28-65B8412FEFE2}.Lucas.Local|Any CPU.Build.0 = Lucas.Local|Any CPU
+		{C31A5EF7-EC66-40CB-8C28-65B8412FEFE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C31A5EF7-EC66-40CB-8C28-65B8412FEFE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45CC1033-9ADC-4592-9750-5595A48D9BAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45CC1033-9ADC-4592-9750-5595A48D9BAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45CC1033-9ADC-4592-9750-5595A48D9BAA}.Lucas.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{45CC1033-9ADC-4592-9750-5595A48D9BAA}.Lucas.Local|Any CPU.Build.0 = Release|Any CPU
+		{45CC1033-9ADC-4592-9750-5595A48D9BAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45CC1033-9ADC-4592-9750-5595A48D9BAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E98565F-C938-4B3F-B559-276321B12F3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E98565F-C938-4B3F-B559-276321B12F3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E98565F-C938-4B3F-B559-276321B12F3D}.Lucas.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{2E98565F-C938-4B3F-B559-276321B12F3D}.Lucas.Local|Any CPU.Build.0 = Release|Any CPU
+		{2E98565F-C938-4B3F-B559-276321B12F3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E98565F-C938-4B3F-B559-276321B12F3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5780EF14-C471-4CC5-97CA-2BE451734CAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5780EF14-C471-4CC5-97CA-2BE451734CAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5780EF14-C471-4CC5-97CA-2BE451734CAA}.Lucas.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{5780EF14-C471-4CC5-97CA-2BE451734CAA}.Lucas.Local|Any CPU.Build.0 = Release|Any CPU
+		{5780EF14-C471-4CC5-97CA-2BE451734CAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5780EF14-C471-4CC5-97CA-2BE451734CAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{725A0573-6B64-43DC-AFBE-2C8D332B887C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{725A0573-6B64-43DC-AFBE-2C8D332B887C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{725A0573-6B64-43DC-AFBE-2C8D332B887C}.Lucas.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{725A0573-6B64-43DC-AFBE-2C8D332B887C}.Lucas.Local|Any CPU.Build.0 = Release|Any CPU
+		{725A0573-6B64-43DC-AFBE-2C8D332B887C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{725A0573-6B64-43DC-AFBE-2C8D332B887C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE22A676-3082-4D39-B3DD-7CAF37790334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE22A676-3082-4D39-B3DD-7CAF37790334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE22A676-3082-4D39-B3DD-7CAF37790334}.Lucas.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{DE22A676-3082-4D39-B3DD-7CAF37790334}.Lucas.Local|Any CPU.Build.0 = Release|Any CPU
+		{DE22A676-3082-4D39-B3DD-7CAF37790334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE22A676-3082-4D39-B3DD-7CAF37790334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B3D6509-0067-44E2-BC47-863AC2DC539F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B3D6509-0067-44E2-BC47-863AC2DC539F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B3D6509-0067-44E2-BC47-863AC2DC539F}.Lucas.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{7B3D6509-0067-44E2-BC47-863AC2DC539F}.Lucas.Local|Any CPU.Build.0 = Release|Any CPU
+		{7B3D6509-0067-44E2-BC47-863AC2DC539F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B3D6509-0067-44E2-BC47-863AC2DC539F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4411210-EA0F-419C-B810-2A09BF3B6D76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4411210-EA0F-419C-B810-2A09BF3B6D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4411210-EA0F-419C-B810-2A09BF3B6D76}.Lucas.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{D4411210-EA0F-419C-B810-2A09BF3B6D76}.Lucas.Local|Any CPU.Build.0 = Release|Any CPU
+		{D4411210-EA0F-419C-B810-2A09BF3B6D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4411210-EA0F-419C-B810-2A09BF3B6D76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38872A5F-E87E-4FAD-B109-8EB7B2E6A4A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38872A5F-E87E-4FAD-B109-8EB7B2E6A4A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38872A5F-E87E-4FAD-B109-8EB7B2E6A4A0}.Lucas.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{38872A5F-E87E-4FAD-B109-8EB7B2E6A4A0}.Lucas.Local|Any CPU.Build.0 = Release|Any CPU
+		{38872A5F-E87E-4FAD-B109-8EB7B2E6A4A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38872A5F-E87E-4FAD-B109-8EB7B2E6A4A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21023FF2-B19C-4CAD-9EC2-28F47FC9FC4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21023FF2-B19C-4CAD-9EC2-28F47FC9FC4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21023FF2-B19C-4CAD-9EC2-28F47FC9FC4C}.Lucas.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{21023FF2-B19C-4CAD-9EC2-28F47FC9FC4C}.Lucas.Local|Any CPU.Build.0 = Release|Any CPU
+		{21023FF2-B19C-4CAD-9EC2-28F47FC9FC4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21023FF2-B19C-4CAD-9EC2-28F47FC9FC4C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

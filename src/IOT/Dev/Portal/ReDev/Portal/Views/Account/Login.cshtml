@@ -1,0 +1,73 @@
+﻿@model Portal.Models.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h1>Login </h1>
+
+<section id="loginForm">
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="view">
+        <div class="row" style="height:50px">
+            <div class="col gu5">
+                @Html.LabelFor(m => m.UserName, new { @class = "label" })
+            </div>
+            <div class="col gu19">
+                @Html.TextBoxFor(m => m.UserName, new { @class = "textbox" })
+                @Html.ValidationMessageFor(m => m.UserName)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col gu5">
+
+                @Html.LabelFor(m => m.Password, new { @class = "label" })
+            </div>
+            <div class="col gu19">
+                @Html.PasswordFor(m => m.Password, new { @class = "textbox" })
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col gu5">
+                @Html.LabelFor(m => m.RememberMe, new { @class = "labelcheckbox" })
+            </div>
+            <div class="col gu19">
+                @Html.CheckBoxFor(m => m.RememberMe)
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col gu14">
+                &nbsp;
+            </div>
+
+            @*I really don't think i have done this in a neat way, but until we remove/replce the button, I did this as a fix*@
+
+            <div class="col gu10">
+                <div class="row">
+                    <div class="col gu10" style="height:80px">
+                        <input type="submit" value="Login" class="loginbutton" />
+                    </div>
+                    <div class="col gu10">
+                            @Html.ActionLink("Register", "Register") if you don't have an account.  
+                        <br/>
+                            @Html.ActionLink("Forgot Password", "Forgot") 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+</section>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

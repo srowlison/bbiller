@@ -1,0 +1,22 @@
+﻿
+    @if (Request.IsAuthenticated)
+{
+    <div style="text-align:center;">
+        @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "manageaccountbutton", title = "Manage" })
+
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+        {
+            @Html.AntiForgeryToken()
+            <a class="logoutbutton" href="javascript:document.getElementById('logoutForm').submit()"></a>
+        }   
+    </div>
+}
+else
+{
+            <div >
+                @Html.ActionLink("Login", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "loginbutton" })
+                @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "registerbutton" })
+            </div>
+}
+
+            

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f408f667-e020-4d8f-bbe1-d20d6f4cf552" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://node.diamondcircle.net/atm.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Atm3.xsd" MetadataType="Schema" ID="3cfa913b-a0fc-498a-9f42-8aadce6c2c92" SourceId="1" SourceUrl="https://node.diamondcircle.net/Atm.svc?xsd=xsd2" />
+    <MetadataFile FileName="atm2.wsdl" MetadataType="Wsdl" ID="c4492fff-7f12-4d82-bd08-8f227b949a64" SourceId="1" SourceUrl="https://node.diamondcircle.net/Atm.svc?wsdl" />
+    <MetadataFile FileName="Atm21.wsdl" MetadataType="Wsdl" ID="91d88faa-e781-47d4-95f3-e77bebde6b6a" SourceId="1" SourceUrl="https://node.diamondcircle.net/Atm.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Atm31.xsd" MetadataType="Schema" ID="f48eba20-cb2e-43e3-aff0-3fa612a51952" SourceId="1" SourceUrl="https://node.diamondcircle.net/Atm.svc?xsd=xsd1" />
+    <MetadataFile FileName="Atm32.xsd" MetadataType="Schema" ID="da0d5be9-e942-49b7-809e-f20fa5a4767b" SourceId="1" SourceUrl="https://node.diamondcircle.net/Atm.svc?xsd=xsd0" />
+    <MetadataFile FileName="Atm1.disco" MetadataType="Disco" ID="3fcd91f2-f587-4630-b700-d2d41677279f" SourceId="1" SourceUrl="https://node.diamondcircle.net/Atm.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

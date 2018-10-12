@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DC.Data.FiatBalance>
+
+@{
+    ViewBag.Title = "Balances";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+<table>
+    <tr>
+        <th>
+            Currency
+        </th>
+        <th>
+            Balance
+        </th>
+        <th>
+            Action
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Currency.CurrencyAbbrev)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Balance)
+        </td>
+        <td>
+            @Html.ActionLink("Transaction history", "FiatHistory", new { id=item.BalanceId }) |
+        </td>
+    </tr>
+}
+
+</table>

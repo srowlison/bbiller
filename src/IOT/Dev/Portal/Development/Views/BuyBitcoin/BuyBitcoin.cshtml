@@ -1,0 +1,72 @@
+﻿@model Portal.ViewModels.BuyBitcoinViewModel
+@{
+    ViewBag.Title = "Buy Bitcoin";
+}
+<div class="row">
+    &nbsp;
+</div>
+<h2>Buy Bitcoin for Card: @Html.Raw(Model.CardId) </h2>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.CardId)
+    @Html.ValidationSummary(true)
+
+    <div class="row">
+
+        <div class="col gu5" style="height: 60px">
+            @Html.LabelFor(model => model.BitcoinAmount)
+
+        </div>
+        <div class="col gu19">
+            @Html.TextBoxFor(model => model.BitcoinAmount)
+            @Html.ValidationMessageFor(model => model.BitcoinAmount)
+        </div>
+    </div>
+    <div class="row" style="height: 60px">
+
+        <div class="col gu5">
+            @Html.LabelFor(model => model.Currency)
+        </div>
+        <div class="col gu19">
+            @Html.TextBoxFor(model => model.Currency)
+            @Html.ValidationMessageFor(model => model.Currency)
+        </div>
+
+    </div>
+    <div class="row" style="height: 120px">
+
+        <div class="col gu5" style="float: left; text-align:left; ">
+            @Html.LabelFor(model => model.CreditCardMask)
+        </div>
+        <div class="col gu19">
+            @Html.EditorFor(model => model.CreditCardMask) 
+            @Html.ValidationMessageFor(model => model.CreditCardMask)
+        </div>
+
+
+    </div>
+
+    <div class="row"
+         style="height:150px; vertical-align:bottom;">
+
+        <div class="col gu8">
+            @Html.ActionLink("Cancel", "BuyBitcoin", routeValues: null, htmlAttributes: new { @class = "cancelbutton" })
+        </div>
+        <div class="col gu8" style="float:right;"></div>
+ 
+        <div class="col gu8" style="float:right;">
+            <input type="submit" value=" " class="buybitcoinbuttonblue" />
+
+
+        </div>
+
+    </div>
+}
+
+
+
+

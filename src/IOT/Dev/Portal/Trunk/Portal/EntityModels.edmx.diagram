@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e45ebf8d197c4e538c5de9c77e292ba0" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="DiamondCircle_dbModel.Address" Width="1.5" PointX="6.6164430596942276" PointY="0.40126727540104989" />
+        <EntityTypeShape EntityType="DiamondCircle_dbModel.Card" Width="1.5" PointX="7.859494605967539" PointY="3.3433763847422675" />
+        <EntityTypeShape EntityType="DiamondCircle_dbModel.country" Width="1.5" PointX="10.537132065062007" PointY="15.379195026764272" />
+        <EntityTypeShape EntityType="DiamondCircle_dbModel.Customer" Width="1.5" PointX="7.1036614603845694" PointY="19.521425345689721" />
+        <EntityTypeShape EntityType="DiamondCircle_dbModel.CustomerBank" Width="1.5" PointX="11.782852319899412" PointY="0.79073661602602185" />
+        <EntityTypeShape EntityType="DiamondCircle_dbModel.Transaction" Width="1.5" PointX="11.537661289580941" PointY="19.177932271351075" />
+        <EntityTypeShape EntityType="DiamondCircle_dbModel.UploadFile" Width="1.5" PointX="7.3432337657284146" PointY="20.74534135532814" />
+        <EntityTypeShape EntityType="DiamondCircle_dbModel.UserDetail" Width="1.5" PointX="4.90352499340825" PointY="17.085343398659184" />
+        <AssociationConnector Association="DiamondCircle_dbModel.FK_Addresses_Countries" />
+        <AssociationConnector Association="DiamondCircle_dbModel.FK_Addresses_Customer" />
+        <AssociationConnector Association="DiamondCircle_dbModel.FK_Cards_Customer" />
+        <AssociationConnector Association="DiamondCircle_dbModel.FK_Transaction_Cards" />
+        <AssociationConnector Association="DiamondCircle_dbModel.FK_CustomerBanks_Customer" />
+        <EntityTypeShape EntityType="DiamondCircle_dbModel.send" Width="1.5" PointX="0.37913384864997762" PointY="6.3622472017827665" />
+        <AssociationConnector Association="DiamondCircle_dbModel.FK_send_Customer" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

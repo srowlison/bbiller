@@ -1,0 +1,183 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinPayments", "..\..\BitcoinATMReleaseVersion\BitcoinATM\PinPayments\PinPayments.csproj", "{D80F497B-61A9-4355-85D5-245FCA984A43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Payment", "..\..\DCServices\Development\DC.Payments\DC.Payment.csproj", "{D4411210-EA0F-419C-B810-2A09BF3B6D76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Providers.Tests", "..\..\DCServices\Development\DC.Providers.Tests\DC.Providers.Tests.csproj", "{218E5895-DA15-4878-9A87-F9A0E6C6768A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Payment.Tests", "..\..\DCServices\Development\DC.Payment.Tests\DC.Payment.Tests.csproj", "{DBE6D076-1A96-465E-B666-61130CFA57A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Common", "..\..\DCServices\Development\DC.Common\DC.Common.csproj", "{725A0573-6B64-43DC-AFBE-2C8D332B887C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crypto", "..\..\DCServices\Development\bccrypto-net-1.7-src-ext\csharp\crypto\crypto.csproj", "{38872A5F-E87E-4FAD-B109-8EB7B2E6A4A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Data", "..\..\DCServices\Development\DC.Data\DC.Data.csproj", "{45CC1033-9ADC-4592-9750-5595A48D9BAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Common.Models", "..\..\DCServices\Development\DC.Models\DC.Common.Models.csproj", "{5780EF14-C471-4CC5-97CA-2BE451734CAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Providers", "..\..\DCServices\Development\DC.Providers\DC.Providers.csproj", "{2E98565F-C938-4B3F-B559-276321B12F3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Node", "..\..\DCServices\Development\DC.Node\DC.Node.csproj", "{DE22A676-3082-4D39-B3DD-7CAF37790334}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitcoinRpcSharp", "..\..\DCServices\Development\BitcoinRpcSharp\BitcoinRpcSharp.csproj", "{21023FF2-B19C-4CAD-9EC2-28F47FC9FC4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal", "..\..\Portal\ReDev\Portal\Portal.csproj", "{FE69024A-4E24-404A-969B-03A79E73F48A}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 13
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://puremethods.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\..\\BitcoinATMReleaseVersion\\BitcoinATM\\PinPayments\\PinPayments.csproj
+		SccProjectName1 = ../../BitcoinATMReleaseVersion/BitcoinATM/PinPayments
+		SccLocalPath1 = ..\\..\\BitcoinATMReleaseVersion\\BitcoinATM\\PinPayments
+		SccProjectUniqueName2 = ..\\..\\DCServices\\Development\\DC.Payments\\DC.Payment.csproj
+		SccProjectName2 = ../../DCServices/Development/DC.Payments
+		SccLocalPath2 = ..\\..\\DCServices\\Development\\DC.Payments
+		SccProjectUniqueName3 = ..\\..\\DCServices\\Development\\DC.Providers.Tests\\DC.Providers.Tests.csproj
+		SccProjectName3 = ../../DCServices/Development/DC.Providers.Tests
+		SccLocalPath3 = ..\\..\\DCServices\\Development\\DC.Providers.Tests
+		SccProjectUniqueName4 = ..\\..\\DCServices\\Development\\DC.Payment.Tests\\DC.Payment.Tests.csproj
+		SccProjectName4 = ../../DCServices/Development/DC.Payment.Tests
+		SccLocalPath4 = ..\\..\\DCServices\\Development\\DC.Payment.Tests
+		SccProjectUniqueName5 = ..\\..\\DCServices\\Development\\DC.Common\\DC.Common.csproj
+		SccProjectName5 = ../../DCServices/Development/DC.Common
+		SccLocalPath5 = ..\\..\\DCServices\\Development\\DC.Common
+		SccProjectUniqueName6 = ..\\..\\DCServices\\Development\\bccrypto-net-1.7-src-ext\\csharp\\crypto\\crypto.csproj
+		SccProjectName6 = ../../DCServices/Development/bccrypto-net-1.7-src-ext/csharp/crypto
+		SccLocalPath6 = ..\\..\\DCServices\\Development\\bccrypto-net-1.7-src-ext\\csharp\\crypto
+		SccProjectUniqueName7 = ..\\..\\DCServices\\Development\\DC.Data\\DC.Data.csproj
+		SccProjectName7 = ../../DCServices/Development/DC.Data
+		SccLocalPath7 = ..\\..\\DCServices\\Development\\DC.Data
+		SccProjectUniqueName8 = ..\\..\\DCServices\\Development\\DC.Models\\DC.Common.Models.csproj
+		SccProjectName8 = ../../DCServices/Development/DC.Models
+		SccLocalPath8 = ..\\..\\DCServices\\Development\\DC.Models
+		SccProjectUniqueName9 = ..\\..\\DCServices\\Development\\DC.Providers\\DC.Providers.csproj
+		SccProjectName9 = ../../DCServices/Development/DC.Providers
+		SccLocalPath9 = ..\\..\\DCServices\\Development\\DC.Providers
+		SccProjectUniqueName10 = ..\\..\\DCServices\\Development\\DC.Node\\DC.Node.csproj
+		SccProjectName10 = ../../DCServices/Development/DC.Node
+		SccLocalPath10 = ..\\..\\DCServices\\Development\\DC.Node
+		SccProjectUniqueName11 = ..\\..\\DCServices\\Development\\BitcoinRpcSharp\\BitcoinRpcSharp.csproj
+		SccProjectName11 = ../../DCServices/Development/BitcoinRpcSharp
+		SccLocalPath11 = ..\\..\\DCServices\\Development\\BitcoinRpcSharp
+		SccProjectUniqueName12 = ..\\..\\Portal\\ReDev\\Portal\\Portal.csproj
+		SccProjectName12 = ../../Portal/ReDev/Portal
+		SccLocalPath12 = ..\\..\\Portal\\ReDev\\Portal
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Lucas.Local|Any CPU = Lucas.Local|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Steve Local|Any CPU = Steve Local|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D80F497B-61A9-4355-85D5-245FCA984A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D80F497B-61A9-4355-85D5-245FCA984A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D80F497B-61A9-4355-85D5-245FCA984A43}.Lucas.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{D80F497B-61A9-4355-85D5-245FCA984A43}.Lucas.Local|Any CPU.Build.0 = Release|Any CPU
+		{D80F497B-61A9-4355-85D5-245FCA984A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D80F497B-61A9-4355-85D5-245FCA984A43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D80F497B-61A9-4355-85D5-245FCA984A43}.Steve Local|Any CPU.ActiveCfg = Release|Any CPU
+		{D80F497B-61A9-4355-85D5-245FCA984A43}.Steve Local|Any CPU.Build.0 = Release|Any CPU
+		{D4411210-EA0F-419C-B810-2A09BF3B6D76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4411210-EA0F-419C-B810-2A09BF3B6D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4411210-EA0F-419C-B810-2A09BF3B6D76}.Lucas.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{D4411210-EA0F-419C-B810-2A09BF3B6D76}.Lucas.Local|Any CPU.Build.0 = Release|Any CPU
+		{D4411210-EA0F-419C-B810-2A09BF3B6D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4411210-EA0F-419C-B810-2A09BF3B6D76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4411210-EA0F-419C-B810-2A09BF3B6D76}.Steve Local|Any CPU.ActiveCfg = Release|Any CPU
+		{D4411210-EA0F-419C-B810-2A09BF3B6D76}.Steve Local|Any CPU.Build.0 = Release|Any CPU
+		{218E5895-DA15-4878-9A87-F9A0E6C6768A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{218E5895-DA15-4878-9A87-F9A0E6C6768A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{218E5895-DA15-4878-9A87-F9A0E6C6768A}.Lucas.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{218E5895-DA15-4878-9A87-F9A0E6C6768A}.Lucas.Local|Any CPU.Build.0 = Release|Any CPU
+		{218E5895-DA15-4878-9A87-F9A0E6C6768A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{218E5895-DA15-4878-9A87-F9A0E6C6768A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{218E5895-DA15-4878-9A87-F9A0E6C6768A}.Steve Local|Any CPU.ActiveCfg = Release|Any CPU
+		{218E5895-DA15-4878-9A87-F9A0E6C6768A}.Steve Local|Any CPU.Build.0 = Release|Any CPU
+		{DBE6D076-1A96-465E-B666-61130CFA57A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBE6D076-1A96-465E-B666-61130CFA57A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBE6D076-1A96-465E-B666-61130CFA57A1}.Lucas.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{DBE6D076-1A96-465E-B666-61130CFA57A1}.Lucas.Local|Any CPU.Build.0 = Release|Any CPU
+		{DBE6D076-1A96-465E-B666-61130CFA57A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBE6D076-1A96-465E-B666-61130CFA57A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBE6D076-1A96-465E-B666-61130CFA57A1}.Steve Local|Any CPU.ActiveCfg = Release|Any CPU
+		{DBE6D076-1A96-465E-B666-61130CFA57A1}.Steve Local|Any CPU.Build.0 = Release|Any CPU
+		{725A0573-6B64-43DC-AFBE-2C8D332B887C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{725A0573-6B64-43DC-AFBE-2C8D332B887C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{725A0573-6B64-43DC-AFBE-2C8D332B887C}.Lucas.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{725A0573-6B64-43DC-AFBE-2C8D332B887C}.Lucas.Local|Any CPU.Build.0 = Release|Any CPU
+		{725A0573-6B64-43DC-AFBE-2C8D332B887C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{725A0573-6B64-43DC-AFBE-2C8D332B887C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{725A0573-6B64-43DC-AFBE-2C8D332B887C}.Steve Local|Any CPU.ActiveCfg = Release|Any CPU
+		{725A0573-6B64-43DC-AFBE-2C8D332B887C}.Steve Local|Any CPU.Build.0 = Release|Any CPU
+		{38872A5F-E87E-4FAD-B109-8EB7B2E6A4A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38872A5F-E87E-4FAD-B109-8EB7B2E6A4A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38872A5F-E87E-4FAD-B109-8EB7B2E6A4A0}.Lucas.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{38872A5F-E87E-4FAD-B109-8EB7B2E6A4A0}.Lucas.Local|Any CPU.Build.0 = Release|Any CPU
+		{38872A5F-E87E-4FAD-B109-8EB7B2E6A4A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38872A5F-E87E-4FAD-B109-8EB7B2E6A4A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38872A5F-E87E-4FAD-B109-8EB7B2E6A4A0}.Steve Local|Any CPU.ActiveCfg = Release|Any CPU
+		{38872A5F-E87E-4FAD-B109-8EB7B2E6A4A0}.Steve Local|Any CPU.Build.0 = Release|Any CPU
+		{45CC1033-9ADC-4592-9750-5595A48D9BAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45CC1033-9ADC-4592-9750-5595A48D9BAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45CC1033-9ADC-4592-9750-5595A48D9BAA}.Lucas.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{45CC1033-9ADC-4592-9750-5595A48D9BAA}.Lucas.Local|Any CPU.Build.0 = Release|Any CPU
+		{45CC1033-9ADC-4592-9750-5595A48D9BAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45CC1033-9ADC-4592-9750-5595A48D9BAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45CC1033-9ADC-4592-9750-5595A48D9BAA}.Steve Local|Any CPU.ActiveCfg = Release|Any CPU
+		{45CC1033-9ADC-4592-9750-5595A48D9BAA}.Steve Local|Any CPU.Build.0 = Release|Any CPU
+		{5780EF14-C471-4CC5-97CA-2BE451734CAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5780EF14-C471-4CC5-97CA-2BE451734CAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5780EF14-C471-4CC5-97CA-2BE451734CAA}.Lucas.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{5780EF14-C471-4CC5-97CA-2BE451734CAA}.Lucas.Local|Any CPU.Build.0 = Release|Any CPU
+		{5780EF14-C471-4CC5-97CA-2BE451734CAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5780EF14-C471-4CC5-97CA-2BE451734CAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5780EF14-C471-4CC5-97CA-2BE451734CAA}.Steve Local|Any CPU.ActiveCfg = Release|Any CPU
+		{5780EF14-C471-4CC5-97CA-2BE451734CAA}.Steve Local|Any CPU.Build.0 = Release|Any CPU
+		{2E98565F-C938-4B3F-B559-276321B12F3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E98565F-C938-4B3F-B559-276321B12F3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E98565F-C938-4B3F-B559-276321B12F3D}.Lucas.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{2E98565F-C938-4B3F-B559-276321B12F3D}.Lucas.Local|Any CPU.Build.0 = Release|Any CPU
+		{2E98565F-C938-4B3F-B559-276321B12F3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E98565F-C938-4B3F-B559-276321B12F3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E98565F-C938-4B3F-B559-276321B12F3D}.Steve Local|Any CPU.ActiveCfg = Release|Any CPU
+		{2E98565F-C938-4B3F-B559-276321B12F3D}.Steve Local|Any CPU.Build.0 = Release|Any CPU
+		{DE22A676-3082-4D39-B3DD-7CAF37790334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE22A676-3082-4D39-B3DD-7CAF37790334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE22A676-3082-4D39-B3DD-7CAF37790334}.Lucas.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{DE22A676-3082-4D39-B3DD-7CAF37790334}.Lucas.Local|Any CPU.Build.0 = Release|Any CPU
+		{DE22A676-3082-4D39-B3DD-7CAF37790334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE22A676-3082-4D39-B3DD-7CAF37790334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE22A676-3082-4D39-B3DD-7CAF37790334}.Steve Local|Any CPU.ActiveCfg = Release|Any CPU
+		{DE22A676-3082-4D39-B3DD-7CAF37790334}.Steve Local|Any CPU.Build.0 = Release|Any CPU
+		{21023FF2-B19C-4CAD-9EC2-28F47FC9FC4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21023FF2-B19C-4CAD-9EC2-28F47FC9FC4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21023FF2-B19C-4CAD-9EC2-28F47FC9FC4C}.Lucas.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{21023FF2-B19C-4CAD-9EC2-28F47FC9FC4C}.Lucas.Local|Any CPU.Build.0 = Release|Any CPU
+		{21023FF2-B19C-4CAD-9EC2-28F47FC9FC4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21023FF2-B19C-4CAD-9EC2-28F47FC9FC4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21023FF2-B19C-4CAD-9EC2-28F47FC9FC4C}.Steve Local|Any CPU.ActiveCfg = Release|Any CPU
+		{21023FF2-B19C-4CAD-9EC2-28F47FC9FC4C}.Steve Local|Any CPU.Build.0 = Release|Any CPU
+		{FE69024A-4E24-404A-969B-03A79E73F48A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE69024A-4E24-404A-969B-03A79E73F48A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE69024A-4E24-404A-969B-03A79E73F48A}.Lucas.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{FE69024A-4E24-404A-969B-03A79E73F48A}.Lucas.Local|Any CPU.Build.0 = Release|Any CPU
+		{FE69024A-4E24-404A-969B-03A79E73F48A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE69024A-4E24-404A-969B-03A79E73F48A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE69024A-4E24-404A-969B-03A79E73F48A}.Steve Local|Any CPU.ActiveCfg = Release|Any CPU
+		{FE69024A-4E24-404A-969B-03A79E73F48A}.Steve Local|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45
+	EndGlobalSection
+EndGlobal

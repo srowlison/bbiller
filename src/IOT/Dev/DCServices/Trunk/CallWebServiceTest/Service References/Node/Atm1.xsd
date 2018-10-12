@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/DC.Common.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DC.Common.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://localhost:44300/Atm.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="Keys">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EncryptedWIFPrivateKey" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="PrivateKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PublicKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Keys" nillable="true" type="tns:Keys" />
+  <xs:complexType name="Order">
+    <xs:sequence>
+      <xs:element name="_x003C_Address_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_BTC_x003E_k__BackingField" type="xs:decimal" />
+      <xs:element name="_x003C_Id_x003E_k__BackingField" type="ser:guid" />
+      <xs:element name="_x003C_PrivateKeyAsBase64_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_PrivateKeyAsByteArray_x003E_k__BackingField" nillable="true" type="xs:base64Binary" />
+      <xs:element name="_x003C_PrivateKey_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Txn_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Order" nillable="true" type="tns:Order" />
+</xs:schema>

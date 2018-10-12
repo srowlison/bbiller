@@ -1,0 +1,1857 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DiamondCircle_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Currency" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="Balance" Type="decimal" Precision="20" Scale="9" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Addresses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="CustomerId" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="AddressLine1" Type="nvarchar" MaxLength="50" />
+          <Property Name="AddressLine2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Suburb" Type="nvarchar" MaxLength="50" />
+          <Property Name="Postcode" Type="nvarchar" MaxLength="6" />
+          <Property Name="CountryId" Type="int" />
+          <Property Name="LandLine" Type="nvarchar" MaxLength="15" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="15" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="15" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AddressTypeId" Type="int" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AddressTypes">
+          <Key>
+            <PropertyRef Name="AddressTypeId" />
+          </Key>
+          <Property Name="AddressTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AddressTypeDescription" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="AspNetUserManagement">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="DisableSignIn" Type="bit" Nullable="false" />
+          <Property Name="LastSignInTimeUtc" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserSecrets">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Secret" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="CardCurrency">
+          <Key>
+            <PropertyRef Name="CardCurrencyId" />
+          </Key>
+          <Property Name="CardCurrencyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CardId" Type="nchar" MaxLength="16" Nullable="false" />
+          <Property Name="FiatCurrencyId" Type="int" Nullable="false" />
+          <Property Name="Balance" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedUser" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CardCurrencyHistory">
+          <Key>
+            <PropertyRef Name="FiatHistoryId" />
+          </Key>
+          <Property Name="FiatHistoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CardCurrencyId" Type="int" Nullable="false" />
+          <Property Name="CreditAmount" Type="decimal" Precision="18" Scale="8" />
+          <Property Name="DebitAmount" Type="decimal" Precision="18" Scale="8" />
+          <Property Name="DateActioned" Type="datetime" />
+          <Property Name="DateConfirmed" Type="datetime" />
+          <Property Name="Reference" Type="varchar" MaxLength="50" />
+          <Property Name="TransactionDetails" Type="varchar" MaxLength="100" />
+          <Property Name="CreateUser" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cards">
+          <Key>
+            <PropertyRef Name="CardId" />
+          </Key>
+          <Property Name="CustomerID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="DateIssued" Type="datetime" Nullable="false" />
+          <Property Name="CardId" Type="nchar" MaxLength="16" Nullable="false" />
+          <Property Name="Password" Type="nchar" MaxLength="256" />
+          <Property Name="PublicKey" Type="nchar" MaxLength="34" />
+          <Property Name="Pin" Type="nchar" MaxLength="6" />
+          <Property Name="Status" Type="nchar" MaxLength="10" />
+          <Property Name="TempPublicKey" Type="nchar" MaxLength="34" />
+          <Property Name="CreditCardId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="ColdStorage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="BitcoinAddress" Type="nvarchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="countries">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CreditCard">
+          <Key>
+            <PropertyRef Name="CreditCardId" />
+          </Key>
+          <Property Name="CreditCardId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CardHolderName" Type="varchar" MaxLength="50" />
+          <Property Name="CardNumber" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ExpiryDate" Type="date" />
+          <Property Name="CVC2" Type="nchar" MaxLength="10" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="DOB" Type="nvarchar" MaxLength="20" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="50" />
+          <Property Name="Telephone" Type="varchar" MaxLength="50" />
+          <Property Name="AddressLine1" Type="varchar" MaxLength="50" />
+          <Property Name="Suburb" Type="varchar" MaxLength="50" />
+          <Property Name="Postcode" Type="nvarchar" MaxLength="20" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountryId" Type="int" />
+          <Property Name="ExpiryMonth" Type="nvarchar" MaxLength="2" />
+          <Property Name="ExpiryYear" Type="nvarchar" MaxLength="4" />
+          <Property Name="CountryName" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="CurrencyId" />
+          </Key>
+          <Property Name="CurrencyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CurrencyAbbrev" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="CurrencyDescription" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedUser" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Status" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="CountryId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" />
+          <Property Name="Identified" Type="bit" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="DOB" Type="datetime" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="ModifiedUser" Type="varchar" MaxLength="50" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CustomerBanks">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerId" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="BSB" Type="nchar" MaxLength="6" />
+          <Property Name="AccountNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="PayPal" Type="nvarchar" MaxLength="60" />
+          <Property Name="SWIFT" Type="nvarchar" MaxLength="50" />
+          <Property Name="IBAN" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="Margins">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TerminalId" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="FiatCurrency" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="FiatAmount" Type="money" Nullable="false" />
+          <Property Name="FiatFee" Type="money" />
+          <Property Name="Rate" Type="decimal" Precision="20" Scale="9" />
+        </EntityType>
+        <EntityType Name="SendBitcoin">
+          <Key>
+            <PropertyRef Name="SendBitcoinId" />
+          </Key>
+          <Property Name="SendBitcoinId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CardId" Type="nchar" MaxLength="16" />
+          <Property Name="Sender" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Receiver" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Created" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="BTCAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Terminals">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Location" Type="nvarchar" MaxLength="50" />
+          <Property Name="Longitude" Type="decimal" Precision="18" Scale="9" />
+          <Property Name="Latitude" Type="decimal" Precision="18" Scale="9" />
+          <Property Name="Description" Type="text" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+          <Property Name="Version" Type="varchar" MaxLength="50" />
+          <Property Name="Created" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="SerialNumber" Type="varchar" MaxLength="50" />
+          <Property Name="DefaultFiatCurrency" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="DefaultCryptoCurrency" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tokens">
+          <Key>
+            <PropertyRef Name="TokenId" />
+          </Key>
+          <Property Name="TokenId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TokenKey" Type="varchar" MaxLength="128" />
+          <Property Name="TokenValue" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="TradingHistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CustomerId" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
+          <Property Name="OrderType" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="20" Scale="9" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="29" Scale="9" Nullable="false" />
+          <Property Name="NumuratorCurrency" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="DeominatorCurrency" Type="nchar" MaxLength="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
+          <Property Name="CardId" Type="nchar" MaxLength="16" />
+          <Property Name="TransType" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="TerminalId" Type="nchar" MaxLength="10" />
+          <Property Name="NumuratorCurrency" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="DeominatorCurrency" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="Amount" Type="numeric" Precision="20" Scale="9" Nullable="false" />
+          <Property Name="Price" Type="numeric" Precision="20" Scale="9" Nullable="false" />
+          <Property Name="Reference" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="UploadFiles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FileName" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="FileRealName" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Createdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserDetails">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="56" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ConfirmationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsConfirmed" Type="bit" />
+          <Property Name="LastPasswordFailureDate" Type="datetime" />
+          <Property Name="PasswordFailuresSinceLastSuccess" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="PasswordChangedDate" Type="datetime" />
+          <Property Name="PasswordSalt" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="PasswordVerificationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="PasswordVerificationTokenExpirationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="webpages_OAuthMembership">
+          <Key>
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
+          </Key>
+          <Property Name="Provider" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ProviderUserId" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Account_0">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Addresses_AddressTypes">
+          <End Role="AddressTypes" Type="Self.AddressTypes" Multiplicity="0..1" />
+          <End Role="Addresses" Type="Self.Addresses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressTypes">
+              <PropertyRef Name="AddressTypeId" />
+            </Principal>
+            <Dependent Role="Addresses">
+              <PropertyRef Name="AddressTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Addresses_Countries">
+          <End Role="countries" Type="Self.countries" Multiplicity="0..1" />
+          <End Role="Addresses" Type="Self.Addresses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="countries">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Addresses">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Addresses_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Addresses" Type="Self.Addresses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Addresses">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CardCurrency_Cards">
+          <End Role="Cards" Type="Self.Cards" Multiplicity="1" />
+          <End Role="CardCurrency" Type="Self.CardCurrency" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cards">
+              <PropertyRef Name="CardId" />
+            </Principal>
+            <Dependent Role="CardCurrency">
+              <PropertyRef Name="CardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CardCurrency_Currency">
+          <End Role="Currency" Type="Self.Currency" Multiplicity="1" />
+          <End Role="CardCurrency" Type="Self.CardCurrency" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="CurrencyId" />
+            </Principal>
+            <Dependent Role="CardCurrency">
+              <PropertyRef Name="FiatCurrencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CardCurrencyHistory_CardCurrency">
+          <End Role="CardCurrency" Type="Self.CardCurrency" Multiplicity="1" />
+          <End Role="CardCurrencyHistory" Type="Self.CardCurrencyHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CardCurrency">
+              <PropertyRef Name="CardCurrencyId" />
+            </Principal>
+            <Dependent Role="CardCurrencyHistory">
+              <PropertyRef Name="CardCurrencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cards_CreditCard">
+          <End Role="CreditCard" Type="Self.CreditCard" Multiplicity="0..1" />
+          <End Role="Cards" Type="Self.Cards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CreditCard">
+              <PropertyRef Name="CreditCardId" />
+            </Principal>
+            <Dependent Role="Cards">
+              <PropertyRef Name="CreditCardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cards_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Cards" Type="Self.Cards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Cards">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Currency_countries">
+          <End Role="countries" Type="Self.countries" Multiplicity="1" />
+          <End Role="Currency" Type="Self.Currency" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="countries">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Currency">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerBanks_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="CustomerBanks" Type="Self.CustomerBanks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="CustomerBanks">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserManagement_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="AspNetUserManagement" Type="Self.AspNetUserManagement" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserManagement">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RoleId">
+          <End Role="webpages_Roles" Type="Self.webpages_Roles" Multiplicity="1" />
+          <End Role="webpages_UsersInRoles" Type="Self.webpages_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="webpages_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="webpages_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SendBitcoin_Cards">
+          <End Role="Cards" Type="Self.Cards" Multiplicity="0..1" />
+          <End Role="SendBitcoin" Type="Self.SendBitcoin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cards">
+              <PropertyRef Name="CardId" />
+            </Principal>
+            <Dependent Role="SendBitcoin">
+              <PropertyRef Name="CardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TradingHistory_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="TradingHistory" Type="Self.TradingHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="TradingHistory">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transaction_Cards">
+          <End Role="Cards" Type="Self.Cards" Multiplicity="0..1" />
+          <End Role="Transaction" Type="Self.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cards">
+              <PropertyRef Name="CardId" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="CardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UploadFiles_user">
+          <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+          <End Role="UploadFiles" Type="Self.UploadFiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UploadFiles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_UserId">
+          <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+          <End Role="webpages_UsersInRoles" Type="Self.webpages_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="webpages_UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DiamondCircle_dbModelStoreContainer">
+          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Addresses" EntityType="Self.Addresses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AddressTypes" EntityType="Self.AddressTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserManagement" EntityType="Self.AspNetUserManagement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserSecrets" EntityType="Self.AspNetUserSecrets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CardCurrency" EntityType="Self.CardCurrency" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CardCurrencyHistory" EntityType="Self.CardCurrencyHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cards" EntityType="Self.Cards" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ColdStorage" EntityType="Self.ColdStorage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="countries" EntityType="Self.countries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CreditCard" EntityType="Self.CreditCard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Currency" EntityType="Self.Currency" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerBanks" EntityType="Self.CustomerBanks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Margins" EntityType="Self.Margins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SendBitcoin" EntityType="Self.SendBitcoin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Terminals" EntityType="Self.Terminals" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tokens" EntityType="Self.Tokens" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TradingHistory" EntityType="Self.TradingHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transaction" EntityType="Self.Transaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UploadFiles" EntityType="Self.UploadFiles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserDetails" EntityType="Self.UserDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="webpages_Membership" EntityType="Self.webpages_Membership" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="webpages_OAuthMembership" EntityType="Self.webpages_OAuthMembership" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="webpages_Roles" EntityType="Self.webpages_Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="webpages_UsersInRoles" EntityType="Self.webpages_UsersInRoles" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Account_0" Association="Self.FK_Account_0">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Addresses_AddressTypes" Association="Self.FK_Addresses_AddressTypes">
+            <End Role="AddressTypes" EntitySet="AddressTypes" />
+            <End Role="Addresses" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Addresses_Countries" Association="Self.FK_Addresses_Countries">
+            <End Role="countries" EntitySet="countries" />
+            <End Role="Addresses" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Addresses_Customer" Association="Self.FK_Addresses_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Addresses" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CardCurrency_Cards" Association="Self.FK_CardCurrency_Cards">
+            <End Role="Cards" EntitySet="Cards" />
+            <End Role="CardCurrency" EntitySet="CardCurrency" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CardCurrency_Currency" Association="Self.FK_CardCurrency_Currency">
+            <End Role="Currency" EntitySet="Currency" />
+            <End Role="CardCurrency" EntitySet="CardCurrency" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CardCurrencyHistory_CardCurrency" Association="Self.FK_CardCurrencyHistory_CardCurrency">
+            <End Role="CardCurrency" EntitySet="CardCurrency" />
+            <End Role="CardCurrencyHistory" EntitySet="CardCurrencyHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cards_CreditCard" Association="Self.FK_Cards_CreditCard">
+            <End Role="CreditCard" EntitySet="CreditCard" />
+            <End Role="Cards" EntitySet="Cards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cards_Customer" Association="Self.FK_Cards_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Cards" EntitySet="Cards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Currency_countries" Association="Self.FK_Currency_countries">
+            <End Role="countries" EntitySet="countries" />
+            <End Role="Currency" EntitySet="Currency" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerBanks_Customer" Association="Self.FK_CustomerBanks_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="CustomerBanks" EntitySet="CustomerBanks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserManagement_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserManagement_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserManagement" EntitySet="AspNetUserManagement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RoleId" Association="Self.fk_RoleId">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SendBitcoin_Cards" Association="Self.FK_SendBitcoin_Cards">
+            <End Role="Cards" EntitySet="Cards" />
+            <End Role="SendBitcoin" EntitySet="SendBitcoin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TradingHistory_Customer" Association="Self.FK_TradingHistory_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="TradingHistory" EntitySet="TradingHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transaction_Cards" Association="Self.FK_Transaction_Cards">
+            <End Role="Cards" EntitySet="Cards" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UploadFiles_user" Association="Self.FK_UploadFiles_user">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="UploadFiles" EntitySet="UploadFiles" />
+          </AssociationSet>
+          <AssociationSet Name="fk_UserId" Association="Self.fk_UserId">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DiamondCircle_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CardId" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="TransType" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="TerminalId" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="NumuratorCurrency" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DeominatorCurrency" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Precision="20" Scale="9" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="20" Scale="9" Nullable="false" />
+          <Property Name="Reference" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Card" Relationship="DiamondCircle_dbModel.FK_Transaction_Cards" FromRole="Transaction" ToRole="Card" />
+        </EntityType>
+        <EntityContainer Name="DiamondCircle_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Transactions" EntityType="Self.Transaction" />
+          <EntitySet Name="ColdStorages" EntityType="DiamondCircle_dbModel.ColdStorage" />
+          <EntitySet Name="Margins" EntityType="DiamondCircle_dbModel.Margin" />
+          <EntitySet Name="Terminals" EntityType="DiamondCircle_dbModel.Terminal" />
+          <EntitySet Name="Accounts" EntityType="DiamondCircle_dbModel.Account" />
+          <EntitySet Name="Customers" EntityType="DiamondCircle_dbModel.Customer" />
+          <AssociationSet Name="FK_Account_0" Association="DiamondCircle_dbModel.FK_Account_0">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <EntitySet Name="Addresses" EntityType="DiamondCircle_dbModel.Address" />
+          <EntitySet Name="CustomerBanks" EntityType="DiamondCircle_dbModel.CustomerBank" />
+          <EntitySet Name="UploadFiles" EntityType="DiamondCircle_dbModel.UploadFile" />
+          <EntitySet Name="UserDetails" EntityType="DiamondCircle_dbModel.UserDetail" />
+          <EntitySet Name="UserProfiles" EntityType="DiamondCircle_dbModel.UserProfile" />
+          <AssociationSet Name="FK_Addresses_Customer" Association="DiamondCircle_dbModel.FK_Addresses_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerBanks_Customer" Association="DiamondCircle_dbModel.FK_CustomerBanks_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="CustomerBank" EntitySet="CustomerBanks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UploadFiles_user" Association="DiamondCircle_dbModel.FK_UploadFiles_user">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="UploadFile" EntitySet="UploadFiles" />
+          </AssociationSet>
+          <EntitySet Name="AspNetRoles" EntityType="DiamondCircle_dbModel.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="DiamondCircle_dbModel.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="DiamondCircle_dbModel.AspNetUserLogin" />
+          <EntitySet Name="AspNetUserManagements" EntityType="DiamondCircle_dbModel.AspNetUserManagement" />
+          <EntitySet Name="AspNetUsers" EntityType="DiamondCircle_dbModel.AspNetUser" />
+          <EntitySet Name="AspNetUserSecrets" EntityType="DiamondCircle_dbModel.AspNetUserSecret" />
+          <EntitySet Name="webpages_Membership" EntityType="DiamondCircle_dbModel.webpages_Membership" />
+          <EntitySet Name="webpages_OAuthMembership" EntityType="DiamondCircle_dbModel.webpages_OAuthMembership" />
+          <EntitySet Name="webpages_Roles" EntityType="DiamondCircle_dbModel.webpages_Roles" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="DiamondCircle_dbModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaim" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="DiamondCircle_dbModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogin" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserManagement_dbo_AspNetUsers_UserId" Association="DiamondCircle_dbModel.FK_dbo_AspNetUserManagement_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserManagement" EntitySet="AspNetUserManagements" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="DiamondCircle_dbModel.AspNetUserRoles">
+            <End Role="AspNetRole" EntitySet="AspNetRoles" />
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <AssociationSet Name="webpages_UsersInRoles" Association="DiamondCircle_dbModel.webpages_UsersInRoles">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+          </AssociationSet>
+          <EntitySet Name="Currencies" EntityType="DiamondCircle_dbModel.Currency" />
+          <EntitySet Name="Tokens" EntityType="DiamondCircle_dbModel.Token" />
+          <EntitySet Name="TradingHistories" EntityType="DiamondCircle_dbModel.TradingHistory" />
+          <AssociationSet Name="FK_TradingHistory_Customer" Association="DiamondCircle_dbModel.FK_TradingHistory_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="TradingHistory" EntitySet="TradingHistories" />
+          </AssociationSet>
+          <EntitySet Name="CardCurrencies" EntityType="DiamondCircle_dbModel.CardCurrency" />
+          <EntitySet Name="CardCurrencyHistories" EntityType="DiamondCircle_dbModel.CardCurrencyHistory" />
+          <AssociationSet Name="FK_CardCurrency_Currency" Association="DiamondCircle_dbModel.FK_CardCurrency_Currency">
+            <End Role="Currency" EntitySet="Currencies" />
+            <End Role="CardCurrency" EntitySet="CardCurrencies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CardCurrencyHistory_CardCurrency" Association="DiamondCircle_dbModel.FK_CardCurrencyHistory_CardCurrency">
+            <End Role="CardCurrency" EntitySet="CardCurrencies" />
+            <End Role="CardCurrencyHistory" EntitySet="CardCurrencyHistories" />
+          </AssociationSet>
+          <EntitySet Name="SendBitcoins" EntityType="DiamondCircle_dbModel.SendBitcoin" />
+          <EntitySet Name="AddressTypes" EntityType="DiamondCircle_dbModel.AddressType" />
+          <AssociationSet Name="FK_Addresses_AddressTypes" Association="DiamondCircle_dbModel.FK_Addresses_AddressTypes">
+            <End Role="AddressType" EntitySet="AddressTypes" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <EntitySet Name="countries" EntityType="DiamondCircle_dbModel.country" />
+          <AssociationSet Name="FK_Addresses_Countries" Association="DiamondCircle_dbModel.FK_Addresses_Countries">
+            <End Role="country" EntitySet="countries" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Currency_countries" Association="DiamondCircle_dbModel.FK_Currency_countries">
+            <End Role="country" EntitySet="countries" />
+            <End Role="Currency" EntitySet="Currencies" />
+          </AssociationSet>
+          <EntitySet Name="Cards" EntityType="DiamondCircle_dbModel.Card" />
+          <EntitySet Name="CreditCards" EntityType="DiamondCircle_dbModel.CreditCard" />
+          <AssociationSet Name="FK_CardCurrency_Cards" Association="DiamondCircle_dbModel.FK_CardCurrency_Cards">
+            <End Role="Card" EntitySet="Cards" />
+            <End Role="CardCurrency" EntitySet="CardCurrencies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cards_CreditCard" Association="DiamondCircle_dbModel.FK_Cards_CreditCard">
+            <End Role="CreditCard" EntitySet="CreditCards" />
+            <End Role="Card" EntitySet="Cards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cards_Customer" Association="DiamondCircle_dbModel.FK_Cards_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Card" EntitySet="Cards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SendBitcoin_Cards" Association="DiamondCircle_dbModel.FK_SendBitcoin_Cards">
+            <End Role="Card" EntitySet="Cards" />
+            <End Role="SendBitcoin" EntitySet="SendBitcoins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transaction_Cards" Association="DiamondCircle_dbModel.FK_Transaction_Cards">
+            <End Role="Card" EntitySet="Cards" />
+            <End Role="Transaction" EntitySet="Transactions" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ColdStorage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="BitcoinAddress" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Margin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TerminalId" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FiatCurrency" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="FiatAmount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="FiatFee" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Rate" Type="Decimal" Precision="20" Scale="9" />
+        </EntityType>
+        <EntityType Name="Terminal">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Longitude" Type="Decimal" Precision="18" Scale="9" />
+          <Property Name="Latitude" Type="Decimal" Precision="18" Scale="9" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <Property Name="Version" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="SerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DefaultFiatCurrency" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="DefaultCryptoCurrency" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Currency" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="Balance" Type="Decimal" Nullable="false" Precision="20" Scale="9" />
+          <NavigationProperty Name="Customer" Relationship="DiamondCircle_dbModel.FK_Account_0" FromRole="Account" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Identified" Type="Boolean" />
+          <NavigationProperty Name="Account" Relationship="DiamondCircle_dbModel.FK_Account_0" FromRole="Customer" ToRole="Account" />
+          <NavigationProperty Name="Addresses" Relationship="DiamondCircle_dbModel.FK_Addresses_Customer" FromRole="Customer" ToRole="Address" />
+          <NavigationProperty Name="CustomerBanks" Relationship="DiamondCircle_dbModel.FK_CustomerBanks_Customer" FromRole="Customer" ToRole="CustomerBank" />
+          <NavigationProperty Name="TradingHistories" Relationship="DiamondCircle_dbModel.FK_TradingHistory_Customer" FromRole="Customer" ToRole="TradingHistory" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DOB" Type="DateTime" Precision="3" />
+          <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cards" Relationship="DiamondCircle_dbModel.FK_Cards_Customer" FromRole="Customer" ToRole="Card" />
+        </EntityType>
+        <Association Name="FK_Account_0">
+          <End Type="DiamondCircle_dbModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="DiamondCircle_dbModel.Account" Role="Account" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="CustomerId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="AddressLine1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AddressLine2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Suburb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Postcode" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="CountryId" Type="Int32" />
+          <Property Name="LandLine" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Customer" Relationship="DiamondCircle_dbModel.FK_Addresses_Customer" FromRole="Address" ToRole="Customer" />
+          <Property Name="AddressTypeId" Type="Int32" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AddressType1" Relationship="DiamondCircle_dbModel.FK_Addresses_AddressTypes" FromRole="Address" ToRole="AddressType" />
+          <NavigationProperty Name="country" Relationship="DiamondCircle_dbModel.FK_Addresses_Countries" FromRole="Address" ToRole="country" />
+        </EntityType>
+        <EntityType Name="CustomerBank">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="BSB" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Name="AccountNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PayPal" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="SWIFT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IBAN" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Customer" Relationship="DiamondCircle_dbModel.FK_CustomerBanks_Customer" FromRole="CustomerBank" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="UploadFile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FileName" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="FileRealName" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Createdate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="UserProfile" Relationship="DiamondCircle_dbModel.FK_UploadFiles_user" FromRole="UploadFile" ToRole="UserProfile" />
+        </EntityType>
+        <EntityType Name="UserDetail">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="56" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UploadFiles" Relationship="DiamondCircle_dbModel.FK_UploadFiles_user" FromRole="UserProfile" ToRole="UploadFile" />
+          <NavigationProperty Name="webpages_Roles" Relationship="DiamondCircle_dbModel.webpages_UsersInRoles" FromRole="UserProfile" ToRole="webpages_Roles" />
+        </EntityType>
+        <Association Name="FK_Addresses_Customer">
+          <End Type="DiamondCircle_dbModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="DiamondCircle_dbModel.Address" Role="Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerBanks_Customer">
+          <End Type="DiamondCircle_dbModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="DiamondCircle_dbModel.CustomerBank" Role="CustomerBank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="CustomerBank">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UploadFiles_user">
+          <End Type="DiamondCircle_dbModel.UserProfile" Role="UserProfile" Multiplicity="1" />
+          <End Type="DiamondCircle_dbModel.UploadFile" Role="UploadFile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UploadFile">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="DiamondCircle_dbModel.AspNetUserRoles" FromRole="AspNetRole" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="DiamondCircle_dbModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaim" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="DiamondCircle_dbModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogin" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUserManagement">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="DisableSignIn" Type="Boolean" Nullable="false" />
+          <Property Name="LastSignInTimeUtc" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="AspNetUser" Relationship="DiamondCircle_dbModel.FK_dbo_AspNetUserManagement_dbo_AspNetUsers_UserId" FromRole="AspNetUserManagement" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="DiamondCircle_dbModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserClaim" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="DiamondCircle_dbModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserLogin" />
+          <NavigationProperty Name="AspNetUserManagement" Relationship="DiamondCircle_dbModel.FK_dbo_AspNetUserManagement_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserManagement" />
+          <NavigationProperty Name="AspNetRoles" Relationship="DiamondCircle_dbModel.AspNetUserRoles" FromRole="AspNetUser" ToRole="AspNetRole" />
+        </EntityType>
+        <EntityType Name="AspNetUserSecret">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Secret" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ConfirmationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="IsConfirmed" Type="Boolean" />
+          <Property Name="LastPasswordFailureDate" Type="DateTime" Precision="3" />
+          <Property Name="PasswordFailuresSinceLastSuccess" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordChangedDate" Type="DateTime" Precision="3" />
+          <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordVerificationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordVerificationTokenExpirationDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="webpages_OAuthMembership">
+          <Key>
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
+          </Key>
+          <Property Name="Provider" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ProviderUserId" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserProfiles" Relationship="DiamondCircle_dbModel.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="UserProfile" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Type="DiamondCircle_dbModel.AspNetUser" Role="AspNetUser" Multiplicity="0..1" />
+          <End Type="DiamondCircle_dbModel.AspNetUserClaim" Role="AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaim">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Type="DiamondCircle_dbModel.AspNetUser" Role="AspNetUser" Multiplicity="0..1" />
+          <End Type="DiamondCircle_dbModel.AspNetUserLogin" Role="AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogin">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserManagement_dbo_AspNetUsers_UserId">
+          <End Type="DiamondCircle_dbModel.AspNetUser" Role="AspNetUser" Multiplicity="1" />
+          <End Type="DiamondCircle_dbModel.AspNetUserManagement" Role="AspNetUserManagement" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserManagement">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Type="DiamondCircle_dbModel.AspNetRole" Role="AspNetRole" Multiplicity="*" />
+          <End Type="DiamondCircle_dbModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
+        </Association>
+        <Association Name="webpages_UsersInRoles">
+          <End Type="DiamondCircle_dbModel.webpages_Roles" Role="webpages_Roles" Multiplicity="*" />
+          <End Type="DiamondCircle_dbModel.UserProfile" Role="UserProfile" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="CurrencyId" />
+          </Key>
+          <Property Name="CurrencyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CurrencyAbbrev" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="CurrencyDescription" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastModifiedUser" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CountryId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CardCurrencies" Relationship="DiamondCircle_dbModel.FK_CardCurrency_Currency" FromRole="Currency" ToRole="CardCurrency" />
+          <NavigationProperty Name="country" Relationship="DiamondCircle_dbModel.FK_Currency_countries" FromRole="Currency" ToRole="country" />
+        </EntityType>
+        <EntityType Name="Token">
+          <Key>
+            <PropertyRef Name="TokenId" />
+          </Key>
+          <Property Name="TokenId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TokenKey" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="TokenValue" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TradingHistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="CustomerId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OrderType" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="20" Scale="9" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="29" Scale="9" />
+          <Property Name="NumuratorCurrency" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="DeominatorCurrency" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Customer" Relationship="DiamondCircle_dbModel.FK_TradingHistory_Customer" FromRole="TradingHistory" ToRole="Customer" />
+        </EntityType>
+        <Association Name="FK_TradingHistory_Customer">
+          <End Type="DiamondCircle_dbModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="DiamondCircle_dbModel.TradingHistory" Role="TradingHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="TradingHistory">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CardCurrency">
+          <Key>
+            <PropertyRef Name="CardCurrencyId" />
+          </Key>
+          <Property Name="CardCurrencyId" Type="Int32" Nullable="false" />
+          <Property Name="CardId" Type="String" Nullable="false" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="FiatCurrencyId" Type="Int32" Nullable="false" />
+          <Property Name="Balance" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+          <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastModifiedUser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Currency" Relationship="DiamondCircle_dbModel.FK_CardCurrency_Currency" FromRole="CardCurrency" ToRole="Currency" />
+          <NavigationProperty Name="CardCurrencyHistories" Relationship="DiamondCircle_dbModel.FK_CardCurrencyHistory_CardCurrency" FromRole="CardCurrency" ToRole="CardCurrencyHistory" />
+          <NavigationProperty Name="Card" Relationship="DiamondCircle_dbModel.FK_CardCurrency_Cards" FromRole="CardCurrency" ToRole="Card" />
+        </EntityType>
+        <EntityType Name="CardCurrencyHistory">
+          <Key>
+            <PropertyRef Name="FiatHistoryId" />
+          </Key>
+          <Property Name="FiatHistoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CardCurrencyId" Type="Int32" Nullable="false" />
+          <Property Name="CreditAmount" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="DebitAmount" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="DateActioned" Type="DateTime" Precision="3" />
+          <Property Name="DateConfirmed" Type="DateTime" Precision="3" />
+          <Property Name="Reference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TransactionDetails" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CardCurrency" Relationship="DiamondCircle_dbModel.FK_CardCurrencyHistory_CardCurrency" FromRole="CardCurrencyHistory" ToRole="CardCurrency" />
+        </EntityType>
+        <Association Name="FK_CardCurrency_Currency">
+          <End Type="DiamondCircle_dbModel.Currency" Role="Currency" Multiplicity="1" />
+          <End Type="DiamondCircle_dbModel.CardCurrency" Role="CardCurrency" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="CurrencyId" />
+            </Principal>
+            <Dependent Role="CardCurrency">
+              <PropertyRef Name="FiatCurrencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CardCurrencyHistory_CardCurrency">
+          <End Type="DiamondCircle_dbModel.CardCurrency" Role="CardCurrency" Multiplicity="1" />
+          <End Type="DiamondCircle_dbModel.CardCurrencyHistory" Role="CardCurrencyHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CardCurrency">
+              <PropertyRef Name="CardCurrencyId" />
+            </Principal>
+            <Dependent Role="CardCurrencyHistory">
+              <PropertyRef Name="CardCurrencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SendBitcoin">
+          <Key>
+            <PropertyRef Name="SendBitcoinId" />
+          </Key>
+          <Property Name="SendBitcoinId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CardId" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="Sender" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Receiver" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="BTCAmount" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+          <NavigationProperty Name="Card" Relationship="DiamondCircle_dbModel.FK_SendBitcoin_Cards" FromRole="SendBitcoin" ToRole="Card" />
+        </EntityType>
+        <EntityType Name="AddressType">
+          <Key>
+            <PropertyRef Name="AddressTypeId" />
+          </Key>
+          <Property Name="AddressTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AddressTypeDescription" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Addresses" Relationship="DiamondCircle_dbModel.FK_Addresses_AddressTypes" FromRole="AddressType" ToRole="Address" />
+        </EntityType>
+        <Association Name="FK_Addresses_AddressTypes">
+          <End Type="DiamondCircle_dbModel.AddressType" Role="AddressType" Multiplicity="0..1" />
+          <End Type="DiamondCircle_dbModel.Address" Role="Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressType">
+              <PropertyRef Name="AddressTypeId" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="AddressTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="country">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="40" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Addresses" Relationship="DiamondCircle_dbModel.FK_Addresses_Countries" FromRole="country" ToRole="Address" />
+          <NavigationProperty Name="Currencies" Relationship="DiamondCircle_dbModel.FK_Currency_countries" FromRole="country" ToRole="Currency" />
+        </EntityType>
+        <Association Name="FK_Addresses_Countries">
+          <End Type="DiamondCircle_dbModel.country" Role="country" Multiplicity="0..1" />
+          <End Type="DiamondCircle_dbModel.Address" Role="Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Currency_countries">
+          <End Type="DiamondCircle_dbModel.country" Role="country" Multiplicity="1" />
+          <End Type="DiamondCircle_dbModel.Currency" Role="Currency" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Currency">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Card">
+          <Key>
+            <PropertyRef Name="CardId" />
+          </Key>
+          <Property Name="CustomerID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="DateIssued" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CardId" Type="String" Nullable="false" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="256" FixedLength="true" Unicode="true" />
+          <Property Name="PublicKey" Type="String" MaxLength="34" FixedLength="true" Unicode="true" />
+          <Property Name="Pin" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="TempPublicKey" Type="String" MaxLength="34" FixedLength="true" Unicode="true" />
+          <Property Name="CreditCardId" Type="Guid" />
+          <NavigationProperty Name="CardCurrencies" Relationship="DiamondCircle_dbModel.FK_CardCurrency_Cards" FromRole="Card" ToRole="CardCurrency" />
+          <NavigationProperty Name="CreditCard" Relationship="DiamondCircle_dbModel.FK_Cards_CreditCard" FromRole="Card" ToRole="CreditCard" />
+          <NavigationProperty Name="Customer" Relationship="DiamondCircle_dbModel.FK_Cards_Customer" FromRole="Card" ToRole="Customer" />
+          <NavigationProperty Name="SendBitcoins" Relationship="DiamondCircle_dbModel.FK_SendBitcoin_Cards" FromRole="Card" ToRole="SendBitcoin" />
+          <NavigationProperty Name="Transactions" Relationship="DiamondCircle_dbModel.FK_Transaction_Cards" FromRole="Card" ToRole="Transaction" />
+        </EntityType>
+        <EntityType Name="CreditCard">
+          <Key>
+            <PropertyRef Name="CreditCardId" />
+          </Key>
+          <Property Name="CreditCardId" Type="Guid" Nullable="false" />
+          <Property Name="CardHolderName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CardNumber" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ExpiryDate" Type="DateTime" Precision="0" />
+          <Property Name="CVC2" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DOB" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AddressLine1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Suburb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Postcode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CountryId" Type="Int32" />
+          <Property Name="ExpiryMonth" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="ExpiryYear" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="CountryName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cards" Relationship="DiamondCircle_dbModel.FK_Cards_CreditCard" FromRole="CreditCard" ToRole="Card" />
+        </EntityType>
+        <Association Name="FK_CardCurrency_Cards">
+          <End Type="DiamondCircle_dbModel.Card" Role="Card" Multiplicity="1" />
+          <End Type="DiamondCircle_dbModel.CardCurrency" Role="CardCurrency" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Card">
+              <PropertyRef Name="CardId" />
+            </Principal>
+            <Dependent Role="CardCurrency">
+              <PropertyRef Name="CardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cards_CreditCard">
+          <End Type="DiamondCircle_dbModel.CreditCard" Role="CreditCard" Multiplicity="0..1" />
+          <End Type="DiamondCircle_dbModel.Card" Role="Card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CreditCard">
+              <PropertyRef Name="CreditCardId" />
+            </Principal>
+            <Dependent Role="Card">
+              <PropertyRef Name="CreditCardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cards_Customer">
+          <End Type="DiamondCircle_dbModel.Customer" Role="Customer" Multiplicity="0..1" />
+          <End Type="DiamondCircle_dbModel.Card" Role="Card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Card">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SendBitcoin_Cards">
+          <End Type="DiamondCircle_dbModel.Card" Role="Card" Multiplicity="0..1" />
+          <End Type="DiamondCircle_dbModel.SendBitcoin" Role="SendBitcoin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Card">
+              <PropertyRef Name="CardId" />
+            </Principal>
+            <Dependent Role="SendBitcoin">
+              <PropertyRef Name="CardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transaction_Cards">
+          <End Type="DiamondCircle_dbModel.Card" Role="Card" Multiplicity="0..1" />
+          <End Type="DiamondCircle_dbModel.Transaction" Role="Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Card">
+              <PropertyRef Name="CardId" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="CardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DiamondCircle_dbModelStoreContainer" CdmEntityContainer="DiamondCircle_dbEntities">
+          <EntitySetMapping Name="Transactions">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.Transaction">
+              <MappingFragment StoreEntitySet="Transaction">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="CardId" ColumnName="CardId" />
+                <ScalarProperty Name="TransType" ColumnName="TransType" />
+                <ScalarProperty Name="TerminalId" ColumnName="TerminalId" />
+                <ScalarProperty Name="NumuratorCurrency" ColumnName="NumuratorCurrency" />
+                <ScalarProperty Name="DeominatorCurrency" ColumnName="DeominatorCurrency" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Reference" ColumnName="Reference" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ColdStorages">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.ColdStorage">
+              <MappingFragment StoreEntitySet="ColdStorage">
+                <ScalarProperty Name="BitcoinAddress" ColumnName="BitcoinAddress" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Margins">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.Margin">
+              <MappingFragment StoreEntitySet="Margins">
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="FiatFee" ColumnName="FiatFee" />
+                <ScalarProperty Name="FiatAmount" ColumnName="FiatAmount" />
+                <ScalarProperty Name="FiatCurrency" ColumnName="FiatCurrency" />
+                <ScalarProperty Name="TerminalId" ColumnName="TerminalId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Terminals">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.Terminal">
+              <MappingFragment StoreEntitySet="Terminals">
+                <ScalarProperty Name="DefaultCryptoCurrency" ColumnName="DefaultCryptoCurrency" />
+                <ScalarProperty Name="DefaultFiatCurrency" ColumnName="DefaultFiatCurrency" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedUser" ColumnName="ModifiedUser" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Identified" ColumnName="Identified" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Addresses">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.Address">
+              <MappingFragment StoreEntitySet="Addresses">
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="AddressTypeId" ColumnName="AddressTypeId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="LandLine" ColumnName="LandLine" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+                <ScalarProperty Name="Suburb" ColumnName="Suburb" />
+                <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+                <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerBanks">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.CustomerBank">
+              <MappingFragment StoreEntitySet="CustomerBanks">
+                <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+                <ScalarProperty Name="SWIFT" ColumnName="SWIFT" />
+                <ScalarProperty Name="PayPal" ColumnName="PayPal" />
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="BSB" ColumnName="BSB" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UploadFiles">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.UploadFile">
+              <MappingFragment StoreEntitySet="UploadFiles">
+                <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+                <ScalarProperty Name="FileRealName" ColumnName="FileRealName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserDetails">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.UserDetail">
+              <MappingFragment StoreEntitySet="UserDetails">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserProfiles">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserManagements">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.AspNetUserManagement">
+              <MappingFragment StoreEntitySet="AspNetUserManagement">
+                <ScalarProperty Name="LastSignInTimeUtc" ColumnName="LastSignInTimeUtc" />
+                <ScalarProperty Name="DisableSignIn" ColumnName="DisableSignIn" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserSecrets">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.AspNetUserSecret">
+              <MappingFragment StoreEntitySet="AspNetUserSecrets">
+                <ScalarProperty Name="Secret" ColumnName="Secret" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_Membership">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.webpages_Membership">
+              <MappingFragment StoreEntitySet="webpages_Membership">
+                <ScalarProperty Name="PasswordVerificationTokenExpirationDate" ColumnName="PasswordVerificationTokenExpirationDate" />
+                <ScalarProperty Name="PasswordVerificationToken" ColumnName="PasswordVerificationToken" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="PasswordChangedDate" ColumnName="PasswordChangedDate" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PasswordFailuresSinceLastSuccess" ColumnName="PasswordFailuresSinceLastSuccess" />
+                <ScalarProperty Name="LastPasswordFailureDate" ColumnName="LastPasswordFailureDate" />
+                <ScalarProperty Name="IsConfirmed" ColumnName="IsConfirmed" />
+                <ScalarProperty Name="ConfirmationToken" ColumnName="ConfirmationToken" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_OAuthMembership">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.webpages_OAuthMembership">
+              <MappingFragment StoreEntitySet="webpages_OAuthMembership">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProviderUserId" ColumnName="ProviderUserId" />
+                <ScalarProperty Name="Provider" ColumnName="Provider" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_Roles">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.webpages_Roles">
+              <MappingFragment StoreEntitySet="webpages_Roles">
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="DiamondCircle_dbModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetUser">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="AspNetRole">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="webpages_UsersInRoles" TypeName="DiamondCircle_dbModel.webpages_UsersInRoles" StoreEntitySet="webpages_UsersInRoles">
+            <EndProperty Name="UserProfile">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="webpages_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="Currencies">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.Currency">
+              <MappingFragment StoreEntitySet="Currency">
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="LastModifiedUser" ColumnName="LastModifiedUser" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="CurrencyDescription" ColumnName="CurrencyDescription" />
+                <ScalarProperty Name="CurrencyAbbrev" ColumnName="CurrencyAbbrev" />
+                <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tokens">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.Token">
+              <MappingFragment StoreEntitySet="Tokens">
+                <ScalarProperty Name="TokenValue" ColumnName="TokenValue" />
+                <ScalarProperty Name="TokenKey" ColumnName="TokenKey" />
+                <ScalarProperty Name="TokenId" ColumnName="TokenId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TradingHistories">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.TradingHistory">
+              <MappingFragment StoreEntitySet="TradingHistory">
+                <ScalarProperty Name="DeominatorCurrency" ColumnName="DeominatorCurrency" />
+                <ScalarProperty Name="NumuratorCurrency" ColumnName="NumuratorCurrency" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CardCurrencies">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.CardCurrency">
+              <MappingFragment StoreEntitySet="CardCurrency">
+                <ScalarProperty Name="LastModifiedUser" ColumnName="LastModifiedUser" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="FiatCurrencyId" ColumnName="FiatCurrencyId" />
+                <ScalarProperty Name="CardId" ColumnName="CardId" />
+                <ScalarProperty Name="CardCurrencyId" ColumnName="CardCurrencyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CardCurrencyHistories">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.CardCurrencyHistory">
+              <MappingFragment StoreEntitySet="CardCurrencyHistory">
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="TransactionDetails" ColumnName="TransactionDetails" />
+                <ScalarProperty Name="Reference" ColumnName="Reference" />
+                <ScalarProperty Name="DateConfirmed" ColumnName="DateConfirmed" />
+                <ScalarProperty Name="DateActioned" ColumnName="DateActioned" />
+                <ScalarProperty Name="DebitAmount" ColumnName="DebitAmount" />
+                <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+                <ScalarProperty Name="CardCurrencyId" ColumnName="CardCurrencyId" />
+                <ScalarProperty Name="FiatHistoryId" ColumnName="FiatHistoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SendBitcoins">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.SendBitcoin">
+              <MappingFragment StoreEntitySet="SendBitcoin">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="BTCAmount" ColumnName="BTCAmount" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Receiver" ColumnName="Receiver" />
+                <ScalarProperty Name="Sender" ColumnName="Sender" />
+                <ScalarProperty Name="CardId" ColumnName="CardId" />
+                <ScalarProperty Name="SendBitcoinId" ColumnName="SendBitcoinId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AddressTypes">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.AddressType">
+              <MappingFragment StoreEntitySet="AddressTypes">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="AddressTypeDescription" ColumnName="AddressTypeDescription" />
+                <ScalarProperty Name="AddressTypeId" ColumnName="AddressTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="countries">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.country">
+              <MappingFragment StoreEntitySet="countries">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cards">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.Card">
+              <MappingFragment StoreEntitySet="Cards">
+                <ScalarProperty Name="CreditCardId" ColumnName="CreditCardId" />
+                <ScalarProperty Name="TempPublicKey" ColumnName="TempPublicKey" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Pin" ColumnName="Pin" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CardId" ColumnName="CardId" />
+                <ScalarProperty Name="DateIssued" ColumnName="DateIssued" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CreditCards">
+            <EntityTypeMapping TypeName="DiamondCircle_dbModel.CreditCard">
+              <MappingFragment StoreEntitySet="CreditCard">
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="ExpiryYear" ColumnName="ExpiryYear" />
+                <ScalarProperty Name="ExpiryMonth" ColumnName="ExpiryMonth" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+                <ScalarProperty Name="Suburb" ColumnName="Suburb" />
+                <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CVC2" ColumnName="CVC2" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+                <ScalarProperty Name="CardHolderName" ColumnName="CardHolderName" />
+                <ScalarProperty Name="CreditCardId" ColumnName="CreditCardId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Portal.CustomerBank>
+
+@{
+    ViewBag.Title = "Bank Details";
+}
+
+<h2>Bank Details</h2>
+
+ @if (Model.Count()==0)
+      {
+<p>
+   
+   
+        @Html.ActionLink("Create New", "Create")
+   
+  
+</p>
+      }
+else
+{
+     <div class="datagrid">
+<table>
+    <thead>
+    <tr>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.BSB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AccountNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PayPal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SWIFT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IBAN)
+        </th>
+        <th></th>
+    </tr>
+</thead>
+@foreach (var item in Model) {
+    <tr>
+       
+          @Html.HiddenFor(modelItem => item.CustomerId)
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.BSB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccountNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PayPal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SWIFT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IBAN)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) 
+          
+        </td>
+    </tr>
+}
+
+</table>
+</div>
+ }

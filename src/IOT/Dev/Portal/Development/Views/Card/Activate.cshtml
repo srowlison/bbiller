@@ -1,0 +1,75 @@
+﻿@model DC.Data.Card
+
+@{
+    ViewBag.Title = "Activate Card";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    $(".inputs").keyup(function () {
+        if (this.value.length == 5) {
+            $(this).next('.inputprivatekey').focus();
+        }
+    });
+</script>
+
+<div class="row">
+    <div class="col gu24"
+         style="height:10px">
+        &nbsp;
+    </div>
+</div>
+<div class="row" style="height:60px">
+    <div class="col gu24">
+        <h2>Activate your card</h2>
+    </div>
+</div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+
+        <div class="row" style="height:300px">
+
+        @Html.HiddenFor(model => model.CustomerID, "Customer")
+ 
+        @*@if (!ViewData.ModelState.IsValid)
+        {
+        <div class="errorMessage">@Html.ValidationMessage("Error")</div>
+        }
+        else
+        {*@
+        <h3 style="color:green">@Html.Raw(TempData["Msg"])</h3>
+        
+        <div class="row" style="height:280px">
+            <div class="col gu4">
+                <label>Enter the card ID:</label>
+            </div>
+            <div class="col gu11">
+
+                @Html.TextBoxFor(model => model.CardId, new { @class = "textbox" })
+                @* @Html.ValidationMessageFor(model => model.CardId)*@
+            </div>
+            <div class="col gu9">
+                &nbsp;
+            </div>
+        </div>
+        </div>
+        <div class="row"
+             style="height:150px; vertical-align:bottom;">
+
+            <div class="col gu8">
+                @Html.ActionLink("Cancel", "Index", "Home", routeValues: null, htmlAttributes: new { @class = "cancelbutton" })
+            </div>
+            <div class="col gu8" style="float:right;"></div>
+
+            @*I really don't think i have done this in a neat way, but until we remove/replce the button, I did this as a fix*@
+            <div class="col gu8" style="float:right;">
+                <input type="submit" value=" " class="activatecardbutton" />
+            </div>
+        </div>
+    }
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BitcoinATM.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TerminalId" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="PrinterVendorId" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">3540</Value>
+    </Setting>
+    <Setting Name="PrinterProductId" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">424</Value>
+    </Setting>
+    <Setting Name="WebRelayIP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">192.168.50.254</Value>
+    </Setting>
+    <Setting Name="Country" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Australia</Value>
+    </Setting>
+    <Setting Name="IPAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">101.187.126.48</Value>
+    </Setting>
+    <Setting Name="DefaultCurrency" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AUD</Value>
+    </Setting>
+    <Setting Name="RelayInstalled" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

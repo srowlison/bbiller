@@ -1,0 +1,73 @@
+﻿@model Portal.Models.TransferModel
+
+@{
+    ViewBag.Title = "Transfer Bitcoin";
+}
+<div class="row">&nbsp;
+</div>
+<h2>Transfer for Card: @Html.Raw(Model.CardId) </h2>
+<h3>Current Bitcoin balance: @Html.Raw(Model.Balance) </h3>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.CardId)
+        @Html.ValidationSummary(true)
+
+        <div class="row">
+
+            <div class="col gu5" style="height: 60px">
+                @Html.LabelFor(model => model.PrivateKey)
+
+            </div>
+            <div class="col gu19">
+                @Html.TextBoxFor(model => model.PrivateKey, new { @class = "long-text", maxlength = 88, autocomplete = "off" })
+                @Html.ValidationMessageFor(model => model.PrivateKey)
+            </div>
+        </div>
+        <div class="row" style="height: 60px">
+
+            <div class="col gu5">
+                @Html.LabelFor(model => model.DestinationAddress)
+            </div>
+            <div class="col gu19">
+                @Html.TextBoxFor(model => model.DestinationAddress, new { @class = "long-text", maxlength = 88 })
+                @Html.ValidationMessageFor(model => model.DestinationAddress)
+            </div>
+ 
+        </div>
+        <div class="row" style="height: 120px">
+            @* TODO Display available balance *@
+            <div class="col gu5" style="float: left; text-align:left; ">
+                @Html.LabelFor(model => model.AmountToTransferInBtc)
+            </div>
+            <div class="col gu19">
+                @Html.EditorFor(model => model.AmountToTransferInBtc) @* TODO display balance in AUD via Ajax call for info *@
+                @Html.ValidationMessageFor(model => model.AmountToTransferInBtc)
+            </div>
+
+
+        </div>
+
+        <div class="row"
+             style="height:150px; vertical-align:bottom;">
+
+            <div class="col gu8">
+                @Html.ActionLink("Cancel", "Index", routeValues: null, htmlAttributes: new { @class = "cancelbutton" })
+            </div>
+            <div class="col gu8" style="float:right;"></div>
+                @*I really don't think i have done this in a neat way, but until we remove/replce the button, I did this as a fix*@
+
+                <div class="col gu8" style="float:right;">
+                    <input type="submit" value=" " class="transferbuttonblue" />
+
+
+                </div>
+
+            </div>
+    }
+
+
+
+

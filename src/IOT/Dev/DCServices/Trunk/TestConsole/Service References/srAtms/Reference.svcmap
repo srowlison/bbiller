@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="389b5403-84bc-4299-abdc-9bd76524ab81" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dcnode-1.cloudapp.net/atm.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="atm3.xsd" MetadataType="Schema" ID="3a4cc0e2-ca15-4630-b290-827510538393" SourceId="1" SourceUrl="http://dcnode-1.cloudapp.net/atm.svc?xsd=xsd2" />
+    <MetadataFile FileName="atm31.xsd" MetadataType="Schema" ID="f0a3fb6f-d4f5-400a-814e-8da0174ec2c1" SourceId="1" SourceUrl="http://dcnode-1.cloudapp.net/atm.svc?xsd=xsd0" />
+    <MetadataFile FileName="atm32.xsd" MetadataType="Schema" ID="8351d3ed-e7a0-4d08-af0a-319e3a82e011" SourceId="1" SourceUrl="http://dcnode-1.cloudapp.net/atm.svc?xsd=xsd1" />
+    <MetadataFile FileName="atm1.disco" MetadataType="Disco" ID="650a1649-867c-4cf4-863f-ca11835624ac" SourceId="1" SourceUrl="http://dcnode-1.cloudapp.net/atm.svc?disco" />
+    <MetadataFile FileName="atm1.wsdl" MetadataType="Wsdl" ID="31fa676f-5da8-444a-ba8e-ae18e5a7a3aa" SourceId="1" SourceUrl="http://dcnode-1.cloudapp.net/atm.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

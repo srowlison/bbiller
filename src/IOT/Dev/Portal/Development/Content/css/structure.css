@@ -1,0 +1,259 @@
+body {background: #999;}
+.page-section {position:relative; width:100%;}
+.pg-canvas {margin:0 auto; position:relative; zoom:1; padding: 0 20px; background: #fff;}
+
+/**
+ * PAGE SECTIONS
+ * 
+ * Different backgrouns to visually differentiate page sections.
+ */
+.pg-header {background: #999;}
+.pg-header .pg-canvas {background: #f0f0f0;}
+
+.pg-contents {background: #fff;
+              color:#013A57;
+              font-family:Arial;
+}
+.pg-login { background-color:transparent;
+            background: #FF9F17;
+           height:80px;}
+.pg-home {background:#fff;}
+
+.pg-footer {background: #FF9F17;
+            height:150px;
+            padding-top:8px;
+            color:white; 
+            height:40px;
+            font-family:Arial;
+            font-size:12px;
+            text-align:center;
+}
+
+.pg-footer .pg-canvas {background: #e0e0e0;}
+
+/**
+    TABLES
+    */
+
+table.table1{
+    width:940px;
+    padding-right:5px;
+    border:1px;
+   border-color:red;
+}
+
+.table1 thead th {
+    background-color:#013A57;
+    color:white;
+    font-weight:bold;
+    border:solid;
+    border:5px;
+    }
+.tr {
+    height:20px;
+    border-bottom:5px;
+    border-color:red;
+}
+tr:nth-child(even) {
+  background-color: #ccd7dd;
+}
+ 
+tr:nth-child(odd) {
+  background-color:white;
+}
+
+
+
+
+
+
+/**
+ * BANDS 
+ */
+
+.blueband {
+    background:#013A57; 
+    color:#fff; 
+    height:80px;
+}
+
+/**
+ * LINK BUTTONS
+ */
+
+
+
+.orangebutton {
+    left:20%;
+    background-color:RGB(255,159,23);
+    color:white;
+    height:60px;
+    width:280px;
+    text-align:center;
+    vertical-align:middle;
+    font-family:helvetica;
+    font-weight:bold;
+    border:1px;
+    border-color:white;
+    font-size:24px;
+}
+.loginbutton{
+    display:block;
+    margin-top:10px;
+    position:absolute;
+    left:10%;
+    font-size:24px;
+    font-weight:bold;
+    padding: 15px 106px;
+    color: #ffffff! important;
+    background: #003b54! important;
+}
+
+.registerbutton{
+    display:block; 
+    margin-top:10px;
+    position:absolute;
+    right:10%;
+    font-size:24px;
+    font-weight:bold;
+    padding: 15px 106px;
+    color: #003b54! important;
+    background: #ffffff! important;
+}
+
+.logoutbutton{
+    background: url(../../Images/logout_button.png) no-repeat top left;
+    display:block;
+    margin-top:10px;
+    position:absolute;
+    left:10%;
+    height:60px;
+    width:280px;
+}
+
+.manageaccountbutton{
+    background: url(../../Images/account_button.png) no-repeat top left;
+    display:block; 
+    margin-top:10px;
+    position:absolute;
+    right:10%;
+    height:60px;
+    width:280px;
+}
+
+.activatecardbutton{
+    background: url(../../Images/activate_blue_button.png) no-repeat top left;
+    display:block; 
+    margin-top:10px;
+    position:absolute;
+    right:10%;
+    height:60px;
+    width:280px;
+}
+
+.transferbuttonblue{
+    background: url(../../Images/transfer_button_blue.png) /*no-repeat top left*/;
+    display:block;
+    margin-top:10px;
+    /*right:10%;*/
+    height:60px;
+    width:280px;
+}
+
+.buybitcoinbuttonblue{
+    background: url(../../Images/transfer_button_blue.png) /*no-repeat top left*/;
+    display:block;
+    margin-top:10px;
+    /*right:10%;*/
+    height:60px;
+    width:280px;
+}
+
+.cancelbutton{
+    display:block; 
+    margin-top:10px;
+    position:absolute;
+    left:10%;
+    font-size:24px;
+    font-weight:bold;
+    padding: 15px 106px;
+    color: #003b54! important;
+    background: #ffffff! important;
+    border: 1px solid #e2e2e2;
+}
+
+
+.widetextbox {
+    position:left;
+    width:500px;
+}
+
+.textbox {
+    width:300px;
+}
+
+inputs{
+    width:400px;
+    position:left;
+}
+
+.inputprivatekey{
+       width:500px;
+    position:left;
+
+
+}
+
+.errorMessage{
+    text-decoration-color:red;
+    color:red;
+    /*font-size:larger*/
+}
+
+        label {
+            display: block;
+            margin-top: 3px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        input, textarea {
+            margin-top: 3px;
+            font-size: 1.0em;
+            margin-bottom: 5px;
+            border: 1px solid #e2e2e2;
+            padding: 5px;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #7ac0da;
+        }
+
+        input.long-text {
+            width: 532px;
+        }
+
+        /* styles for validation helpers */
+        .field-validation-error {
+            color: #e80c4d;
+        }
+
+        .field-validation-valid {
+            display: none;
+        }
+
+        input.input-validation-error {
+            border: 1px solid #e80c4d;
+        }
+
+        .validation-summary-errors {
+            color: #e80c4d;
+        }
+
+        .validation-summary-valid {
+            display: none;
+        }
+
+        .validation-summary-errors ul {
+            padding-left: 15px;
+        }

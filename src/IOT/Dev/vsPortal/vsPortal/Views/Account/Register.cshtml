@@ -1,0 +1,69 @@
+﻿@model Portal.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title</h1>
+</hgroup>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <div class="row">
+        <div class="col gu4">
+            <p>@Html.LabelFor(m => m.UserName, new { @class = "label" })</p>
+        </div>
+        <div class="col gu15">
+            <p>@Html.TextBoxFor(m => m.UserName, new { @class = "textbox" })</p>
+        </div>
+        <div class="col gu10">
+            &nbsp;
+        </div>
+    </div>
+    <div class="row">
+        <div class="col gu4">
+            <p>@Html.LabelFor(m => m.Password, new { @class = "label" })</p>
+        </div>
+        <div class="col gu15">
+            <p>@Html.PasswordFor(m => m.Password, new { @class = "textbox" })</p>
+        </div>
+        <div class="col gu10">
+            &nbsp;
+        </div>
+    </div>
+    <div class="row">
+        <div class="col gu4">
+            <p>@Html.LabelFor(m => m.ConfirmPassword, new { @class = "label" })</p>
+        </div>
+        <div class="col gu15">
+            <p>@Html.PasswordFor(m => m.ConfirmPassword, new { @class = "textbox" })</p>
+        </div>
+        <div class="col gu10">
+            &nbsp;
+        </div>
+    </div>
+    <div class="row">
+        <div class="col gu4">
+            <p>@Html.LabelFor(m => m.Email, new { @class = "label" })</p>
+        </div>
+        <div class="col gu15">
+            <p>@Html.TextBoxFor(m => m.Email, new { @class = "textbox" })</p>
+        </div>
+        <div class="col gu10">
+            &nbsp;
+        </div>
+    </div>
+    <div class="row">
+         <div class="col gu11">
+             &nbsp;
+         </div>
+        <input type="submit" value="Register" class="registerbutton" />
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

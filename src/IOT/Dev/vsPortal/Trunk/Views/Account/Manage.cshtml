@@ -1,0 +1,36 @@
+﻿@model Portal.Models.LocalPasswordModel
+@{
+    ViewBag.Title = "Manage Account";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title</h1>
+</hgroup>
+
+<div class="view">
+    <p class="message-success">@ViewBag.StatusMessage</p>
+
+    @if (ViewBag.HasLocalPassword)
+    {
+        @Html.Partial("_ChangePasswordPartial")
+    }
+    else
+    { 
+        @Html.Partial("_SetPasswordPartial")
+    }
+    <div class="row"
+         style="height:150px; vertical-align:bottom;">
+
+        <div class="col gu8">
+            @Html.ActionLink("Contact Details", "Index", "Address", null, htmlAttributes: new { @class = "cancelbutton" })
+        </div>
+        <div class="col gu16" style="float:right;"></div>
+
+
+    </div>    
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

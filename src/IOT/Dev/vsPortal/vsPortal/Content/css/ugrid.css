@@ -1,0 +1,62 @@
+/*!
+ * UGrid Web Grid System 2.0
+ * http://webnicer.com/ugrid.html
+ *
+ * Copyright 2014, Jacek Ciolek <j.ciolek@webnicer.com>
+ * Dual licensed under the MIT or GPL Version 3 licences.
+ * http://webnicer.com/ugrid/licence.html
+ */
+.row:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+.row {display:inline-block;}
+.row {display:block;}
+.row {position:relative; margin-left:-10px;}
+.gu24 .row {width:960px;}
+.gu23 .row {width:920px;}
+.gu22 .row {width:880px;}
+.gu21 .row {width:840px;}
+.gu20 .row {width:800px;}
+.gu19 .row {width:760px;}
+.gu18 .row {width:720px;}
+.gu17 .row {width:680px;}
+.gu16 .row {width:640px;}
+.gu15 .row {width:600px;}
+.gu14 .row {width:560px;}
+.gu13 .row {width:520px;}
+.gu12 .row {width:480px;}
+.gu11 .row {width:440px;}
+.gu10 .row {width:400px;}
+.gu9 .row {width:360px;}
+.gu8 .row {width:320px;}
+.gu7 .row {width:280px;}
+.gu6 .row {width:240px;}
+.gu5 .row {width:200px;}
+.gu4 .row {width:160px;}
+.gu3 .row {width:120px;}
+.gu2 .row {width:80px;}
+.gu1 .row {width:40px;}
+
+.col {padding-left: 10px; float:left; position:relative;}
+.gu24 {width:950px;}
+.gu23 {width:910px;}
+.gu22 {width:870px;}
+.gu21 {width:830px;}
+.gu20 {width:790px;}
+.gu19 {width:750px;}
+.gu18 {width:710px;}
+.gu17 {width:670px;}
+.gu16 {width:630px;}
+.gu15 {width:590px;}
+.gu14 {width:550px;}
+.gu13 {width:510px;}
+.gu12 {width:470px;}
+.gu11 {width:430px;}
+.gu10 {width:390px;}
+.gu9 {width:350px;}
+.gu8 {width:310px;}
+.gu7 {width:270px;}
+.gu6 {width:230px;}
+.gu5 {width:190px;}
+.gu4 {width:150px;}
+.gu3 {width:110px;}
+.gu2 {width:70px;}
+.gu1 {width:30px;}

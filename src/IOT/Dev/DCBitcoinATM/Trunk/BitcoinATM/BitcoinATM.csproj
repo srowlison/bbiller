@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB564806-1430-4858-88EB-5D20CB780E96}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BitcoinATM</RootNamespace>
+    <AssemblyName>BitcoinATM</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.PosEftLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\AxInterop.PosEftLib.dll</HintPath>
+    </Reference>
+    <Reference Include="LibUsbDotNet, Version=2.2.8.104, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assembiles\LibUsbDotNet\LibUsbDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging">
+      <HintPath>..\packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Bitcoin.cs" />
+    <Compile Include="btcnfcfunctions.cs" />
+    <Compile Include="CustomPrinter.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ICrypto.cs" />
+    <Compile Include="ModWinsCard.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ATM\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DCCard\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DCDiagnostics\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DCExchange\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EftposTest.resx">
+      <DependentUpon>EftposTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Resources\EftposTest.resx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\ATM\atm.wsdl" />
+    <None Include="Service References\ATM\atm.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ATM\atm1.wsdl" />
+    <None Include="Service References\ATM\atm1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ATM\atm2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ATM\BitcoinATM.ATM.Keys.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ATM\BitcoinATM.ATM.Order.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DCCard\BitcoinATM.DCCard.OnlineAccount.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DCCard\Card.wsdl" />
+    <None Include="Service References\DCCard\Card.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DCCard\Card1.wsdl" />
+    <None Include="Service References\DCCard\Card1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DCDiagnostics\BitcoinATM.DCDiagnostics.TerminalSettings.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DCDiagnostics\Diagnostic.wsdl" />
+    <None Include="Service References\DCDiagnostics\Diagnostic.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DCDiagnostics\Diagnostic1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DCDiagnostics\Diagnostic2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DCDiagnostics\Diagnostic3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DCDiagnostics\Diagnostics.wsdl" />
+    <None Include="Service References\DCExchange\BitcoinATM.DCExchange.Margin.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DCExchange\Exchange.wsdl" />
+    <None Include="Service References\DCExchange\Exchange.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DCExchange\Exchange1.wsdl" />
+    <None Include="Service References\DCExchange\Exchange1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PrintingServices\PrintingServices.csproj">
+      <Project>{9211b25f-d128-48fa-bafa-24adf6dfb001}</Project>
+      <Name>PrintingServices</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\touch_panel1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sydney.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diamond-circle-nfc-tag_b18260be-78b5-4c83-aae1-1419bbd9d94a_2048x2048.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AxInterop.PosEftLib.dll" />
+    <Content Include="Interop.PosEftLib.dll" />
+    <None Include="Service References\DCDiagnostics\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DCDiagnostics\configuration.svcinfo" />
+    <None Include="Service References\DCDiagnostics\configuration91.svcinfo" />
+    <None Include="Service References\DCDiagnostics\Diagnostic.disco" />
+    <None Include="Service References\DCExchange\Exchange2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DCExchange\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DCExchange\configuration.svcinfo" />
+    <None Include="Service References\DCExchange\configuration91.svcinfo" />
+    <None Include="Service References\DCExchange\Exchange.disco" />
+    <None Include="Service References\ATM\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ATM\configuration.svcinfo" />
+    <None Include="Service References\ATM\configuration91.svcinfo" />
+    <None Include="Service References\ATM\atm.disco" />
+    <None Include="Service References\DCCard\Card2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DCCard\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DCCard\configuration.svcinfo" />
+    <None Include="Service References\DCCard\configuration91.svcinfo" />
+    <None Include="Service References\DCCard\Card.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ATM\" />
+    <WCFMetadataStorage Include="Service References\DCCard\" />
+    <WCFMetadataStorage Include="Service References\DCDiagnostics\" />
+    <WCFMetadataStorage Include="Service References\DCExchange\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

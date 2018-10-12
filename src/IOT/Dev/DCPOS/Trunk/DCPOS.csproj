@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F03F350-E980-4CA8-AD0B-055B345AE43E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DCPOS</RootNamespace>
+    <AssemblyName>DCPOS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>DCPOS.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="btcnfcfunctions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BuyBitcoin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuyBitcoin.Designer.cs">
+      <DependentUpon>BuyBitcoin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CardBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CardBalance.Designer.cs">
+      <DependentUpon>CardBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DCCommon.cs" />
+    <Compile Include="Factory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="INFC.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainFormForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFormForm.Designer.cs">
+      <DependentUpon>MainFormForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MerchantCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MerchantCard.Designer.cs">
+      <DependentUpon>MerchantCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModWinsCard.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NewCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewCard.Designer.cs">
+      <DependentUpon>NewCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PinPad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PinPad.Designer.cs">
+      <DependentUpon>PinPad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase.Designer.cs">
+      <DependentUpon>Purchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Refund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Refund.Designer.cs">
+      <DependentUpon>Refund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellBitcoin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellBitcoin.Designer.cs">
+      <DependentUpon>SellBitcoin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ATM\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Card\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DCExchange\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BuyBitcoin.resx">
+      <DependentUpon>BuyBitcoin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CardBalance.resx">
+      <DependentUpon>CardBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFormForm.resx">
+      <DependentUpon>MainFormForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MerchantCard.resx">
+      <DependentUpon>MerchantCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewCard.resx">
+      <DependentUpon>NewCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PinPad.resx">
+      <DependentUpon>PinPad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Purchase.resx">
+      <DependentUpon>Purchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Refund.resx">
+      <DependentUpon>Refund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellBitcoin.resx">
+      <DependentUpon>SellBitcoin.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\ATM\atm.wsdl" />
+    <None Include="Service References\ATM\Atm.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ATM\Atm1.wsdl" />
+    <None Include="Service References\ATM\Atm1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ATM\Atm2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ATM\DCPOS.ATM.Keys.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ATM\DCPOS.ATM.Order.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Card\Card.wsdl" />
+    <None Include="Service References\Card\Card.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Card\Card1.wsdl" />
+    <None Include="Service References\Card\Card1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Card\Card2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Card\DCPOS.Card.CCInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Card\DCPOS.Card.OnlineAccount.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DCExchange\DCPOS.DCExchange.Margin.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DCExchange\Exchange.wsdl" />
+    <None Include="Service References\DCExchange\Exchange.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DCExchange\Exchange1.wsdl" />
+    <None Include="Service References\DCExchange\Exchange1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DCExchange\Exchange2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ATM\" />
+    <WCFMetadataStorage Include="Service References\Card\" />
+    <WCFMetadataStorage Include="Service References\DCExchange\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ATM\Atm.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ATM\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ATM\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ATM\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Card\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Card\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Card\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DCExchange\Exchange.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DCExchange\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DCExchange\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DCExchange\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,89 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Data", "..\..\..\Source\PureMethods\DCServices\Development\DC.Data\DC.Data.csproj", "{45CC1033-9ADC-4592-9750-5595A48D9BAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DCAPI", "..\DCAPI\DCAPI\DCAPI.csproj", "{5B8FE5D1-D01F-4B86-B81D-B7838918F522}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{61615AE7-4370-41B5-8237-C89D70C84698}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crypto", "..\..\..\Source\PureMethods\DCServices\Development\bccrypto-net-1.7-src-ext\csharp\crypto\crypto.csproj", "{38872A5F-E87E-4FAD-B109-8EB7B2E6A4A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Common", "..\..\..\Source\PureMethods\DCServices\Development\DC.Common\DC.Common.csproj", "{725A0573-6B64-43DC-AFBE-2C8D332B887C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{89823DA6-F47F-4F4B-A482-A293D60B1DE7}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Common.Models", "..\..\..\Source\PureMethods\DCServices\Development\DC.Models\DC.Common.Models.csproj", "{5780EF14-C471-4CC5-97CA-2BE451734CAA}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://puremethods.visualstudio.com/defaultcollection
+		SccProjectUniqueName0 = ..\\..\\..\\Source\\PureMethods\\DCServices\\Development\\DC.Data\\DC.Data.csproj
+		SccProjectName0 = $/PureMethods/DCServices/Development/DC.Data
+		SccAuxPath0 = https://puremethods.visualstudio.com/defaultcollection
+		SccLocalPath0 = ..\\..\\..\\Source\\PureMethods\\DCServices\\Development\\DC.Data
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = ..\\DCAPI\\DCAPI\\DCAPI.csproj
+		SccProjectName1 = $/PureMethods/DCAPI/DCAPI/DCAPI
+		SccAuxPath1 = https://puremethods.visualstudio.com/defaultcollection
+		SccLocalPath1 = ..\\DCAPI\\DCAPI
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = ..\\..\\..\\Source\\PureMethods\\DCServices\\Development\\bccrypto-net-1.7-src-ext\\csharp\\crypto\\crypto.csproj
+		SccProjectName2 = $/PureMethods/DCServices/Development/bccrypto-net-1.7-src-ext/csharp/crypto
+		SccAuxPath2 = https://puremethods.visualstudio.com/defaultcollection
+		SccLocalPath2 = ..\\..\\..\\Source\\PureMethods\\DCServices\\Development\\bccrypto-net-1.7-src-ext\\csharp\\crypto
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = ..\\..\\..\\Source\\PureMethods\\DCServices\\Development\\DC.Common\\DC.Common.csproj
+		SccProjectName3 = $/PureMethods/DCServices/Development/DC.Common
+		SccAuxPath3 = https://puremethods.visualstudio.com/defaultcollection
+		SccLocalPath3 = ..\\..\\..\\Source\\PureMethods\\DCServices\\Development\\DC.Common
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName4 = ..\\..\\..\\Source\\PureMethods\\DCServices\\Development\\DC.Models\\DC.Common.Models.csproj
+		SccProjectName4 = $/PureMethods/DCServices/Development/DC.Models
+		SccAuxPath4 = https://puremethods.visualstudio.com/defaultcollection
+		SccLocalPath4 = ..\\..\\..\\Source\\PureMethods\\DCServices\\Development\\DC.Models
+		SccProvider4 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45CC1033-9ADC-4592-9750-5595A48D9BAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45CC1033-9ADC-4592-9750-5595A48D9BAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45CC1033-9ADC-4592-9750-5595A48D9BAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45CC1033-9ADC-4592-9750-5595A48D9BAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B8FE5D1-D01F-4B86-B81D-B7838918F522}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B8FE5D1-D01F-4B86-B81D-B7838918F522}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B8FE5D1-D01F-4B86-B81D-B7838918F522}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B8FE5D1-D01F-4B86-B81D-B7838918F522}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61615AE7-4370-41B5-8237-C89D70C84698}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61615AE7-4370-41B5-8237-C89D70C84698}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61615AE7-4370-41B5-8237-C89D70C84698}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61615AE7-4370-41B5-8237-C89D70C84698}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38872A5F-E87E-4FAD-B109-8EB7B2E6A4A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38872A5F-E87E-4FAD-B109-8EB7B2E6A4A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38872A5F-E87E-4FAD-B109-8EB7B2E6A4A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38872A5F-E87E-4FAD-B109-8EB7B2E6A4A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{725A0573-6B64-43DC-AFBE-2C8D332B887C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{725A0573-6B64-43DC-AFBE-2C8D332B887C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{725A0573-6B64-43DC-AFBE-2C8D332B887C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{725A0573-6B64-43DC-AFBE-2C8D332B887C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5780EF14-C471-4CC5-97CA-2BE451734CAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5780EF14-C471-4CC5-97CA-2BE451734CAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5780EF14-C471-4CC5-97CA-2BE451734CAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5780EF14-C471-4CC5-97CA-2BE451734CAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

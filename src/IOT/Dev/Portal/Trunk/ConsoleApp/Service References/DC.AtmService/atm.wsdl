@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schema.diamondcircle.net/v1" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="atm" targetNamespace="http://schema.diamondcircle.net/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IAtm_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schema.diamondcircle.net/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/DC.Common.Models" />
+      <xs:element name="CreatePublicEncryptedPrivateKey">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreatePublicEncryptedPrivateKeyResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DC.Common.Models" minOccurs="0" name="CreatePublicEncryptedPrivateKeyResult" nillable="true" type="q1:Keys" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateOrder">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="publicKey" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateOrderResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DC.Common.Models" minOccurs="0" name="CreateOrderResult" nillable="true" type="q2:Order" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TransferCoinsToBuyer">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="cardId" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TransferCoinsToBuyerResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="TransferCoinsToBuyerResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReceiveCoins">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="encryptedPrivateKey" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cardId" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="destinationAddress" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReceiveCoinsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ReceiveCoinsResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetBalance">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="confirmations" type="xs:short" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetBalanceResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetBalanceResult" type="xs:decimal" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SendBitcoins">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="encryptedPrivateKey" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="destinationAddress" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SendBitcoinsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SendBitcoinsResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/DC.Common.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DC.Common.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xs:complexType name="Keys">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EncryptedWIFPrivateKey" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="PrivateKey" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PublicKey" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Keys" nillable="true" type="tns:Keys" />
+      <xs:complexType name="Order">
+        <xs:sequence>
+          <xs:element name="_x003C_Address_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_BTC_x003E_k__BackingField" type="xs:decimal" />
+          <xs:element name="_x003C_Id_x003E_k__BackingField" type="ser:guid" />
+          <xs:element name="_x003C_PrivateKeyAsBase64_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_PrivateKeyAsByteArray_x003E_k__BackingField" nillable="true" type="xs:base64Binary" />
+          <xs:element name="_x003C_PrivateKey_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_Txn_x003E_k__BackingField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Order" nillable="true" type="tns:Order" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IAtm_CreatePublicEncryptedPrivateKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePublicEncryptedPrivateKey" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_CreatePublicEncryptedPrivateKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePublicEncryptedPrivateKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_CreateOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrder" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_CreateOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_TransferCoinsToBuyer_InputMessage">
+    <wsdl:part name="parameters" element="tns:TransferCoinsToBuyer" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_TransferCoinsToBuyer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TransferCoinsToBuyerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_ReceiveCoins_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveCoins" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_ReceiveCoins_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveCoinsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_GetBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalance" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_GetBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_SendBitcoins_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendBitcoins" />
+  </wsdl:message>
+  <wsdl:message name="IAtm_SendBitcoins_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendBitcoinsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAtm">
+    <wsdl:operation name="CreatePublicEncryptedPrivateKey">
+      <wsdl:input wsaw:Action="http://schema.diamondcircle.net/v1/IAtm/CreatePublicEncryptedPrivateKey" message="tns:IAtm_CreatePublicEncryptedPrivateKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://schema.diamondcircle.net/v1/IAtm/CreatePublicEncryptedPrivateKeyResponse" message="tns:IAtm_CreatePublicEncryptedPrivateKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrder">
+      <wsdl:input wsaw:Action="http://schema.diamondcircle.net/v1/IAtm/CreateOrder" message="tns:IAtm_CreateOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://schema.diamondcircle.net/v1/IAtm/CreateOrderResponse" message="tns:IAtm_CreateOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TransferCoinsToBuyer">
+      <wsdl:input wsaw:Action="http://schema.diamondcircle.net/v1/IAtm/TransferCoinsToBuyer" message="tns:IAtm_TransferCoinsToBuyer_InputMessage" />
+      <wsdl:output wsaw:Action="http://schema.diamondcircle.net/v1/IAtm/TransferCoinsToBuyerResponse" message="tns:IAtm_TransferCoinsToBuyer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveCoins">
+      <wsdl:input wsaw:Action="http://schema.diamondcircle.net/v1/IAtm/ReceiveCoins" message="tns:IAtm_ReceiveCoins_InputMessage" />
+      <wsdl:output wsaw:Action="http://schema.diamondcircle.net/v1/IAtm/ReceiveCoinsResponse" message="tns:IAtm_ReceiveCoins_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBalance">
+      <wsdl:input wsaw:Action="http://schema.diamondcircle.net/v1/IAtm/GetBalance" message="tns:IAtm_GetBalance_InputMessage" />
+      <wsdl:output wsaw:Action="http://schema.diamondcircle.net/v1/IAtm/GetBalanceResponse" message="tns:IAtm_GetBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendBitcoins">
+      <wsdl:input wsaw:Action="http://schema.diamondcircle.net/v1/IAtm/SendBitcoins" message="tns:IAtm_SendBitcoins_InputMessage" />
+      <wsdl:output wsaw:Action="http://schema.diamondcircle.net/v1/IAtm/SendBitcoinsResponse" message="tns:IAtm_SendBitcoins_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAtm" type="tns:IAtm">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IAtm_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreatePublicEncryptedPrivateKey">
+      <soap:operation soapAction="http://schema.diamondcircle.net/v1/IAtm/CreatePublicEncryptedPrivateKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrder">
+      <soap:operation soapAction="http://schema.diamondcircle.net/v1/IAtm/CreateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransferCoinsToBuyer">
+      <soap:operation soapAction="http://schema.diamondcircle.net/v1/IAtm/TransferCoinsToBuyer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveCoins">
+      <soap:operation soapAction="http://schema.diamondcircle.net/v1/IAtm/ReceiveCoins" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBalance">
+      <soap:operation soapAction="http://schema.diamondcircle.net/v1/IAtm/GetBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBitcoins">
+      <soap:operation soapAction="http://schema.diamondcircle.net/v1/IAtm/SendBitcoins" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="atm">
+    <wsdl:port name="BasicHttpBinding_IAtm" binding="tns:BasicHttpBinding_IAtm">
+      <soap:address location="https://node.diamondcircle.net/Atm.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

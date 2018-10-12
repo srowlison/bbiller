@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DiamondCircle_db" Class="DCPaymentServiceDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=tcp:it5jl14q4r.database.windows.net,1433;Initial Catalog=DiamondCircle_db;Integrated Security=False;User ID=srowlison@it5jl14q4r;Connect Timeout=30;Encrypt=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DiamondCircle_dbConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.addTransaction" Method="addTransaction">
+    <Parameter Name="DateTime" Parameter="dateTime" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="CardID" Parameter="cardID" Type="System.String" DbType="NChar(8)" />
+    <Parameter Name="TransType" Parameter="transType" Type="System.String" DbType="NChar(3)" />
+    <Parameter Name="TerminalID" Parameter="terminalID" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="NumuratorCurrency" Parameter="numuratorCurrency" Type="System.String" DbType="NChar(3)" />
+    <Parameter Name="DeominatorCurrency" Parameter="deominatorCurrency" Type="System.String" DbType="NChar(3)" />
+    <Parameter Name="Amount" Parameter="amount" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Price" Parameter="price" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Reference" Parameter="reference" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="addTransactionResult">
+      <Column Name="TransactionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InsertRowCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.getCard" Method="getCard">
+    <Parameter Name="CardID" Parameter="cardID" Type="System.String" DbType="NChar(8)" />
+    <ElementType Name="getCardResult">
+      <Column Name="CardId" Type="System.String" DbType="NChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DateIssued" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NChar(256)" CanBeNull="true" />
+      <Column Name="PublicKey" Type="System.String" DbType="NChar(34)" CanBeNull="true" />
+      <Column Name="Pin" Type="System.String" DbType="NChar(6)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.addCard" Method="addCard">
+    <Parameter Name="CardID" Parameter="cardID" Type="System.String" DbType="NChar(16)" />
+    <Parameter Name="PublicKey" Parameter="publicKey" Type="System.String" DbType="NChar(34)" />
+    <Parameter Name="Pin" Parameter="pin" Type="System.String" DbType="NChar(6)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NChar(256)" />
+    <Parameter Name="DateIssued" Parameter="dateIssued" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

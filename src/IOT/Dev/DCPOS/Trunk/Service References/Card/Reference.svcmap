@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="76f9a33b-f7cd-4fb6-8cf1-c8143b67b4bb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://payment.diamondcircle.net/Card.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Card.xsd" MetadataType="Schema" ID="092d1461-9951-4d73-bf0a-6ee21291288b" SourceId="1" SourceUrl="https://payment.diamondcircle.net/Card.svc?xsd=xsd1" />
+    <MetadataFile FileName="Card1.xsd" MetadataType="Schema" ID="a1d3c856-9c6d-4371-b3c0-7084b5a9e3fe" SourceId="1" SourceUrl="https://payment.diamondcircle.net/Card.svc?xsd=xsd0" />
+    <MetadataFile FileName="Card.wsdl" MetadataType="Wsdl" ID="3a964ad2-a87d-48cd-b335-54924496a20c" SourceId="1" SourceUrl="https://payment.diamondcircle.net/Card.svc?wsdl" />
+    <MetadataFile FileName="Card1.wsdl" MetadataType="Wsdl" ID="09cd0e9b-d861-4d39-ae9a-30ddbdb47a81" SourceId="1" SourceUrl="https://payment.diamondcircle.net/Card.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Card2.xsd" MetadataType="Schema" ID="cd9fcdae-ce53-479e-bdd8-7a478cfd85be" SourceId="1" SourceUrl="https://payment.diamondcircle.net/Card.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

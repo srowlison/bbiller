@@ -1,0 +1,85 @@
+﻿@model Portal.Models.SendModel
+@{
+
+    ViewBag.Title = "Send";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<h2>Send YourBitcoin</h2>
+<h4 style="color:red">@ViewBag.message</h4>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+   <div class="view">
+   
+        <ol style="list-style :none;">
+            <li>
+                @Html.HiddenFor(item => item.sender) 
+                  @Html.HiddenFor(item => item.CurrentAmount) 
+            <label class="label"> To Address </label> @Html.TextBoxFor(item => item.reciver,new { @class= "Ltextbox" })
+          
+
+                   </li>
+           <li>
+            <label class="label"> AUD </label>@Html.TextBoxFor(item => item.AUDAmount, new { @class = "ltextbox" , id = "AUD" } )
+         
+           
+            </li>
+            <li>
+            <label class="label"> Amount </label> <div id="lblRate" class="lbl"></div>
+
+            </li>
+        </ol>
+
+        <input type="submit" value="Send" class="BtnSubmit" />
+   </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script type="text/javascript">
+
+    $(function () {
+        $('#AUD').keyup(function () {
+                
+            var xxx = document.getElementById('AUD').value;
+                
+                var postData = { amount: xxx };
+                $.ajax({
+                    url: '@Url.Action("Show")',
+                    type: 'GET',
+                    data: postData,
+                    success: function (result) {
+                      
+                        $('#lblRate').html(result);
+                    }
+                });
+            });
+
+            // cancel the default redirect from the link by returning false
+            return false;
+        });
+    ;
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.ltextbox').keypress(function (event) {
+         
+            if (event.which < 8 || event.which > 59) {
+           
+                event.preventDefault();
+            } // prevent if not number/dot
+            if (event.which > 8 && event.which < 46) {
+            
+                event.preventDefault();
+            }
+            if (event.which == 46 && $(this).val().indexOf('.') != -1) {
+                event.preventDefault();
+            } // prevent if already dot
+
+        });
+    });
+</script>

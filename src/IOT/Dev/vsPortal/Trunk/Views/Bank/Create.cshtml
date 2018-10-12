@@ -1,0 +1,67 @@
+﻿@model Portal.CustomerBank
+
+@{
+    ViewBag.Title = "Create Bank Details";
+}
+
+<h2>Create Bank Details</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+<div class="view">
+
+        
+                    <div class="editor-label">
+            @Html.LabelFor(model => model.BSB,new { @class= "label" })
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.BSB,new { @class= "textbox" })
+            @Html.ValidationMessageFor(model => model.BSB)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AccountNumber,new { @class= "label" })
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.AccountNumber,new { @class= "textbox" })
+            @Html.ValidationMessageFor(model => model.AccountNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PayPal,new { @class= "label" })
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.PayPal,new { @class= "textbox" })
+            @Html.ValidationMessageFor(model => model.PayPal)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SWIFT,new { @class= "label" })
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.SWIFT,new { @class= "textbox" })
+            @Html.ValidationMessageFor(model => model.SWIFT)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IBAN,new { @class= "label" })
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.IBAN,new { @class= "textbox" })
+            @Html.ValidationMessageFor(model => model.IBAN)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

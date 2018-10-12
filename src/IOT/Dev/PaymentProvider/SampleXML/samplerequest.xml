@@ -1,0 +1,13 @@
+<MerchantRequest>
+<MerchantInfo> <MerchantName>TestMerchant</MerchantName> <MerchantPIN>TestMerchant</MerchantPIN>
+</MerchantInfo> <TransactionInfo>
+<OrderID>001234</OrderID>
+<OrderDescription>WorldBooks order 1234</OrderDescription> <Amount>10000</Amount> <CurrencyCode>840</CurrencyCode> <MerchantDateTime>2012-10-05 11:22:19</MerchantDateTime>
+</TransactionInfo> <ClientInfo>
+<AccountNumber>hr385645</AccountNumber> <Name>Bob</Name> <Surname>Smith</Surname>
+<Address>17 Main Street</Address> <City>New York</City>
+<State>NY</State> <Zip>10348</Zip> <Country>US</Country> <Telephone>2122101938</Telephone> <Email>bob.smith@test.com</Email> <DOB>1986-08-12</DOB> <ClientIP>215.45.81.1</ClientIP>
+</ClientInfo> <PaymentInfo>
+<PAN>4444333322221111</PAN> <ExpiryDate>07-2014</ExpiryDate> <CardHolderName>B Smith</CardHolderName> <CVC2>123</CVC2>
+<StartDate/>
+<IssueNumber/> </PaymentInfo> </MerchantRequest>

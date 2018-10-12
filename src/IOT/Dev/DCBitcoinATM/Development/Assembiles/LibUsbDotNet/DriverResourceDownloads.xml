@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ArrayOfDriverResourceDownload xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<DriverResourceDownload DisplayName="WinUSB 1.9">
+		<Url>http://sites.google.com/site/libusbdotnet/driver_resources/Winusb01009.Driver.Resources?attredirects=0&amp;d=1</Url>
+		<Description>WinUSB v1.9 (7600.16385.0) Drivers x86, amd64, ia64 (WdfCoInstaller01009.dll, WUDFUpdate_01009.dll, winusbcoinstaller2.dll)</Description>
+	</DriverResourceDownload>
+	<DriverResourceDownload DisplayName="libusb-win32 1.2.4.0 (signed) W2K-WIN7">
+		<Url>http://sites.google.com/site/libusbdotnet/driver_resources/LibUsb-Win32-LUDN.Driver.Resources?attredirects=0&amp;d=1</Url>
+		<Description>libusb-win32 1.2.4.0 (signed) Drivers x86, amd64, ia64 (libusb0.dll, libusb0.sys)</Description>
+	</DriverResourceDownload>
+</ArrayOfDriverResourceDownload>

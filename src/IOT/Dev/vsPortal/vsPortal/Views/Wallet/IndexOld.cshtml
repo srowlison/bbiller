@@ -1,0 +1,61 @@
+﻿@model IEnumerable<DC.Data.Card>
+
+<hgroup class="title">
+    <h1>@ViewBag.Message </h1>
+
+</hgroup>
+<div class="datagrid">
+<table>
+    <thead>
+    <tr>
+   
+           <th>
+           Tag Id
+         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateIssued)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublicKey)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+ 
+    </tr>
+</thead>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CardId)
+        </td>
+       <td>
+
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateIssued)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublicKey)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+       
+    </tr>
+}
+
+</table>
+</div>

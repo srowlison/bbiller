@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DCPOS.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EncryptedPrivateKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">EncryptedPrivateKey</Value>
+    </Setting>
+    <Setting Name="PublicKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PublicKey</Value>
+    </Setting>
+    <Setting Name="CardId" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CardId</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

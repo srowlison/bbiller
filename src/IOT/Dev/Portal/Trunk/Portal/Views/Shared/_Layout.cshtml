@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Diamond Circle</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/content/css/ugrid.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="~/content/css/reset.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="~/content/css/structure.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="~/content/css/text.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="~/content/css/font-awesome.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="~/content/css/font-awesome.min.css" media="all" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @RenderSection("viewSpecificStyles", required: false)
+
+</head>
+<body>
+    <div class="pg-canvas gu24">
+        <div class="row">
+            <div class="col gu24">
+                <div class="row pg-home">
+                    <div class="col gu1">&nbsp;</div>
+                    <div class="col gu11" style="float:left">
+                        <div >
+                            <a href="http://diamondcircle.net/"><img src="~/Images/Diamond-Circle-Logo.png" style="padding: 10px;" height="40" width="300" /> </a>
+                        </div>
+                    </div>
+                    <div class="col gu8">
+                        <div>
+                            <a href="~/home"><img src="~/Images/Diamond-Circle-Portal.png" style="margin-left:20%"></a>
+                        </div>
+                    </div>
+                    <div class="col gu4">&nbsp;</div>
+                </div>
+                <div class="row pg-login">
+                    <div class="col gu24">
+
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                </div>
+            </div>
+         </div>
+
+        @RenderSection("featured1", required: false)
+
+        <div id="main_content">
+
+            @RenderSection("featured", required: false)
+            @* <section class="content-wrapper main-content clear-fix">*@
+            <section style="height:520px">
+                @RenderBody()
+            </section>
+        </div>
+
+        <div class="row pg-footer">
+            <div class="col gu24">
+                Copyright © @DateTime.Now.Year Diamond Circle Pty Ltd. All rights reserved.  |  <a href="http://diamondcircle.net/pages/contact-us"> Contact us </a>
+
+
+                @Scripts.Render("~/bundles/jquery")
+                @RenderSection("scripts", required: false)
+            </div>
+        </div>
+    </div>
+</body>
+</html>

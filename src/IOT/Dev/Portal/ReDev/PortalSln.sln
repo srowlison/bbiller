@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal", "Portal\Portal.csproj", "{FE69024A-4E24-404A-969B-03A79E73F48A}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://puremethods.visualstudio.com/defaultcollection
+		SccProjectUniqueName0 = Portal\\Portal.csproj
+		SccProjectName0 = Portal
+		SccAuxPath0 = https://puremethods.visualstudio.com/defaultcollection
+		SccLocalPath0 = Portal
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE69024A-4E24-404A-969B-03A79E73F48A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE69024A-4E24-404A-969B-03A79E73F48A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE69024A-4E24-404A-969B-03A79E73F48A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE69024A-4E24-404A-969B-03A79E73F48A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

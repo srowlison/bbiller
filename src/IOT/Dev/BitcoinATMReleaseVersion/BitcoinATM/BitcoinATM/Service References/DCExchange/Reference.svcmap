@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2a1fe810-3fc7-4664-8114-61ef679f1547" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://payment.diamondcircle.net/Exchange.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Exchange1.wsdl" MetadataType="Wsdl" ID="fdb2e58c-37e3-453f-9010-f3db33f4254c" SourceId="1" SourceUrl="https://payment.diamondcircle.net/Exchange.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Exchange.xsd" MetadataType="Schema" ID="65f500bb-a522-407e-af9f-068845d126eb" SourceId="1" SourceUrl="https://payment.diamondcircle.net/Exchange.svc?xsd=xsd1" />
+    <MetadataFile FileName="Exchange.wsdl" MetadataType="Wsdl" ID="0435a051-12bc-4cb0-af6e-76ee823440f9" SourceId="1" SourceUrl="https://payment.diamondcircle.net/Exchange.svc?wsdl" />
+    <MetadataFile FileName="Exchange1.xsd" MetadataType="Schema" ID="35e1bf2f-91f4-4c1a-a0b5-dd5bc9e6a1ee" SourceId="1" SourceUrl="https://payment.diamondcircle.net/Exchange.svc?xsd=xsd0" />
+    <MetadataFile FileName="Exchange.disco" MetadataType="Disco" ID="11622cd6-1434-4f59-978a-e72d0f5100e6" SourceId="1" SourceUrl="https://payment.diamondcircle.net/Exchange.svc?disco" />
+    <MetadataFile FileName="Exchange3.xsd" MetadataType="Schema" ID="7df128a0-a6d3-40b6-aa17-290307101283" SourceId="1" SourceUrl="https://payment.diamondcircle.net/Exchange.svc?xsd=xsd3" />
+    <MetadataFile FileName="Exchange2.xsd" MetadataType="Schema" ID="e38b9f1a-5432-4b76-af17-43490a1d646b" SourceId="1" SourceUrl="https://payment.diamondcircle.net/Exchange.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

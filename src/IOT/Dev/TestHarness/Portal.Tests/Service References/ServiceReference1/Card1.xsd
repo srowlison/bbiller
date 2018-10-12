@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://payment.diamondcircle.net/v1" elementFormDefault="qualified" targetNamespace="https://payment.diamondcircle.net/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://localhost:44301/Card.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DC.Common.Models" />
+  <xs:element name="AddCardWithPIN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CardId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PublicKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PIN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCardWithPINResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CardId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PublicKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Zip" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DOB" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CardHolderName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CardNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ExpiryDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="CVC2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CountryId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCardResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerCC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CardId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerCCResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DC.Common.Models" minOccurs="0" name="GetCustomerCCResult" nillable="true" type="q1:CCInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsCardOnFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CardId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsCardOnFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsCardOnFileResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHotWalletAddress">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHotWalletAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetHotWalletAddressResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOnlineAccount">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOnlineAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DC.Common.Models" minOccurs="0" name="AddOnlineAccountResult" nillable="true" type="q2:OnlineAccount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CardId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TransType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TerminalId" type="xs:int" />
+        <xs:element minOccurs="0" name="NumuratorCurrency" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DenominatorCurrency" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Reference" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteTransactionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WriteTransactionResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateaPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PaymentProvider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateaPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateaPaymentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

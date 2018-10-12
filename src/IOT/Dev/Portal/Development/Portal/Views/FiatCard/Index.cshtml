@@ -1,0 +1,70 @@
+﻿@model IEnumerable<DC.Data.Card>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateIssued)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublicKey)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrivateKey)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateIssued)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublicKey)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrivateKey)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CardId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CardId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CardId })
+        </td>
+    </tr>
+}
+
+</table>

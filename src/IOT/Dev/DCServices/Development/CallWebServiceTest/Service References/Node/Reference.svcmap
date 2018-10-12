@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="671a4da7-d8f2-4b6e-8e81-1dea8cef7194" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:49384/Atm.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Atm.disco" MetadataType="Disco" ID="518aec64-332e-4e91-95a8-ff8ff1d7556a" SourceId="1" SourceUrl="https://localhost:44300/Atm.svc?disco" />
+    <MetadataFile FileName="Atm.xsd" MetadataType="Schema" ID="9277a0d3-0c77-406f-a44e-b90fd955230b" SourceId="1" SourceUrl="https://localhost:44300/Atm.svc?xsd=xsd1" />
+    <MetadataFile FileName="Atm1.xsd" MetadataType="Schema" ID="430ceade-6e58-4c0d-9c47-3d15927df1cc" SourceId="1" SourceUrl="https://localhost:44300/Atm.svc?xsd=xsd2" />
+    <MetadataFile FileName="Atm.wsdl" MetadataType="Wsdl" ID="ce814d6f-e8a3-4c4d-ba6b-cd03178738b9" SourceId="1" SourceUrl="https://localhost:44300/Atm.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Atm2.xsd" MetadataType="Schema" ID="9bf61ca5-55b2-4a5d-a210-082d832b7223" SourceId="1" SourceUrl="https://localhost:44300/Atm.svc?xsd=xsd0" />
+    <MetadataFile FileName="atm1.wsdl" MetadataType="Wsdl" ID="362788c9-ec85-425a-bade-f4e9147e7d87" SourceId="1" SourceUrl="https://localhost:44300/Atm.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

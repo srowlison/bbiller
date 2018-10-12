@@ -1,0 +1,87 @@
+﻿@model DC.Data.Card
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Card</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CustomerID, "Customer")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CustomerID", String.Empty)
+            @Html.ValidationMessageFor(model => model.CustomerID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DateIssued)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DateIssued)
+            @Html.ValidationMessageFor(model => model.DateIssued)
+        </div>
+
+        @Html.HiddenFor(model => model.CardId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PublicKey)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PublicKey)
+            @Html.ValidationMessageFor(model => model.PublicKey)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Pin)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Pin)
+            @Html.ValidationMessageFor(model => model.Pin)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Status)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Status)
+            @Html.ValidationMessageFor(model => model.Status)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PrivateKey)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PrivateKey)
+            @Html.ValidationMessageFor(model => model.PrivateKey)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

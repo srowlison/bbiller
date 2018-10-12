@@ -1,0 +1,40 @@
+﻿@model DC.Data.Transaction
+
+@{
+    ViewBag.Title = "Search Transactions";
+    ViewBag.Cards 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View your Bitcoin transactions</h2>
+
+<fieldset>
+    <legend>Transaction</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateTime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CardId)
+    </div>
+    <div class="display-field">
+        @Html.DropDownListFor(model => model.CardId, Model.Card, "Select a card")
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TerminalId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TerminalId)
+    </div>
+
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

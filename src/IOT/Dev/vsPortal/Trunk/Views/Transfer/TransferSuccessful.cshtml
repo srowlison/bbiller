@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "Transfer Balance Successful";
+}
+
+<h2>Transfer Balance Successful</h2>
+
+<p>Your transfer was successfully completed.  The receipt for the tranasaction is: @Html.Raw(ViewBag.Receipt)</p>
+
+@Html.ActionLink("Return to transfer balances", "Index")

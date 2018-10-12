@@ -1,0 +1,105 @@
+﻿@model DC.Data.Address
+
+@{
+    ViewBag.Title = "Add Address";
+}
+
+<h2>Add new address</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+  <div class="view">
+
+     @*   <div class="editor-label">
+            @Html.LabelFor(model => model.CustomerId, "Customer")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CustomerId", String.Empty)
+            @Html.ValidationMessageFor(model => model.CustomerId)
+        </div>*@
+
+   @*     <div class="editor-label">
+            @Html.LabelFor(model => model.AddressType)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AddressType)
+            @Html.ValidationMessageFor(model => model.AddressType)
+        </div>*@
+
+        <div >
+            @Html.LabelFor(model => model.AddressLine1,new { @class= "label" })
+        </div>
+        <div >
+            @Html.TextBoxFor(model => model.AddressLine1,new { @class= "textbox" })
+            @Html.ValidationMessageFor(model => model.AddressLine1)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.AddressLine2,new { @class= "label" })
+        </div>
+        <div >
+            @Html.TextBoxFor(model => model.AddressLine2,new { @class= "textbox" })
+            @Html.ValidationMessageFor(model => model.AddressLine2)
+        </div>
+
+        <div >
+            @Html.LabelFor(model => model.Suburb,new { @class= "label" })
+        </div>
+        <div >
+            @Html.TextBoxFor(model => model.Suburb,new { @class= "textbox" })
+            @Html.ValidationMessageFor(model => model.Suburb)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.Postcode,new { @class= "label" })
+        </div>
+        <div >
+            @Html.TextBoxFor(model => model.Postcode,new { @class= "textbox" })
+            @Html.ValidationMessageFor(model => model.Postcode)
+        </div>
+
+        <div >
+            @Html.LabelFor(model => model.CountryId)
+        </div>
+        <div >
+                  @Html.DropDownList("CountryId",null,new { @class= "textbox" })
+            @Html.ValidationMessageFor(model => model.CountryId)
+        </div>
+
+        <div >
+            @Html.LabelFor(model => model.LandLine,new { @class= "label" })
+        </div>
+        <div >
+            @Html.TextBoxFor(model => model.LandLine,new { @class= "textbox" })
+            @Html.ValidationMessageFor(model => model.LandLine)
+        </div>
+
+        <div >
+            @Html.LabelFor(model => model.Mobile,new { @class= "label" })
+        </div>
+        <div >
+            @Html.TextBoxFor(model => model.Mobile,new { @class= "textbox" })
+            @Html.ValidationMessageFor(model => model.Mobile)
+        </div>
+
+        <div >
+            @Html.LabelFor(model => model.Fax,new { @class= "label" })
+        </div>
+        <div >
+            @Html.TextBoxFor(model => model.Fax,new { @class= "textbox" })
+            @Html.ValidationMessageFor(model => model.Fax)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

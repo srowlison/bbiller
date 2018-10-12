@@ -1,0 +1,39 @@
+﻿@model Tuple<DC.Data.send, bool>
+@{
+    ViewBag.Title = "Confirm";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+   <div class="view">
+   
+        <ol style="list-style :none;">
+            <li>
+                @Html.HiddenFor(Item1 => Model.Item1.sender) 
+                   @Html.HiddenFor(Item1 => Model.Item2)
+            <label class="label"> To Address </label>   @Html.DisplayFor(Item1 => Model.Item1.reciver,new { @class= "label" })
+       
+
+                   </li>
+           <li>
+            <label class="label"> Amount </label>@Html.DisplayFor(Item1 => Model.Item1.BitAmount, new { @class = "label"  } )
+
+           
+            </li>
+            <li>
+            <label class="label"> AUD </label> @Html.DisplayFor(Item1 => Model.Item1.AUDAmount, new { @class = "label"  } )
+
+
+            </li>
+        </ol>
+
+       <h2 style="color:red">@Html.Raw(TempData["Msg"] )</h2>
+       @Html.ActionLink("Back","Send",null,new {@class="BtnSubmit"})
+        <input type="submit" value="Confirm" class="BtnSubmit" />
+   </div>
+}
+

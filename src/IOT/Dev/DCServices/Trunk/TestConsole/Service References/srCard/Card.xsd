@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://payment.diamondcircle.net/v1" elementFormDefault="qualified" targetNamespace="http://payment.diamondcircle.net/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AddCardWithPIN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CardId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PublicKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PIN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCardWithPINResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddCardWithPINResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CardId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PublicKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddCardResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="isCardOnFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CardId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="isCardOnFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="isCardOnFileResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMargin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TerminalId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMarginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMarginResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="BuyMargin" type="xs:decimal" />
+        <xs:element minOccurs="0" name="SellMargin" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHotWalletAddress">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHotWalletAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetHotWalletAddressResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOnlineAccount">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOnlineAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateOnlineAccountResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ConfirmToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CardId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TransType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TerminalId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NumuratorCurrency" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DenominatorCurrency" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Reference" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteTransactionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WriteTransactionResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateaPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PaymentProvider" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateaPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateaPaymentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

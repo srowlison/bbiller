@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://payment.diamondcircle.net/v1" elementFormDefault="qualified" targetNamespace="https://payment.diamondcircle.net/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://payment.diamondcircle.net/Diagnostic.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Diagnostics" />
+  <xs:import schemaLocation="https://payment.diamondcircle.net/Diagnostic.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DC.Common.Models" />
+  <xs:element name="HeartBeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TerminalId" type="xs:int" />
+        <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HeartBeatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HeartBeatResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ServiceError">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TerminalId" type="xs:int" />
+        <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Diagnostics" minOccurs="0" name="Severity" type="q1:TraceEventType" />
+        <xs:element minOccurs="0" name="ErrorCondition" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ServiceErrorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ServiceErrorResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TerminalId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSettingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DC.Common.Models" minOccurs="0" name="GetSettingsResult" nillable="true" type="q2:TerminalSettings" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://dcltest1.azurewebsites.net/DCLAPI.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DC.Common.Models" />
+  <xs:element name="SendBitcoins">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="APIKEY" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FromCardId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FromCardPublicAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="encryptedPrivateKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DestinationCardId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BitcoinAmount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="FiatAmount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendBitcoinsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendBitcoinsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurchaseBitcoins">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="APIKEY" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CardId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FromCardPublicAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FiatAmount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="BitcoinAmount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurchaseBitcoinsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PurchaseBitcoinsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSpotPrice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="APIKEY" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSpotPriceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSpotPriceResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChkPINLimit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="APIKEY" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CardId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Fiatamount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChkPINLimitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ChkPINLimitResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="checkPin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="APIKEY" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CardId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pin" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="checkPinResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="checkPinResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBalance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="APIKEY" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PublicKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Confirmations" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBalanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetBalanceResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePublicEncryptedPrivateKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="APIKEY" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePublicEncryptedPrivateKeyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DC.Common.Models" minOccurs="0" name="CreatePublicEncryptedPrivateKeyResult" nillable="true" type="q1:Keys" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCardWithPinLimit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="APIKEY" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CardId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PublicKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Zip" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DOB" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CardHolderName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CardNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ExpiryMonth" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ExpiryYear" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CVC2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PIN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Limit" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Topup" type="xs:boolean" />
+        <xs:element minOccurs="0" name="TopUpAmount" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCardWithPinLimitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddCardWithPinLimitResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsCardOnFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="APIKEY" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CardId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsCardOnFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsCardOnFileResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="APIKEY" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Body" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendEmailResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

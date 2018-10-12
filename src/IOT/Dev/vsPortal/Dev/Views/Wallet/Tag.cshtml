@@ -1,0 +1,33 @@
+﻿@model Portal.Models.TagModel
+@{
+    ViewBag.Title = "Active Tag";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+
+<hgroup >
+    <h1>@ViewBag.Title.</h1>
+
+</hgroup>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+   <div class="view">
+        <ol style="list-style :none;">
+            <li>
+                @Html.LabelFor(m => m.CardId,new { @class= "label" }) 
+                @Html.TextBoxFor(m => m.CardId,new { @class= "textbox" })
+            </li>
+           
+           
+        </ol>
+        <input type="submit" value="Submit" />
+   </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

@@ -1,0 +1,62 @@
+﻿@model DC.Data.Card
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Card</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Customer.UserId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Customer.UserId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateIssued)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateIssued)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PublicKey)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PublicKey)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Pin)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pin)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Status)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Status)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

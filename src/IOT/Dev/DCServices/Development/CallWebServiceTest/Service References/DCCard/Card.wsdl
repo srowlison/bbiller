@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="https://payment.diamondcircle.net/v1" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://payment.diamondcircle.net/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="https://payment.diamondcircle.net/v1/Imports">
+      <xsd:import schemaLocation="https://localhost:44301/Card.svc?xsd=xsd0" namespace="https://payment.diamondcircle.net/v1" />
+      <xsd:import schemaLocation="https://localhost:44301/Card.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://localhost:44301/Card.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DC.Common.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICard_AddCardWithPIN_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCardWithPIN" />
+  </wsdl:message>
+  <wsdl:message name="ICard_AddCardWithPIN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCardWithPINResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICard_AddCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCard" />
+  </wsdl:message>
+  <wsdl:message name="ICard_AddCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICard_GetCustomerCC_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerCC" />
+  </wsdl:message>
+  <wsdl:message name="ICard_GetCustomerCC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerCCResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICard_IsCardOnFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsCardOnFile" />
+  </wsdl:message>
+  <wsdl:message name="ICard_IsCardOnFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsCardOnFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICard_GetHotWalletAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHotWalletAddress" />
+  </wsdl:message>
+  <wsdl:message name="ICard_GetHotWalletAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHotWalletAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICard_AddOnlineAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOnlineAccount" />
+  </wsdl:message>
+  <wsdl:message name="ICard_AddOnlineAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOnlineAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICard_WriteTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteTransaction" />
+  </wsdl:message>
+  <wsdl:message name="ICard_WriteTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICard_CreateaPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateaPayment" />
+  </wsdl:message>
+  <wsdl:message name="ICard_CreateaPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateaPaymentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICard">
+    <wsdl:operation name="AddCardWithPIN">
+      <wsdl:input wsaw:Action="https://payment.diamondcircle.net/v1/ICard/AddCardWithPIN" message="tns:ICard_AddCardWithPIN_InputMessage" />
+      <wsdl:output wsaw:Action="https://payment.diamondcircle.net/v1/ICard/AddCardWithPINResponse" message="tns:ICard_AddCardWithPIN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCard">
+      <wsdl:input wsaw:Action="https://payment.diamondcircle.net/v1/ICard/AddCard" message="tns:ICard_AddCard_InputMessage" />
+      <wsdl:output wsaw:Action="https://payment.diamondcircle.net/v1/ICard/AddCardResponse" message="tns:ICard_AddCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerCC">
+      <wsdl:input wsaw:Action="https://payment.diamondcircle.net/v1/ICard/GetCustomerCC" message="tns:ICard_GetCustomerCC_InputMessage" />
+      <wsdl:output wsaw:Action="https://payment.diamondcircle.net/v1/ICard/GetCustomerCCResponse" message="tns:ICard_GetCustomerCC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsCardOnFile">
+      <wsdl:input wsaw:Action="https://payment.diamondcircle.net/v1/ICard/IsCardOnFile" message="tns:ICard_IsCardOnFile_InputMessage" />
+      <wsdl:output wsaw:Action="https://payment.diamondcircle.net/v1/ICard/IsCardOnFileResponse" message="tns:ICard_IsCardOnFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHotWalletAddress">
+      <wsdl:input wsaw:Action="https://payment.diamondcircle.net/v1/ICard/GetHotWalletAddress" message="tns:ICard_GetHotWalletAddress_InputMessage" />
+      <wsdl:output wsaw:Action="https://payment.diamondcircle.net/v1/ICard/GetHotWalletAddressResponse" message="tns:ICard_GetHotWalletAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOnlineAccount">
+      <wsdl:input wsaw:Action="https://payment.diamondcircle.net/v1/ICard/AddOnlineAccount" message="tns:ICard_AddOnlineAccount_InputMessage" />
+      <wsdl:output wsaw:Action="https://payment.diamondcircle.net/v1/ICard/AddOnlineAccountResponse" message="tns:ICard_AddOnlineAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteTransaction">
+      <wsdl:input wsaw:Action="https://payment.diamondcircle.net/v1/ICard/WriteTransaction" message="tns:ICard_WriteTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="https://payment.diamondcircle.net/v1/ICard/WriteTransactionResponse" message="tns:ICard_WriteTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateaPayment">
+      <wsdl:input wsaw:Action="https://payment.diamondcircle.net/v1/ICard/CreateaPayment" message="tns:ICard_CreateaPayment_InputMessage" />
+      <wsdl:output wsaw:Action="https://payment.diamondcircle.net/v1/ICard/CreateaPaymentResponse" message="tns:ICard_CreateaPayment_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

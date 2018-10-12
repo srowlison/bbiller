@@ -1,0 +1,65 @@
+﻿@model DC.Data.Card
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Card</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Customer.UserId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Customer.UserId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateIssued)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateIssued)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PublicKey)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PublicKey)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Pin)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pin)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Status)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Status)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PrivateKey)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PrivateKey)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CardId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

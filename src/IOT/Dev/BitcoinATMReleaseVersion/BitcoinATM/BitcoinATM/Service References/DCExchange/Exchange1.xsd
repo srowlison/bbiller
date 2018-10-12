@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://payment.diamondcircle.net/v1" elementFormDefault="qualified" targetNamespace="https://payment.diamondcircle.net/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://payment.diamondcircle.net/Exchange.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DC.Providers" />
+  <xs:import schemaLocation="https://payment.diamondcircle.net/Exchange.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DC.Common.Models" />
+  <xs:element name="GetSpotPrice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="currencyCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="terminalId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSpotPriceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DC.Providers" minOccurs="0" name="GetSpotPriceResult" nillable="true" type="q1:PriceData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMargin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="currencyCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="terminalId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMarginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DC.Common.Models" minOccurs="0" name="GetMarginResult" nillable="true" type="q2:Margin" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
